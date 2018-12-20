@@ -63,10 +63,22 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        // para crear el administrado debemos comprobar que es el
+        // primero en registrarse
+        $tipo = 1;
+        $estadoActual = 0;
+        if(!User::count())
+        {
+            $tipo = 0;
+            $estadoActual = 1;
+        }
+        
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'tipo_user' => $tipo,
+            'estado' => $estadoActual,
         ]);
     }
 }
