@@ -69,12 +69,19 @@ class RegisterController extends Controller
         // primero en registrarse
         $tipo = 1;
         $estadoActual = 0;
-        if(!User::count())
-        {
+        if(!User::count()) {
             $tipo = 0;
             $estadoActual = 1;
         }
-        
+        $phone = '';
+        $domicilio = '';
+        $puesto = '';
+        $rfc = '';
+        if(isset($data['telefono'])) { $phone =  $data['telefono'];}
+        if(isset($data['domicilio'])) { $domicilio =  $data['domicilio'];}
+        if(isset($data['puesto'])) { $puesto =  $data['puesto'];}
+        if(isset($data['rfc'])) { $rfc=  $data['rfc'];}
+
         return User::create([
             'nombre' => $data['nombre'],
             'apellidos' => $data['apellidos'],
@@ -82,10 +89,10 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             'tipo_user' => $tipo,
             'estado' => $estadoActual,
-            'telefono' => 11123,
-            'domicilio' => 'calle calle',
-            'puesto' => 'gerente',
-            'rfc' => '41142fsfsfasfa'
+            'telefono' => $phone,
+            'domicilio' => $domicilio,
+            'puesto' => $puesto,
+            'rfc' => $rfc
         ]);
     }
 }
