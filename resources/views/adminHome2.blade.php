@@ -12,34 +12,91 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="jumbotron text-center">
-                    <a href="{{url('registro/tecnico')}}"><button class="btn btn-success">Todos los tickets</button></a>
+                    <div class="dropdown">
+                        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+                            Tickets
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Link 1</a>
+                            <a class="dropdown-item" href="#">Link 2</a>
+                            <a class="dropdown-item" href="#">Link 3</a>
+                        </div>
+                    </div>
                 </div>
             </div>
+
             <div class="col-md-4">
                 <div class="jumbotron text-center">
-                    <a href="{{url('registro/tecnico')}}"><button class="btn btn-success">Administrar empleados</button></a>
+                    <div class="dropdown">
+                        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+                            Incidentes
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{{url('registro/tecnico')}}">No registrados</a>
+                            <a class="dropdown-item" href="{{url('registro/tecnico')}}">Registrados</a>
+                            <a class="dropdown-item" href="{{url('registro/tecnico')}}">Todos</a>
+                        </div>
+                    </div>
                 </div>
             </div>
+
             <div class="col-md-4">
                 <div class="jumbotron text-center">
-                    <a href="{{url('registro/tecnico')}}"><button class="btn btn-success">Registrar incidentes disponibles</button></a>
+                    <div class="dropdown">
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                            Administrar empleados
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{{url('registro/tecnico')}}">No registrados</a>
+                            <a class="dropdown-item" href="{{url('registro/tecnico')}}">Registrados</a>
+                            <a class="dropdown-item" href="{{url('registro/tecnico')}}">Todos</a>
+                        </div>
+                    </div>
                 </div>
             </div>
+
         </div>
         <div class="row">
             <div class="col-md-4">
                 <div class="jumbotron text-center">
-                    <a href="{{url('registro/tecnico')}}"><button class="btn btn-success">Almacenamiento</button></a>
+                    <div class="dropdown">
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                            Almacenamiento
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{{url('registro/tecnico')}}">No registrados</a>
+                            <a class="dropdown-item" href="{{url('registro/tecnico')}}">Registrados</a>
+                            <a class="dropdown-item" href="{{url('registro/tecnico')}}">Todos</a>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="jumbotron text-center">
-                    <a href="{{url('registro/tecnico')}}"><button class="btn btn-success">Mantenimiento</button></a>
+                    <div class="dropdown">
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                            Mantenimiento
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{{url('registro/tecnico')}}">No registrados</a>
+                            <a class="dropdown-item" href="{{url('registro/tecnico')}}">Registrados</a>
+                            <a class="dropdown-item" href="{{url('registro/tecnico')}}">Todos</a>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="jumbotron text-center">
-                    <a href="{{url('registro/tecnico')}}"><button class="btn btn-success">Almacenamiento</button></a></div>
+                    <div class="dropdown">
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                            Reporte
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{{url('registro/tecnico')}}">No registrados</a>
+                            <a class="dropdown-item" href="{{url('registro/tecnico')}}">Registrados</a>
+                            <a class="dropdown-item" href="{{url('registro/tecnico')}}">Todos</a>
+                        </div>
+                    </div>
             </div>
         </div>
     </div>
@@ -47,7 +104,7 @@
         <h2>Otras acciones</h2>
         <div class="row">
             <div class="jumbotron col-md-6">
-                <a href="{{url('registro/tecnico')}}"><button class="btn btn-danger">Desactivar registro</button></a></div>
+                <a href="{{url('registro/tecnico')}}"><button class="btn btn-danger">Otra accion aqui</button></a></div>
             </div>
         </div>
     </div>
