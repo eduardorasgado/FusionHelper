@@ -48,8 +48,7 @@
                         </button>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="{{url('admin/empleados/noregistrados')}}">No registrados</a>
-                            <a class="dropdown-item" href="{{url('registro/tecnico')}}">Registrados</a>
-                            <a class="dropdown-item" href="{{url('registro/tecnico')}}">Modificar datos de empleado</a>
+                            <a class="dropdown-item" href="{{url('admin/empleados/registrados')}}">Registrados</a>
                         </div>
                     </div>
                 </div>

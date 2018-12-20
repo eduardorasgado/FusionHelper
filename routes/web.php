@@ -30,4 +30,7 @@ Route::group(['middleware' => ['is_admin']], function()
     Route::get('/admin/empleados/noregistrados',
         'administradorController@getEmpleadosNoRegistrados')
         ->name('empleadosNoRegistrados');
+    Route::get('admin/empleados/registrados',
+        'administradorController@getEmpleadosRegistrados')
+        ->name('empleadosRegistrado');
 });

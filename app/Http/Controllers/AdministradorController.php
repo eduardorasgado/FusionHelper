@@ -22,6 +22,10 @@ class AdministradorController extends Controller
     }
     public function getEmpleadosRegistrados()
     {
-
+        // regresamos todos aquellos empleados que tienen un estado
+        // de uno es decir estan activos
+        $Registered = User::where("estado", "=", 1)->get();
+        return view('/adminEmpleados/registrados',
+            compact('Registered'));
     }
 }
