@@ -49,7 +49,7 @@
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="{{url('registro/tecnico')}}">No registrados</a>
                             <a class="dropdown-item" href="{{url('registro/tecnico')}}">Registrados</a>
-                            <a class="dropdown-item" href="{{url('registro/tecnico')}}">Todos</a>
+                            <a class="dropdown-item" href="{{url('registro/tecnico')}}">Modificar datos de empleado</a>
                         </div>
                     </div>
                 </div>

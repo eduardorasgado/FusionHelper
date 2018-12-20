@@ -24,10 +24,10 @@ class CreateUsersTable extends Migration
             $table->string('nombre');
             $table->string('apellidos');
             $table->string('email')->unique();
-            $table->bigInteger('telefono');
-            $table->string('domicilio');
-            $table->string('puesto');
-            $table->string('rfc')->unique();
+            $table->bigInteger('telefono')->default(0);
+            $table->string('domicilio')->default(' ');
+            $table->string('puesto')->default(' ');
+            $table->string('rfc')->unique()->default(' ');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

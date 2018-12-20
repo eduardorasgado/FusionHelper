@@ -21,5 +21,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //Route::group(['middleware' => ['auth']], function() {
 //    // rutas para el usuario debidamente regustrado
-//
-//}
+//};
+
+//Route::grup(['middleware' => ['admin']], function()
+//{
+//    Route::get('/admin', 'AdministradorController');
+//});

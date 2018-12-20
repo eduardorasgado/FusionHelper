@@ -29,4 +29,18 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    const DEFAULT_STRING = ' ';
+    // estado del empleado, si esta inactivo no podra hacer nada
+    const ACTIVE = 1;
+    const INACTIVE = 0;
+    // para constatar que se trata de administrador
+    const ADMIN_TYPE = 0;
+    const EMPLEADO_TYPE = 1;
+    const TECNICO_TYPE = 2;
+
+    public function isAdmin()
+    {
+        return $this->type == self::ADMIN_TYPE;
+    }
 }

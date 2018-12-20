@@ -67,20 +67,19 @@ class RegisterController extends Controller
     {
         // para crear el administrado debemos comprobar que es el
         // primero en registrarse
-        $tipo = 1;
-        $estadoActual = 0;
+        // TODO: CREAR LA OPCION DE TECNICO EN EL REGISTRO
+
+        $tipo = User::EMPLEADO_TYPE;
+        $estadoActual = User::INACTIVE;
         if(!User::count()) {
-            $tipo = 0;
-            $estadoActual = 1;
+            $tipo = User::ADMIN_TYPE;
+            $estadoActual = User::ACTIVE;
         }
-        $phone = '';
-        $domicilio = '';
-        $puesto = '';
-        $rfc = '';
-        if(isset($data['telefono'])) { $phone =  $data['telefono'];}
-        if(isset($data['domicilio'])) { $domicilio =  $data['domicilio'];}
-        if(isset($data['puesto'])) { $puesto =  $data['puesto'];}
-        if(isset($data['rfc'])) { $rfc=  $data['rfc'];}
+
+        $phone = isset($data['telefono']) ? $data['telefono']: 00;
+        $domicilio = isset($data['domicilio']) ? $data['domicilio'] : User::DEFAULT_STRING;
+        $puesto = isset($data['puesto']) ? $data['puesto'] : User::DEFAULT_STRING;
+        $rfc = isset($data['rfc']) ? $data['rfc'] : User::DEFAULT_STRING;
 
         return User::create([
             'nombre' => $data['nombre'],
