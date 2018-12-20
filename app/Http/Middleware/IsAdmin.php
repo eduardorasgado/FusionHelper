@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use Illuminate\Support\Facades\Auth;
 use Closure;
 
 class IsAdmin
@@ -17,10 +18,8 @@ class IsAdmin
     {
         // este middleware debe de estar registrado en app/Http/Kernel.php
         // comprueba que el usuario sea el administrador
-        if(auth()->user()->isAdmin())
-        {
-            return $next($request);
-        }
-        return redirect('/');
+        $admin = Auth::user()->tipo_user;
+        if(Auth::guest() || $admin) { return redirect('/'); }
+        return $next($request);
     }
 }
