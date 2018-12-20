@@ -27,11 +27,11 @@ class HomeController extends Controller
         // elegimos hacia que layout lo mandamos
         // dependiendo de si es administrador o empleado
         $userType = Auth::user()->tipo_user;
-        if($userType)
+        if(!$userType)
         {
             return redirect('/admin');
         }
         //return redirect('/empleado);
-        return view("/empleadoHome");
+        return redirect("/empleado");
     }
 }

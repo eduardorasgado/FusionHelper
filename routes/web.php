@@ -19,9 +19,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-//Route::group(['middleware' => ['auth']], function() {
-//    // rutas para el usuario debidamente regustrado
-//};
+Route::group(['middleware' => ['auth']], function() {
+    // rutas para el usuario debidamente regustrado
+    Route::get('/empleado', 'EmpleadoController@index')->name('empleado');
+});
 
 Route::group(['middleware' => ['is_admin']], function()
 {
