@@ -17,12 +17,12 @@
             </div>
             <div class="col-md-6">
                 <div class="jumbotron">
-                    <a href="{{url('registro/tecnico')}}"><button class="btn btn-success">Solicitar un activo</button></a></div>
+                    <a href="{{url('registro/tecnico')}}"><button class="btn btn-success">Solicitar un activo</button></a>
                 </div>
             </div>
         </div>
         <div class="container">
-            <a href="{{url('registro/tecnico')}}"><button class="btn btn-outline-secondary">Reportar un bug</button></a></div>
+            <a href="{{url('registro/tecnico')}}"><button class="btn btn-outline-secondary">Reportar un bug</button></a>
         </div>
     </div>
 @endsection

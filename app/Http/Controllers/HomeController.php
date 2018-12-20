@@ -31,6 +31,7 @@ class HomeController extends Controller
         {
             return view('/empleadoHome');
         }
-        return view('/adminHome');
+        $stringify = "hola";
+        return view('/adminHome2', compact('stringify'));
     }
 }
