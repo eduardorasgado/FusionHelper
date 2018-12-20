@@ -9,6 +9,7 @@ class AdministradorController extends Controller
     //
     public function index()
     {
-        return view("/adminHome");
+        // devolver la vista principal del administrador
+        return view("/adminHome2");
     }
 }

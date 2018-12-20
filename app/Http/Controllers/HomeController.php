@@ -29,9 +29,9 @@ class HomeController extends Controller
         $userType = Auth::user()->tipo_user;
         if($userType)
         {
-            return view('/empleadoHome');
+            return redirect('/admin');
         }
-        $stringify = "hola";
-        return view('/adminHome2', compact('stringify'));
+        //return redirect('/empleado);
+        return view("/empleadoHome");
     }
 }
