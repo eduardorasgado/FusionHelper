@@ -15,14 +15,19 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id')->unique();
-            // refleja administrador o empleado
+            // refleja administrador: 0, empleado: 1, tecnico: 2
             $table->integer('tipo_user');
             // refleja el estado del usuario
             // debido a que necesita una aceptacion del admin
             // al registrarse
             $table->integer('estado');
-            $table->string('name');
+            $table->string('nombre');
+            $table->string('apellidos');
             $table->string('email')->unique();
+            $table->bigInteger('telefono');
+            $table->string('domicilio');
+            $table->string('puesto');
+            $table->string('rfc')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
