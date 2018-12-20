@@ -27,4 +27,7 @@ Route::group(['middleware' => ['auth']], function() {
 Route::group(['middleware' => ['is_admin']], function()
 {
     Route::get('/admin', 'AdministradorController@index')->name('admin');
+    Route::get('/admin/empleados/noregistrados',
+        'administradorController@getEmpleadosNoRegistrados')
+        ->name('empleadosNoRegistrados');
 });

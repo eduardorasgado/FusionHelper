@@ -12,4 +12,16 @@ class AdministradorController extends Controller
         // devolver la vista principal del administrador
         return view("/adminHome2");
     }
+
+    public function getEmpleadosNoRegistrados()
+    {
+        // regresar todos los usuarios que aun no han sido registrados
+        $noRegistered = User::where("estado", "=", 0)->get();
+        return view('/adminEmpleados/noregistrados',
+            compact('noRegistered'));
+    }
+    public function getEmpleadosRegistrados()
+    {
+
+    }
 }

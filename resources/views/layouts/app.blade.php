@@ -18,6 +18,20 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <style>
+        .jumboColorBlue {
+            background-color: #98e1b7;
+            margin: 10px;
+            padding: 20px;
+        }
+        .jumboColorBlue p {
+            margin: 0;
+        }
+
+        .blue {
+            color: #227dc7;
+        }
+    </style>
 </head>
 <body>
     <div id="app">
