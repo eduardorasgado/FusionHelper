@@ -102,9 +102,9 @@
                         <div class="form-group row">
                             <div class="col-md-4"></div>
                             <div class="form-check">
-                                <input class=" form-check-input {{ $errors->has('tecnico') ? ' is-invalid' : '' }}" type="checkbox" value="" id="tecnico">
+                                <input class=" form-check-input {{ $errors->has('tecnico') ? ' is-invalid' : '' }}" type="checkbox" name="tecnico" value="2" id="tecnico">
                                 <label class="form-check-label text-md-right" for="tecnico">
-                                    Personal Técnico
+                                    {{ __('Personal Técnico') }}
                                 </label>
                             </div>
                         </div>

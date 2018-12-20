@@ -65,12 +65,13 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+
+        // si tecnico esta definido entre los paramentros que recibimos
+        // entonces sera tecnico, de otra forma sera empleado
+        $tipo = isset($data['tecnico']) ? $tipo = User::TECNICO_TYPE : User::EMPLEADO_TYPE;
+        $estadoActual = User::INACTIVE;
         // para crear el administrado debemos comprobar que es el
         // primero en registrarse
-        // TODO: CREAR LA OPCION DE TECNICO EN EL REGISTRO
-
-        $tipo = User::EMPLEADO_TYPE;
-        $estadoActual = User::INACTIVE;
         if(!User::count()) {
             $tipo = User::ADMIN_TYPE;
             $estadoActual = User::ACTIVE;
