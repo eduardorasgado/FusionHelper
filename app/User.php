@@ -39,6 +39,7 @@ class User extends Authenticatable
     const EMPLEADO_TYPE = 1;
     const TECNICO_TYPE = 2;
 
+    // usado por el middleware IsAdmin
     public function isAdmin()
     {
         return $this->type == self::ADMIN_TYPE;

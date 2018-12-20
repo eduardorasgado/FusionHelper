@@ -23,7 +23,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 //    // rutas para el usuario debidamente regustrado
 //};
 
-//Route::grup(['middleware' => ['admin']], function()
-//{
-//    Route::get('/admin', 'AdministradorController');
-//});
+Route::group(['middleware' => ['IsAdmin']], function()
+{
+    Route::get('/admin', 'AdministradorController@index');
+});
