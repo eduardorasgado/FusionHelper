@@ -42,6 +42,6 @@ class User extends Authenticatable
     // usado por el middleware IsAdmin
     public function isAdmin()
     {
-        return $this->type == self::ADMIN_TYPE;
+        return $this->tipo_user == self::ADMIN_TYPE;
     }
 }

@@ -19,6 +19,7 @@ class IsAdmin
         // este middleware debe de estar registrado en app/Http/Kernel.php
         // comprueba que el usuario sea el administrador
         $admin = Auth::user()->tipo_user;
+        //$admin =auth()->user()->isAdmin();
         if(Auth::guest() || $admin) { return redirect('/'); }
         return $next($request);
     }
