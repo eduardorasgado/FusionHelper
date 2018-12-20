@@ -44,6 +44,14 @@
         </div>
     </div>
     <div class="container">
+        <h2>Otras acciones</h2>
+        <div class="row">
+            <div class="jumbotron col-md-6">
+                <a href="{{url('registro/tecnico')}}"><button class="btn btn-danger">Desactivar registro</button></a></div>
+            </div>
+        </div>
+    </div>
+    <div class="container text-right">
         <a href="{{url('registro/tecnico')}}"><button class="btn btn-outline-secondary">Reportar un bug</button></a>
     </div>
 @endsection
