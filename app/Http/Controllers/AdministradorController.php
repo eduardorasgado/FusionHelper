@@ -60,10 +60,11 @@ class AdministradorController extends Controller
     private function changeUserState($id, $state)
     {
         // se usa al activar o desactivar empleados
-        $user = User::where("id", "=", $id)->first();
-        $user->estado = $state;
         try{
+            $user = User::where("id", "=", $id)->first();
+            $user->estado = $state;
             $user->save();
+            return $user;
         } catch (Exception $e)
         {
             //return $e->getMessage();

@@ -9,6 +9,11 @@
         <h1>Empleados Registrados</h1>
         <br><br>
         <p class="alert alert-info">Aquí se encuentran aquellos empleados que están en la plantilla de soporte de sistemas</p>
+        @if(Session::has('Error'))
+            <div class="alert alert-warning" role="alert" style="margin-top: 5px">
+                <span class="text-success">{{ Session::get('Error') }}</span>
+            </div>
+        @endif
         <br>
         <div class="row">
             @foreach($Registered as $user )

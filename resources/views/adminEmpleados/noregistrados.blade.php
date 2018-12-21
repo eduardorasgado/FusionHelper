@@ -11,6 +11,22 @@
             <p class="alert alert-info">Aquí se encuentran aquellos empleados que han mandado solicitud de registro a la plataforma.
         En esta sección puede revisar, aceptar o rechazar las peticiones.</p>
         <br>
+
+        @if(Session::has('userAccepted'))
+            <div class="alert alert-success" role="alert" style="margin-top: 5px">
+                <span class="text-success">{{ Session::get('userAccepted') }}</span>
+            </div>
+        @endif
+        @if(Session::has('userDeleted'))
+            <div class="alert alert-danger" role="alert" style="margin-top: 5px">
+                <span class="text-success">{{ Session::get('userDeleted') }}</span>
+            </div>
+        @endif
+        @if(Session::has('Error'))
+            <div class="alert alert-warning" role="alert" style="margin-top: 5px">
+                <span class="text-success">{{ Session::get('Error') }}</span>
+            </div>
+        @endif
         <div class="row">
             @foreach($noRegistered as $user )
                 <div class="col-md-4">
