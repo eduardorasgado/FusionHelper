@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="cddbc456-9ab5-4391-995f-6537bde7d221" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdministradorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdministradorController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/adminEmpleados/registrados.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/adminEmpleados/registrados.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/adminEmpleados/updateEmpleado.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/adminEmpleados/updateEmpleado.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,8 +49,8 @@
             <file pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/resources/views/adminEmpleados/registrados.blade.php">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="-504">
-                    <caret line="16" column="40" lean-forward="true" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+                  <state relative-caret-position="312">
+                    <caret line="16" column="38" lean-forward="true" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
                   </state>
                 </provider>
               </entry>
@@ -87,8 +85,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/routes/web.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="241">
-                  <caret line="34" column="43" selection-start-line="34" selection-start-column="43" selection-end-line="34" selection-end-column="43" />
+                <state relative-caret-position="649">
+                  <caret line="53" column="29" selection-start-line="53" selection-start-column="29" selection-end-line="53" selection-end-column="29" />
                   <folding>
                     <element signature="e#7#389#0#PHP" expanded="true" />
                   </folding>
@@ -147,17 +145,8 @@
               <file pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/app/Http/Middleware/Authenticate.php">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="612">
-                      <caret line="18" column="9" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/database/factories/UserFactory.php">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="476">
-                      <caret line="14" selection-start-line="14" selection-end-line="14" />
+                    <state relative-caret-position="238">
+                      <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
                     </state>
                   </provider>
                 </entry>
@@ -174,7 +163,7 @@
               <file pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="544">
+                    <state relative-caret-position="68">
                       <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
                       <folding>
                         <element signature="e#40#68#0#PHP" expanded="true" />
@@ -195,11 +184,20 @@
               <file pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdministradorController.php">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="683">
-                      <caret line="81" column="36" selection-start-line="81" selection-start-column="36" selection-end-line="81" selection-end-column="36" />
+                    <state relative-caret-position="411">
+                      <caret line="101" column="24" lean-forward="true" selection-start-line="101" selection-start-column="24" selection-end-line="101" selection-end-column="24" />
                       <folding>
                         <element signature="e#39#52#0#PHP" expanded="true" />
                       </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="476">
+                      <caret line="20" selection-start-line="20" selection-end-line="20" />
                     </state>
                   </provider>
                 </entry>
@@ -211,8 +209,8 @@
               <file pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="374">
-                      <caret line="22" column="57" selection-start-line="22" selection-start-column="57" selection-end-line="22" selection-end-column="57" />
+                    <state relative-caret-position="544">
+                      <caret line="27" column="22" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
                     </state>
                   </provider>
                 </entry>
@@ -258,10 +256,12 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
         <option value="$PROJECT_DIR$/resources/views/adminEmpleados/noregistrados.blade.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/adminEmpleados/updateEmpleado.blade.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/adminEmpleados/registrados.blade.php" />
+        <option value="$PROJECT_DIR$/database/factories/UserFactory.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AdministradorController.php" />
+        <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
       </list>
     </option>
   </component>
@@ -429,6 +429,12 @@
             <path>
               <item name="mesadeTrabajo" type="b2602c69:ProjectViewProjectNode" />
               <item name="mesadeTrabajo" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="seeds" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mesadeTrabajo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mesadeTrabajo" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -493,7 +499,7 @@
       <updated>1545312663570</updated>
       <workItem from="1545312665040" duration="40226000" />
       <workItem from="1545417925480" duration="6599000" />
-      <workItem from="1545439953118" duration="4796000" />
+      <workItem from="1545439953118" duration="7959000" />
     </task>
     <task id="LOCAL-00001" summary="Dropdown en menu de administrador y controlador de administrador creado.">
       <created>1545312751460</created>
@@ -593,11 +599,25 @@
       <option name="project" value="LOCAL" />
       <updated>1545422557994</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Administrador/empleados: Actualizando los datos del usuario con el update.">
+      <created>1545423450792</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1545423450792</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Administrador/empleados: Eliminar usuario ahora funciona">
+      <created>1545425776002</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1545425776002</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51621000" />
+    <option name="totallyTimeSpent" value="54784000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-8" width="2576" height="1096" extended-state="6" />
@@ -605,7 +625,7 @@
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info id="npm" order="1" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="2" weight="0.09232614" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.09232614" />
       <window_info id="Structure" order="3" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" weight="0.32976446" />
       <window_info anchor="bottom" id="Database Changes" order="1" />
@@ -645,7 +665,9 @@
     <MESSAGE value="Administrador/empleados: Mensajes en no registrados y manejo de errores al aceptar o declinar" />
     <MESSAGE value="Administrador/empleados: rutas para modificar el usuario, metodo y vista." />
     <MESSAGE value="Administrador/empleados: Rutas en update emmpleado y debugging del controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="Administrador/empleados: Rutas en update emmpleado y debugging del controller" />
+    <MESSAGE value="Administrador/empleados: Actualizando los datos del usuario con el update." />
+    <MESSAGE value="Administrador/empleados: Eliminar usuario ahora funciona" />
+    <option name="LAST_COMMIT_MESSAGE" value="Administrador/empleados: Eliminar usuario ahora funciona" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/AdministradorLayout.blade.php">
@@ -722,20 +744,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/Authenticate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="18" column="9" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/factories/UserFactory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -743,27 +751,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-          <folding>
-            <element signature="e#40#68#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/EmpleadoController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="57" selection-start-line="22" selection-start-column="57" selection-end-line="22" selection-end-column="57" />
         </state>
       </provider>
     </entry>
@@ -805,16 +796,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="34" column="43" selection-start-line="34" selection-start-column="43" selection-end-line="34" selection-end-column="43" />
-          <folding>
-            <element signature="e#7#389#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/adminEmpleados/updateEmpleado.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
@@ -822,17 +803,65 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="649">
+          <caret line="53" column="29" selection-start-line="53" selection-start-column="29" selection-end-line="53" selection-end-column="29" />
+          <folding>
+            <element signature="e#7#389#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/adminEmpleados/registrados.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-504">
-          <caret line="16" column="40" lean-forward="true" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+        <state relative-caret-position="312">
+          <caret line="16" column="38" lean-forward="true" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="27" column="22" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/factories/UserFactory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="429">
+          <caret line="17" column="32" lean-forward="true" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/Authenticate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+          <folding>
+            <element signature="e#40#68#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdministradorController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="683">
-          <caret line="81" column="36" selection-start-line="81" selection-start-column="36" selection-end-line="81" selection-end-column="36" />
+        <state relative-caret-position="411">
+          <caret line="101" column="24" lean-forward="true" selection-start-line="101" selection-start-column="24" selection-end-line="101" selection-end-column="24" />
           <folding>
             <element signature="e#39#52#0#PHP" expanded="true" />
           </folding>

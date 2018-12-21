@@ -13,7 +13,12 @@ class DatabaseSeeder extends Seeder
     {
         //https://laravel.com/docs/5.7/seeding
 
+        // primero actualizamos el autoload de composer
+        // composer dump_autoload
+        // Corre con: php artisan migrate:refresh --seed
+
         // $this->call(UsersTableSeeder::class);
+
         // seeding para testing de la database
         DB::table('users')->insert([
             // administrador
@@ -27,7 +32,8 @@ class DatabaseSeeder extends Seeder
             'domicilio' => 'calle #22 col centro',
             'puesto' => 'Programador',
             'rfc' => 'KLNVGALD',
-            'password' => bcrypt('gabagabahey')
+            'password' => bcrypt('gabagabahey'),
+            'created_at' => date("Y-m-d H:i:s")
         ]);
         DB::table('users')->insert([
             // empleado
@@ -41,7 +47,8 @@ class DatabaseSeeder extends Seeder
             'domicilio' => 'calle calle col los pinos',
             'puesto' => 'Asesor tecnico',
             'rfc' => 'KLGSGDNVGALD',
-            'password' => bcrypt('iginioiginio1')
+            'password' => bcrypt('iginioiginio1'),
+            'created_at' => date("Y-m-d H:i:s")
         ]);
         DB::table('users')->insert([
             // tecnico
@@ -55,7 +62,8 @@ class DatabaseSeeder extends Seeder
             'domicilio' => 'colon de los ramirez #121 col centro',
             'puesto' => 'cobranza',
             'rfc' => 'GGDS25SDD',
-            'password' => bcrypt('dariodario1')
+            'password' => bcrypt('dariodario1'),
+            'created_at' => date("Y-m-d H:i:s")
         ]);
         DB::table('users')->insert([
             // empleado
@@ -69,7 +77,8 @@ class DatabaseSeeder extends Seeder
             'domicilio' => 'avenida de los broncos col centro',
             'puesto' => 'asesor sap',
             'rfc' => '34634DADDDGASS2',
-            'password' => bcrypt('broncobronco1')
+            'password' => bcrypt('broncobronco1'),
+            'created_at' => date("Y-m-d H:i:s")
         ]);
         DB::table('users')->insert([
             // tecnico
@@ -83,7 +92,8 @@ class DatabaseSeeder extends Seeder
             'domicilio' => 'colonia de los olivos #22 valparaiso',
             'puesto' => 'soporte sap',
             'rfc' => 'SSD34LBLLBL',
-            'password' => bcrypt('eusebioeusebio1')
+            'password' => bcrypt('eusebioeusebio1'),
+            'created_at' => date("Y-m-d H:i:s")
         ]);
     }
 }
