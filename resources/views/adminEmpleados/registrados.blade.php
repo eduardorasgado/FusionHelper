@@ -10,7 +10,7 @@
         <br><br>
         <p class="alert alert-info">Aquí se encuentran aquellos empleados que están en la plantilla de soporte de sistemas</p>
         @if(Session::has('Error'))
-            <div class="alert alert-warning" role="alert" style="margin-top: 5px">
+            <div class="alert alert-danger" role="alert" style="margin-top: 5px">
                 <span class="text-success">{{ Session::get('Error') }}</span>
             </div>
         @endif
@@ -40,7 +40,7 @@
                         <div class="row">
                             <div class="col-md-4"></div>
                             <div>
-                                <a href="" class="btn btn-danger">Eliminar</a>
+                                <a href="{{ route('deleteEmpleado', $user->id)  }}" class="btn btn-danger">Eliminar</a>
                                 &nbsp;&nbsp;&nbsp;&nbsp;
                                 <a href="{{ route('getUpdateEmpleado', $user->id)  }}" class="btn btn-success">Modificar</a>
                             </div>

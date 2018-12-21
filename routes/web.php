@@ -51,4 +51,8 @@ Route::group(['middleware' => ['is_admin']], function()
     Route::post('admin/empleados/update/{id}',
         'AdministradorController@PostUpdateEmpleado')
         ->name('postUpdateEmpleado');
+    // borrando a un empleado
+    Route::get('admin/empleados/delete/{id}',
+        'AdministradorController@deleteEmpleado')
+        ->name('deleteEmpleado');
 });

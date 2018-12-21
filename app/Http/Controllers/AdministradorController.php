@@ -83,7 +83,33 @@ class AdministradorController extends Controller
         // guardando los cambios
         $user->save();
         // vuelta a la lista de registrados
-        return redirect("admin/empleados/registrados")->with('userUpdated','El/La empleado/a '.$user->nombre.' ha sido actualizado.');
+        return redirect("admin/empleados/registrados")->with('userUpdated','El/La empleado/a '.
+            $user->nombre.' ha sido actualizado.');
+    }
+
+    public function deleteEmpleado(Request $request)
+    {
+        // buscando al empleado a borrar
+        $user = null;
+        try{
+            $user = User::findOrFail($request->id);
+        } catch(Exception $e)
+        {
+            return redirect("admin/empleados/registrados")->with('Error','El/La empleado/a no existe o 
+            ha ocurrido un error en el servidor, intentelo más tarde.');
+        }
+        $nameDeleted = $user->nombre;
+        // SI EL EMPLEADO ES UN ADMINISTRADOR ES IMPOSIBLE BORRARLO
+        if(!$user->tipo_user){
+            return redirect("admin/empleados/registrados")->with('Error','No es posible eliminar a un administrador.');
+        }
+        // Borrando al usuario que est dentro de los empleados
+        // registrados
+        $user->delete();
+        // redireccionando a la lista de usuarios registrados pero con
+        // el mensaje de que el usuario ha sido eliminado
+        return redirect("admin/empleados/registrados")->with('Error','El/La empleado/a '.
+            $nameDeleted.' ha sido eliminado. IMPORTANTE: Este proceso es irreversible.');
     }
 
     // UTILIDADES GENERALES
