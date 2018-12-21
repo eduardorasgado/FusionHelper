@@ -60,7 +60,7 @@ class AdministradorController extends Controller
     public function GetUpdateEmpleado(Request $request)
     {
         // recibimos el id del usuario a actualizar
-        $user = User::where('id', '=', $request->id)->first();
+        $user = User::where('id', '=', $request->id)->firstOrFail();
         // retornamos el formulario con los datos actuales del user
         return view('adminEmpleados.updateEmpleado', compact('user'));
     }
@@ -68,7 +68,9 @@ class AdministradorController extends Controller
     public function PostUpdateEmpleado(Request $request)
     {
         // recibimos los datos nuevos, los comprobamos y los guardamos
-        return "hola";
+        $user = $request->id;
+
+        return var_dump($user);
     }
 
     // UTILIDADES GENERALES
@@ -77,7 +79,7 @@ class AdministradorController extends Controller
     {
         // se usa al activar o desactivar empleados
         try{
-            $user = User::where("id", "=", $id)->first();
+            $user = User::where("id", "=", $id)->firstOrFail();
             $user->estado = $state;
             $user->save();
             return $user;

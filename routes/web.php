@@ -48,7 +48,7 @@ Route::group(['middleware' => ['is_admin']], function()
         'AdministradorController@GetUpdateEmpleado')
         ->name('getUpdateEmpleado');
 
-    Route::post('admin/empleados/update',
+    Route::post('admin/empleados/update/{id}',
         'AdministradorController@PostUpdateEmpleado')
         ->name('postUpdateEmpleado');
 });
