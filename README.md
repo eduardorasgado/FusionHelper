@@ -1,2 +1,3 @@
 # FusionHelper
-Mesa de ayuda hecha con Laravel y Bootstrap 4
+Mesa de ayuda para el área de sistemas informáticos hecha con Laravel 5.7, PHP 7.3 y Bootstrap 4.
+

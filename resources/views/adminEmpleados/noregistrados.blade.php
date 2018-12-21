@@ -31,9 +31,10 @@
                         <div class="row">
                             <div class="col-md-4"></div>
                             <div>
-                                <a href="" class="btn btn-danger">Rechazar</a>
+                                <a href="{{ route('denegarEmpleado', $user->id)  }}" class="btn btn-danger">Rechazar</a>
                                 &nbsp;&nbsp;&nbsp;&nbsp;
-                                <a href="" class="btn btn-success">Aceptar</a>
+                                <a href="{{ route('aceptarEmpleado', $user->id) }}"
+                                   class="btn btn-success">Aceptar</a>
                             </div>
                         </div>
                     </div>

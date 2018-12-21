@@ -26,11 +26,21 @@ Route::group(['middleware' => ['auth']], function() {
 
 Route::group(['middleware' => ['is_admin']], function()
 {
+    // TODAS LAS RUTAS PARA EL ADMINISTRADOS
+    // Rutas para el registro de empleados
     Route::get('/admin', 'AdministradorController@index')->name('admin');
     Route::get('/admin/empleados/noregistrados',
-        'administradorController@getEmpleadosNoRegistrados')
+        'AdministradorController@getEmpleadosNoRegistrados')
         ->name('empleadosNoRegistrados');
     Route::get('admin/empleados/registrados',
-        'administradorController@getEmpleadosRegistrados')
+        'AdministradorController@getEmpleadosRegistrados')
         ->name('empleadosRegistrado');
+    // activacion de usuarios nuevos, lo llama adminEmpleados/noregistrados.blade
+    Route::get('/admin/empleados/noregistrados/aceptar/{id}',
+        'AdministradorController@getEmpleadoActivation')
+        ->name('aceptarEmpleado');
+    // Denegacion de nuevo usuario
+    Route::get('/admin/empleados/noregistrados/denegar/{id}',
+        'AdministradorController@getEmpleadoDenegated')
+        ->name('denegarEmpleado');
 });
