@@ -14,6 +14,11 @@
                 <span class="text-success">{{ Session::get('Error') }}</span>
             </div>
         @endif
+        @if(Session::has('userUpdated'))
+            <div class="alert alert-success" role="alert" style="margin-top: 5px">
+                <span class="text-success">{{ Session::get('userUpdated') }}</span>
+            </div>
+        @endif
         <br>
         <div class="row">
             @foreach($Registered as $user )

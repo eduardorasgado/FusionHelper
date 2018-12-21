@@ -68,9 +68,22 @@ class AdministradorController extends Controller
     public function PostUpdateEmpleado(Request $request)
     {
         // recibimos los datos nuevos, los comprobamos y los guardamos
-        $user = $request->id;
-
-        return var_dump($user);
+        $user = User::where("id","=", $request->id)->firstOrFail();
+        $user->nombre = $request->nombre;
+        $user->apellidos = $request->apellidos;
+        $user->email = $request->email;
+        $user->telefono = $request->telefono;
+        $user->domicilio = $request->domicilio;
+        $user->puesto = $request->puesto;
+        $user->rfc = $request->rfc;
+        // configurar el tipo de user como tecnico
+        if(isset($request->tecnico)){ $user->tipo_user = 2; }
+        // configurar el tipo de user como empleado
+        else { $user->tipo_user = 1; }
+        // guardando los cambios
+        $user->save();
+        // vuelta a la lista de registrados
+        return redirect("admin/empleados/registrados")->with('userUpdated','El/La empleado/a '.$user->nombre.' ha sido actualizado.');
     }
 
     // UTILIDADES GENERALES
