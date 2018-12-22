@@ -37,7 +37,7 @@
                             <div>
                                 <a href="" class="btn btn-danger">Eliminar</a>
                                 &nbsp;&nbsp;&nbsp;&nbsp;
-                                <a href="" class="btn btn-success">Modificar</a>
+                                <a href="{{ route('getUpdateEmpleado', $user->id)  }}" class="btn btn-success">Modificar</a>
                             </div>
                         </div>
                     </div>

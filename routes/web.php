@@ -43,4 +43,12 @@ Route::group(['middleware' => ['is_admin']], function()
     Route::get('/admin/empleados/noregistrados/denegar/{id}',
         'AdministradorController@getEmpleadoDenegated')
         ->name('denegarEmpleado');
+    // Actualizar un empleado
+    Route::get('/admin/empleados/update/{id}',
+        'AdministradorController@GetUpdateEmpleado')
+        ->name('getUpdateEmpleado');
+
+    Route::post('admin/empleados/update',
+        'AdministradorController@PostUpdateEmpleado')
+        ->name('postUpdateEmpleado');
 });

@@ -57,6 +57,22 @@ class AdministradorController extends Controller
         return redirect()->back()->with('userDeleted','El/La empleado/a '.$user->nombre.' ha sido rechazado/a.');
     }
 
+    public function GetUpdateEmpleado(Request $request)
+    {
+        // recibimos el id del usuario a actualizar
+        $user = User::where('id', '=', $request->id)->first();
+        // retornamos el formulario con los datos actuales del user
+        return view('adminEmpleados.updateEmpleado', compact('user'));
+    }
+
+    public function PostUpdateEmpleado(Request $request)
+    {
+        // recibimos los datos nuevos, los comprobamos y los guardamos
+        return "hola";
+    }
+
+    // UTILIDADES GENERALES
+
     private function changeUserState($id, $state)
     {
         // se usa al activar o desactivar empleados
