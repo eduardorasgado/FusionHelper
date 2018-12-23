@@ -28,6 +28,7 @@ class AreaController extends Controller
      */
     public function postRegistro(AreaRequest $request)
     {
+        $area_created = null;
         // maneja los datos regresados por el ingreso del registro
         // validando los campos
         $validatedData = $request->validate($request->rules());
@@ -53,11 +54,12 @@ class AreaController extends Controller
     public function deleteArea(Request $request)
     {
         // borrar un area existente el la database
-        $area = null;
         $deletedArea = null;
         try{
             // en caso de que exista el area
             $area = Area::where('id', $request->id)->first();
+            // TODO: SI EL AREA POSEE INCIDENTES NO ES ELIMINADO
+            // SE LE DESACTIVA
             $deletedArea = $area->nombre;
             // borrar el area
             $area->delete();

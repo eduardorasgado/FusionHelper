@@ -55,7 +55,26 @@ class TipoIncidenteController extends Controller
     {
         // elimina el tipo de incidente y en caso de que exista
         // solamente lo desactiva
-        return var_dump('[DELETE TIPO INCIDENTE]: '.$request->id);
+
+        // borrar un area existente el la database
+        $deletedTipo = null;
+        try{
+            // en caso de que exista el area
+            $tipoIncidente = TipoIncidente::where('id', $request->id)->first();
+            // TODO: SI EL AREA POSEE INCIDENTES NO ES ELIMINADO
+            // SE LE DESACTIVA
+            $deletedTipo = $tipoIncidente->nombre;
+            // borrar el area
+            $tipoIncidente->delete();
+            // eliminando el area
+        } catch(Exception $e)
+        {
+            return redirect('/tipoincidente')
+                ->with('Error', 'Puede que el área no exista o que la conexión se haya perdido, intentelo más tarde');
+        }
+
+        return redirect('/tipoincidente')
+            ->with('success', 'El área '.$deletedTipo.' ha sido eliminado/a.');
     }
 
 }

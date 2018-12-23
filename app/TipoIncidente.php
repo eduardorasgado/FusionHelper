@@ -8,6 +8,6 @@ class TipoIncidente extends Model
 {
     //
     protected $fillable = [
-        'nombre', 'descripcion'
+        'nombre', 'descripcion', 'estado'
     ];
 }

@@ -9,6 +9,6 @@ class Area extends Model
     //
     protected $fillable = [
         'clave_area',
-        'nombre'
+        'nombre', 'estado'
     ];
 }
