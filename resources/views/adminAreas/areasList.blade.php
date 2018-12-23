@@ -34,14 +34,14 @@
             @foreach($todasAreas as $area)
                     <div class="col-md-4">
                         <div class="jumbotron jumboColorBlue">
-                            <p>Nombre: <span class="blue">[NOMBRE]</span></p>
-                            <p>Clave: <span class="blue">[CLAVE]</span></p>
+                            <p>Nombre: <span class="blue">{{ $area->nombre }}</span></p>
+                            <p>Clave: <span class="blue">{{ $area->clave_area }}</span></p>
                             <br><br>
                             <div class="row">
                                 <div class="col-md-4"></div>
                                 <div>
                                     <a onclick="return confirm('Está seguro/a de esta acción?');"
-                                       href="" class="btn btn-danger">Eliminar</a>
+                                       href="{{ route('deleteArea', $area->id) }}" class="btn btn-danger">Eliminar</a>
                                     &nbsp;&nbsp;&nbsp;&nbsp;
                                     <a href="" class="btn btn-success">Modificar</a>
                                 </div>

@@ -69,6 +69,9 @@ Route::group(['middleware' => ['is_admin']], function()
     Route::get('/area/registro',
         'AreaController@getRegistro')->name('areaRegistro');
     // post del registro de nueva area
-    Route::post('/arearegistro',
+    Route::post('/area/registro',
         'AreaController@postRegistro')->name('areaRegistroPost');
+    // Eliminamos un area
+    Route::get('/area/delete/{id}',
+        'AreaController@deleteArea')->name('deleteArea');
 });
