@@ -95,5 +95,32 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('eusebioeusebio1'),
             'created_at' => date("Y-m-d H:i:s")
         ]);
+
+        // Insertando areas
+        DB::table('areas')->insert([
+            'clave_area' => 'SDSNSDL4221',
+            'nombre' => 'Recursos Humanos'
+        ]);
+
+        DB::table('areas')->insert([
+            'clave_area' => '221EDDSS676',
+            'nombre' => 'Informática'
+        ]);
+
+        // Insertando  tipo de incidentes
+        DB::table('tipo_incidentes')->insert([
+            'nombre' => 'NAS',
+            'descripcion' => 'Furners stutter from yellow fevers like scurvy cockroachs.'
+        ]);
+
+        DB::table('tipo_incidentes')->insert([
+            'nombre' => 'SAI',
+            'descripcion' => 'After shredding the raspberries, flavor nachos, meatballs and joghurt with it in a wok.'
+        ]);
+
+        DB::table('tipo_incidentes')->insert([
+            'nombre' => 'SOFTWARE',
+            'descripcion' => 'Booda-hood believes when you follow with bliss.'
+        ]);
     }
 }
