@@ -62,6 +62,13 @@ Route::group(['middleware' => ['is_admin']], function()
         'IncidenteController@index')->name('incidenteIndex');
 
     // AREAS
+    // mostrar todas las existentes
     Route::get('/area',
         'AreaController@index')->name('areaIndex');
+    // get del registro de area
+    Route::get('/area/registro',
+        'AreaController@getRegistro')->name('areaRegistro');
+    // post del registro de nueva area
+    Route::post('/area/registro',
+        'AreaController@postRegistro')->name('areaRegistro');
 });

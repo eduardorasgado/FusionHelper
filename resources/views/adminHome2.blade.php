@@ -45,7 +45,7 @@
                             Áreas
                         </button>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{{url('registro/tecnico')}}">Registrar un área</a>
+                            <a class="dropdown-item" href="{{route('areaRegistro')}}">Registrar un área</a>
                             <a class="dropdown-item" href="{{route('areaIndex')}}">Todas las áreas</a>
                         </div>
                     </div>
