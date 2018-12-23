@@ -20,7 +20,9 @@ class IsAdmin
         // comprueba que el usuario sea el administrador
         $admin = Auth::user()->tipo_user;
         //$admin =auth()->user()->isAdmin();
+        // si $admin == 1 o 2 entonces significa que es un empleado
         if(Auth::guest() || $admin) { return redirect('/'); }
+        // si $admin == 0 entonces es un administrador
         return $next($request);
     }
 }
