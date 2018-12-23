@@ -47,6 +47,8 @@ class AreaController extends Controller
             ->with('success', 'El área '.$area_created->nombre.' ha sido creado/a con éxito.');
     }
 
+    // TODO: MODIFICACION DEL TIPO DE AREA PARA QUE
+    // MANEJE LOS INCIDENTES PASADOS QUE LE TIENEN
     public function deleteArea(Request $request)
     {
         // borrar un area existente el la database

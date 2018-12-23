@@ -26,7 +26,7 @@
                     <span class="alert alert-warning">Aún no hay tipos de incidente registrados.</span>
                 </div>
                 <div class="col-md-4">
-                    <a class="btn btn-outline-success" href="">Registrar un tipo de incidente</a>
+                    <a class="btn btn-outline-success" href="{{ route('/tipoincidente/registro') }}">Registrar un tipo de incidente</a>
                 </div>
             </div>
         @endif
@@ -41,7 +41,7 @@
                             <div class="col-md-4"></div>
                             <div>
                                 <a onclick="return confirm('Está seguro/a de esta acción?');"
-                                   href="" class="btn btn-danger">Eliminar</a>
+                                   href="{{ route('deleteTipoIncidente', $tipo->id) }}" class="btn btn-danger">Eliminar</a>
                                 &nbsp;&nbsp;&nbsp;&nbsp;
                                 <a href="" class="btn btn-success">Modificar</a>
                             </div>

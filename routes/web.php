@@ -87,4 +87,8 @@ Route::group(['middleware' => ['is_admin']], function()
     Route::post('/tipoincidente/registro',
         'TipoIncidenteController@postRegistro')
         ->name('tiposIncidenteRegistroPost');
+    // Eliminar un tipo de incidente
+    Route::get('/tipoincidente/delete/{id}',
+        'TipoIncidenteController@delete')
+        ->name('deleteTipoIncidente');
 });

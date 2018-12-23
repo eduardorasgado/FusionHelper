@@ -49,4 +49,10 @@ class TipoIncidenteController extends Controller
         return redirect('/tipoincidente')->with('success', 'El tipo de incidente '.
         $tipoInc->nombre.' se ha registrado');
     }
+
+    public function delete(Request $request)
+    {
+        return var_dump('[DELETE TIPO INCIDENTE]');
+    }
+
 }

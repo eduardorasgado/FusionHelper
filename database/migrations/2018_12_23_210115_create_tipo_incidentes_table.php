@@ -17,6 +17,9 @@ class CreateTipoIncidentesTable extends Migration
             $table->increments('id')->unique();
             $table->string('nombre');
             $table->text('descripcion');
+            // el estado describe si se ha descontinuado el
+            // tipo de incidente
+            $table->integer('estado');
             $table->timestamps();
         });
     }
