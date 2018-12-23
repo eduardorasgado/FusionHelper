@@ -15,4 +15,15 @@ class TipoIncidenteController extends Controller
         return view('incidentesAdmin.tiposIncidenteList',
             compact('allTiposIncidente'));
     }
+
+    public function getRegistro()
+    {
+        // devolviendo el formulario de registro de tipos de incidente
+        return view('incidentesAdmin.tiposIncidenteRegistro');
+    }
+
+    public function postRegistro(Request $request)
+    {
+        return var_dump('[POST TIPO INCIDENTE]');
+    }
 }

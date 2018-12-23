@@ -79,4 +79,12 @@ Route::group(['middleware' => ['is_admin']], function()
     Route::get('/tipoincidente',
         'TipoIncidenteController@index')
         ->name('tiposIncidente');
+    // formulario del tipo de incidente
+    Route::get('/tipoincidente/registro',
+        'TipoIncidenteController@getRegistro')
+        ->name('tiposIncidenteRegistro');
+    // Resolucion post del formulario completado
+    Route::post('/tipoincidente/registro',
+        'TipoIncidenteController@postRegistro')
+        ->name('tiposIncidenteRegistroPost');
 });
