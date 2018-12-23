@@ -9,6 +9,8 @@ class IncidenteController extends Controller
     //
     public function index()
     {
-        return var_dump('[INCIDENTE CONTROLLER]');
+        // Mostrar la lista de todos los incidentes aun sin
+        // asignacion de ticket
+        return view('incidentesAdmin.incidentesList');
     }
 }

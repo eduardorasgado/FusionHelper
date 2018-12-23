@@ -60,4 +60,8 @@ Route::group(['middleware' => ['is_admin']], function()
     // INCIDENTES Y TICKETS
     Route::get('/incidentes',
         'IncidenteController@index')->name('incidenteIndex');
+
+    // AREAS
+    Route::get('/area',
+        'AreaController@index')->name('areaIndex');
 });

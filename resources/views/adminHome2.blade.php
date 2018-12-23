@@ -37,6 +37,24 @@
                     </div>
                 </div>
             </div>
+
+            <div class="col-md-4">
+                <div class="jumbotron text-center">
+                    <div class="dropdown">
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                            Áreas
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{{url('registro/tecnico')}}">Registrar un área</a>
+                            <a class="dropdown-item" href="{{route('areaIndex')}}">Todas las áreas</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+
             <div class="col-md-4">
                 <div class="jumbotron text-center">
                     <div class="dropdown">
@@ -51,8 +69,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
 
             <div class="col-md-4">
                 <div class="jumbotron text-center">
@@ -87,7 +103,7 @@
         <h2>Otras acciones</h2>
         <div class="row">
             <div class="jumbotron col-md-6">
-                <a href="{{url('registro/tecnico')}}"><button class="btn btn-danger">Otra accion aqui</button></a></div>
+                <a href="{{url('registro/tecnico')}}"><button class="btn btn-success">Otra tarea aqui</button></a></div>
             </div>
         </div>
     </div>
