@@ -16,16 +16,16 @@ class CreateIncidentesTable extends Migration
         Schema::create('incidentes', function (Blueprint $table) {
             $table->increments('id')->unique();
             //
-            $table->int('empleadoId');
+            $table->integer('empleadoId');
             // ?
             $table->integer('tipo');
             // ?
             $table->integer('prioridad');
             // ?
             $table->string('caso');
-            $table->longText('diagnostico')->default(' ');
-            $table->longText('solucion')->default(' ');
-            $table->longText('descripcion_fallo')->default(' ');
+            $table->longText('diagnostico');
+            $table->longText('solucion');
+            $table->longText('descripcion_fallo');
             $table->timestamps();
         });
     }
