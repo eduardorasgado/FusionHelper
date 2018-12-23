@@ -74,4 +74,9 @@ Route::group(['middleware' => ['is_admin']], function()
     // Eliminamos un area
     Route::get('/area/delete/{id}',
         'AreaController@deleteArea')->name('deleteArea');
+
+    // TIPO DE INCIDENTES
+    Route::get('/tipoincidente',
+        'TipoIncidenteController@index')
+        ->name('tiposIncidente');
 });

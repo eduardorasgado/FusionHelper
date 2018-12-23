@@ -19,6 +19,8 @@
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="{{route('incidenteIndex')}}">Incidentes</a>
                             <a class="dropdown-item" href="{{url('registro/tecnico')}}">Tickets</a>
+                            <a class="dropdown-item" href="">Agregar tipo de incidente</a>
+                            <a class="dropdown-item" href="{{ route('tiposIncidente') }}">Ver tipos de incidente</a>
                         </div>
                     </div>
                 </div>
