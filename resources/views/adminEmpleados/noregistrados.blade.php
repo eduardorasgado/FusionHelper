@@ -47,9 +47,12 @@
                         <div class="row">
                             <div class="col-md-4"></div>
                             <div>
-                                <a href="{{ route('denegarEmpleado', $user->id)  }}" class="btn btn-danger">Rechazar</a>
+                                <a href="{{ route('denegarEmpleado', $user->id)  }}"
+                                   onclick="return confirm('Está seguro/a de esta acción?');"
+                                   class="btn btn-danger">Rechazar</a>
                                 &nbsp;&nbsp;&nbsp;&nbsp;
                                 <a href="{{ route('aceptarEmpleado', $user->id) }}"
+                                   onclick="return confirm('Está seguro/a de esta acción?');"
                                    class="btn btn-success">Aceptar</a>
                             </div>
                         </div>

@@ -18,7 +18,8 @@
         <br>
         <div class="row">
             <div class="card-body">
-                <form method="POST" action="{{ route('postUpdateEmpleado', $user->id) }}">
+                <form method="POST" action="{{ route('postUpdateEmpleado', $user->id) }}"
+                      onsubmit="return confirm('Está seguro/a de esta acción?');">
                     @csrf
 
                     <div class="form-group row">

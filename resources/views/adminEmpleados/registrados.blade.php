@@ -40,7 +40,8 @@
                         <div class="row">
                             <div class="col-md-4"></div>
                             <div>
-                                <a href="{{ route('deleteEmpleado', $user->id)  }}" class="btn btn-danger">Eliminar</a>
+                                <a onclick="return confirm('Está seguro/a de esta acción?');"
+                                   href="{{ route('deleteEmpleado', $user->id)  }}" class="btn btn-danger">Eliminar</a>
                                 &nbsp;&nbsp;&nbsp;&nbsp;
                                 <a href="{{ route('getUpdateEmpleado', $user->id)  }}" class="btn btn-success">Modificar</a>
                             </div>
