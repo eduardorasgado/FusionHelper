@@ -69,6 +69,6 @@ Route::group(['middleware' => ['is_admin']], function()
     Route::get('/area/registro',
         'AreaController@getRegistro')->name('areaRegistro');
     // post del registro de nueva area
-    Route::post('/area/registro',
-        'AreaController@postRegistro')->name('areaRegistro');
+    Route::post('/arearegistro',
+        'AreaController@postRegistro')->name('areaRegistroPost');
 });

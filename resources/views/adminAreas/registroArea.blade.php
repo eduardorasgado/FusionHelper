@@ -29,7 +29,7 @@
                     @endif
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('areaRegistro') }}"
+                        <form method="POST" action="{{ route('areaRegistroPost') }}"
                               onsubmit="return confirm('Va a registrar una nueva área. Está seguro/a?');">
                             @csrf
 
@@ -48,14 +48,14 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="clave" class="col-md-4 col-form-label text-md-right">{{ __('Clave del área') }}</label>
+                                <label for="clave_area" class="col-md-4 col-form-label text-md-right">{{ __('Clave del área') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="clave" type="text" class="form-control{{ $errors->has('clave') ? ' is-invalid' : '' }}" name="clave" value="{{ old('clave') }}" required autofocus>
+                                    <input id="clave_area" type="text" class="form-control{{ $errors->has('clave_area') ? ' is-invalid' : '' }}" name="clave_area" value="{{ old('clave_area') }}" required autofocus>
 
-                                    @if ($errors->has('clave'))
+                                    @if ($errors->has('clave_area'))
                                         <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('clave') }}</strong>
+                                        <strong>{{ $errors->first('clave_area') }}</strong>
                                     </span>
                                     @endif
                                 </div>

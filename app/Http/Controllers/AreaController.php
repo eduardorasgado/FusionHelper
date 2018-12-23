@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Area;
+use App\Http\Requests\AreaRequest;
 use Illuminate\Http\Request;
 
 class AreaController extends Controller
@@ -20,27 +21,23 @@ class AreaController extends Controller
         return view('adminAreas.registroArea');
     }
 
-    public function postRegistro(Request $request)
+    /**
+     * @param AreaRequest $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function postRegistro(AreaRequest $request)
     {
         // maneja los datos regresados por el ingreso del registro
         // validando los campos
-        $validateData = $request->validate([
-            'clave_area' => 'required|string|unique:areas|max:255',
-            'nombre' => 'required|string|max:350'
-        ]);
+        $validatedData = $request->validate($request->rules());
+
         // creamos el registro en la database
-        $area_created = $this->create($validateData);
-
-        // redirecionar a la lista con un mensaje de creacion del area
-        return redirect('/area')->withSuccess('El área '.$area_created->nombre.' ha sido creado con éxito.');
-    }
-
-    public function create(Array $data)
-    {
-        // crea como tal el area
-        return Area::create([
-            'nombre' => $data['nombre'],
-            'clave_area' => $data['clave_area']
+        $area_created = Area::create([
+            'nombre' => $validatedData['nombre'],
+            'clave_area' => $validatedData['clave_area']
         ]);
+        // redirecionar a la lista con un mensaje de creacion del area
+        return redirect('/area')
+            ->with('success', 'El área '.$area_created->nombre.' ha sido creado/a con éxito.');
     }
 }
