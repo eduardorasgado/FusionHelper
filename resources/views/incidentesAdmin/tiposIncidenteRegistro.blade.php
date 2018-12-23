@@ -7,7 +7,7 @@
             <div class="col-md-10"></div>
             <a class="btn btn-primary" href="/home">Atrás</a>
         </div>
-        <h1>Registro de nueva área en el sistema</h1>
+        <h1>Registro de nuevo tipo de incidente en el sistema</h1>
         <br><br>
         <p class="alert alert-info">Los tipos de incidente son fundamentales para el pertinente registro de los tickets
             en el sistema, así como de los incidentes mismos.</p>
@@ -51,7 +51,8 @@
                                 <label for="descripcion" class="col-md-4 col-form-label text-md-right">{{ __('Descripción general del tipo de incidente') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="descripcion" type="text" class="form-control{{ $errors->has('descripcion') ? ' is-invalid' : '' }}" name="clave_area" value="{{ old('descripcion') }}" required autofocus>
+                                    <textarea id="descripcion" type="text" class="form-control{{ $errors->has('descripcion') ? ' is-invalid' : '' }}" name="descripcion" value="{{ old('descripcion') }}" required autofocus>
+                                    </textarea>
 
                                     @if ($errors->has('descripcion'))
                                         <span class="invalid-feedback" role="alert">
@@ -64,7 +65,7 @@
                             <div class="form-group row mb-0">
                                 <div class="col-md-6 offset-md-4">
                                     <button type="submit" class="btn btn-primary">
-                                        {{ __('Registrar Tipoi de Incidente') }}
+                                        {{ __('Registrar Tipo de Incidente') }}
                                     </button>
                                 </div>
                             </div>

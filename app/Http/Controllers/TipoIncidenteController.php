@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\TipoIncidente;
 use Illuminate\Http\Request;
+use Exception;
+use PHPUnit\Framework\Error\Error;
 
 class TipoIncidenteController extends Controller
 {
@@ -24,6 +26,27 @@ class TipoIncidenteController extends Controller
 
     public function postRegistro(Request $request)
     {
-        return var_dump('[POST TIPO INCIDENTE]');
+        $tipoInc = null;
+        try {
+            //levantar errores en caso de que la descripcion y el nombre
+            // no se encuentren en el request
+            if(!isset($request->descripcion))
+            {
+                if(!isset($request->nombre)){
+                    throw new Exception();
+                }
+            }
+            // crear el tipo de incidente
+            $tipoInc = TipoIncidente::create([
+                'nombre' => $request->nombre,
+                'descripcion' => $request->descripcion
+            ]);
+        } catch(Exception $e) {
+            return redirect()->back()->with('Error','Ha ocurrido un error en el servidor, intentelo más tarde o notifiquelo si persiste');
+        }
+
+        // redirigiendo al index con un mensaje de exito
+        return redirect('/tipoincidente')->with('success', 'El tipo de incidente '.
+        $tipoInc->nombre.' se ha registrado');
     }
 }
