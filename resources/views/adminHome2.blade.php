@@ -13,28 +13,12 @@
             <div class="col-md-4">
                 <div class="jumbotron text-center">
                     <div class="dropdown">
-                        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
-                            Tickets
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                            Incidentes y Tickets
                         </button>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Link 1</a>
-                            <a class="dropdown-item" href="#">Link 2</a>
-                            <a class="dropdown-item" href="#">Link 3</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="jumbotron text-center">
-                    <div class="dropdown">
-                        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
-                            Incidentes
-                        </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{{url('registro/tecnico')}}">No registrados</a>
-                            <a class="dropdown-item" href="{{url('registro/tecnico')}}">Registrados</a>
-                            <a class="dropdown-item" href="{{url('registro/tecnico')}}">Todos</a>
+                            <a class="dropdown-item" href="{{route('incidenteIndex')}}">Incidentes</a>
+                            <a class="dropdown-item" href="{{url('registro/tecnico')}}">Tickets</a>
                         </div>
                     </div>
                 </div>
@@ -53,9 +37,6 @@
                     </div>
                 </div>
             </div>
-
-        </div>
-        <div class="row">
             <div class="col-md-4">
                 <div class="jumbotron text-center">
                     <div class="dropdown">
@@ -70,6 +51,9 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="row">
+
             <div class="col-md-4">
                 <div class="jumbotron text-center">
                     <div class="dropdown">

@@ -24,6 +24,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/empleado', 'EmpleadoController@index')->name('empleado');
 });
 
+// este middleware se agrego en kernel tambien
 Route::group(['middleware' => ['is_admin']], function()
 {
     // TODAS LAS RUTAS PARA EL ADMINISTRADOS
@@ -55,4 +56,8 @@ Route::group(['middleware' => ['is_admin']], function()
     Route::get('admin/empleados/delete/{id}',
         'AdministradorController@deleteEmpleado')
         ->name('deleteEmpleado');
+
+    // INCIDENTES Y TICKETS
+    Route::get('/incidentes',
+        'IncidenteController@index')->name('incidenteIndex');
 });
