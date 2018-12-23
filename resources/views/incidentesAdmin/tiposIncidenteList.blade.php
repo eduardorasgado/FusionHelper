@@ -36,6 +36,7 @@
                     <div class="jumbotron jumboColorBlue">
                         <p>Nombre: <span class="blue">{{ $tipo->nombre }}</span></p>
                         <p>Descripción: <span class="blue">{{ $tipo->descripcion }}</span></p>
+                        <p>Estado: <span class="blue">@if($tipo->estado) Activo @else Desactivado @endif</span></p>
                         <br><br>
                         <div class="row">
                             <div class="col-md-4"></div>

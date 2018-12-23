@@ -17,6 +17,10 @@ class CreateAreasTable extends Migration
             $table->increments('id');
             $table->string('clave_area')->unique();
             $table->string('nombre');
+            // si el area no puede ser eliminada entonces
+            // se desactiva
+            // estado 0: desactivado, 1: activo
+            $table->integer('estado');
             $table->timestamps();
         });
     }

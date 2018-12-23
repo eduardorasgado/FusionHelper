@@ -39,7 +39,8 @@ class TipoIncidenteController extends Controller
             // crear el tipo de incidente
             $tipoInc = TipoIncidente::create([
                 'nombre' => $request->nombre,
-                'descripcion' => $request->descripcion
+                'descripcion' => $request->descripcion,
+                'estado' => 1
             ]);
         } catch(Exception $e) {
             return redirect()->back()->with('Error','Ha ocurrido un error en el servidor, intentelo más tarde o notifiquelo si persiste');
@@ -52,7 +53,9 @@ class TipoIncidenteController extends Controller
 
     public function delete(Request $request)
     {
-        return var_dump('[DELETE TIPO INCIDENTE]');
+        // elimina el tipo de incidente y en caso de que exista
+        // solamente lo desactiva
+        return var_dump('[DELETE TIPO INCIDENTE]: '.$request->id);
     }
 
 }

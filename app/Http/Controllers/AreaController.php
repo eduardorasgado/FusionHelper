@@ -36,7 +36,8 @@ class AreaController extends Controller
         try {
             $area_created = Area::create([
                 'nombre' => $validatedData['nombre'],
-                'clave_area' => $validatedData['clave_area']
+                'clave_area' => $validatedData['clave_area'],
+                'estado' => 1
             ]);
         } catch(Exception $e)
         {

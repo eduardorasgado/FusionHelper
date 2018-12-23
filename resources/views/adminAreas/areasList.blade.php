@@ -36,6 +36,7 @@
                         <div class="jumbotron jumboColorBlue">
                             <p>Nombre: <span class="blue">{{ $area->nombre }}</span></p>
                             <p>Clave: <span class="blue">{{ $area->clave_area }}</span></p>
+                            <p>Estado: <span class="blue">@if($area->estado) Activo @else Desactivado @endif</span></p>
                             <br><br>
                             <div class="row">
                                 <div class="col-md-4"></div>

@@ -19,6 +19,7 @@ class CreateTipoIncidentesTable extends Migration
             $table->text('descripcion');
             // el estado describe si se ha descontinuado el
             // tipo de incidente
+            // estado 0: desactivado, 1: activo
             $table->integer('estado');
             $table->timestamps();
         });
