@@ -21,7 +21,19 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => ['auth']], function() {
     // rutas para el usuario debidamente regustrado
-    Route::get('/empleado', 'EmpleadoController@index')->name('empleado');
+    Route::get('/empleado', 'EmpleadoController@index')
+        ->name('empleado');
+
+    // RUTAS PARA EL EMPLEADO O TECNICO
+
+    // reporte de incidente
+    Route::get('/incidente/empleado/registro',
+        'IncidenteController@getRegistro')
+        ->name('incidenteEmpleadoRegistro');
+    // manejando la peticion post del registro de incidente
+    Route::post('/incidente/empleado/registro',
+        'IncidenteController@postRegistro')
+        ->name('incidenteEmpleadoRegistro');
 });
 
 // este middleware se agrego en kernel tambien

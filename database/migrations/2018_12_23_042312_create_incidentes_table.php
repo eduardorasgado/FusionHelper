@@ -17,9 +17,10 @@ class CreateIncidentesTable extends Migration
             $table->increments('id')->unique();
             //
             $table->integer('empleadoId');
-            // ?
+            // NAS, SAI, SOFTWARE
+            // toma del modelo TipoIncidente
             $table->integer('tipo');
-            // ?
+            // alta 2, media 1, baja 0
             $table->integer('prioridad');
             // ?
             $table->string('caso');
