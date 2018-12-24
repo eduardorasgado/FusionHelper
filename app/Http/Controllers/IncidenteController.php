@@ -37,13 +37,13 @@ class IncidenteController extends Controller
                 'etiquetado' => 0,
                 // id del tipo mostrado en el registro
                 // traido de el render dinamico del modelo TipoIncidente
-                'tipo' => $validatedData->tipo,
+                'tipo' => $validatedData['tipo'],
                 // baja: 0, media: 1, alta: 2
-                'prioridad' => $validatedData->prioridad,
-                'caso' => $validatedData->caso,
-                'diagnostico' => $validatedData->diagnostico,
-                'solucion' => $validatedData->solucion,
-                'descripcion_fallo' => $validatedData->descripcion_fallo
+                'prioridad' => $validatedData['prioridad'],
+                'caso' => $validatedData['caso'],
+                'diagnostico' => $validatedData['diagnostico'],
+                'solucion' => $validatedData['solucion'],
+                'descripcion_fallo' => $validatedData['descripcion_fallo']
             ]);
         } catch (Exception $e)
         {
@@ -52,6 +52,6 @@ class IncidenteController extends Controller
         }
 
         // Si el incidente se creo con exito
-        return redirect('/')->with('success','Se ha reportado el incidente con éxito');
+        return redirect('/empleado/incidentes')->with('success','Se ha reportado el incidente con éxito');
     }
 }

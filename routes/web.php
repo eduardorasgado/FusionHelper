@@ -34,7 +34,8 @@ Route::group(['middleware' => ['auth']], function() {
         ->name('incidenteEmpleadoRegistro');
     // Todos los registros de incidentes
     Route::get('/empleado/incidentes',
-        'EmpleadoController@getIncidentes')->name('incidentesEmpleadoIndex');
+        'EmpleadoController@getIncidentes')
+        ->name('incidentesEmpleadoIndex');
 });
 
 // RUTAS PARA EL ADMINISTRADOR
