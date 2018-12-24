@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="cddbc456-9ab5-4391-995f-6537bde7d221" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/EmpleadoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/EmpleadoController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/incidentesEmpleado/incidentesEmpleadoList.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/incidentesEmpleado/incidentesEmpleadoList.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,10 +32,10 @@
               <entry file="file://$PROJECT_DIR$/resources/views/incidentesEmpleado/incidentesEmpleadoList.blade.php">
                 <provider selected="true" editor-type-id="text-editor">
                   <state relative-caret-position="346">
-                    <caret line="67" column="30" selection-start-line="67" selection-start-column="30" selection-end-line="67" selection-end-column="30" />
+                    <caret line="40" column="62" selection-start-line="40" selection-start-column="62" selection-end-line="40" selection-end-column="62" />
                     <folding>
                       <element signature="e#1395#1426#0#HTML" expanded="true" />
-                      <element signature="e#1812#1843#0#HTML" expanded="true" />
+                      <element signature="e#3690#3721#0#HTML" expanded="true" />
                     </folding>
                   </state>
                 </provider>
@@ -624,7 +622,7 @@
       <workItem from="1545439953118" duration="8026000" />
       <workItem from="1545537716934" duration="6569000" />
       <workItem from="1545584846972" duration="32855000" />
-      <workItem from="1545667503739" duration="10696000" />
+      <workItem from="1545667503739" duration="11534000" />
     </task>
     <task id="LOCAL-00001" summary="Dropdown en menu de administrador y controlador de administrador creado.">
       <created>1545312751460</created>
@@ -878,11 +876,18 @@
       <option name="project" value="LOCAL" />
       <updated>1545681885820</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Empleado/Incidente: Clasificacion de incidentes en etiquetados y en cola. Frontend definido y render de los incidentes.">
+      <created>1545684765032</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1545684765032</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104971000" />
+    <option name="totallyTimeSpent" value="105809000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-8" width="2576" height="1096" extended-state="6" />
@@ -938,7 +943,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Administrador/empleados: Mensajes en no registrados y manejo de errores al aceptar o declinar" />
     <MESSAGE value="Administrador/empleados: rutas para modificar el usuario, metodo y vista." />
     <MESSAGE value="Administrador/empleados: Rutas en update emmpleado y debugging del controller" />
     <MESSAGE value="Administrador/empleados: Actualizando los datos del usuario con el update." />
@@ -963,7 +967,8 @@
     <MESSAGE value="Administrador/Incidente: Ruta completa del listado de incidentes. Guardado del registro del nuevo incidente.&#10;Refactor de las rutas de admin y empleado de los incidentes." />
     <MESSAGE value="Administrador/Incidente: Ruta de creación de incidente completa." />
     <MESSAGE value="Administrador/Incidente: Entregamos todos los incidentes de un determinado usuario a su lista de registros de incidentes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Administrador/Incidente: Entregamos todos los incidentes de un determinado usuario a su lista de registros de incidentes" />
+    <MESSAGE value="Empleado/Incidente: Clasificacion de incidentes en etiquetados y en cola. Frontend definido y render de los incidentes." />
+    <option name="LAST_COMMIT_MESSAGE" value="Empleado/Incidente: Clasificacion de incidentes en etiquetados y en cola. Frontend definido y render de los incidentes." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
@@ -1304,10 +1309,10 @@
     <entry file="file://$PROJECT_DIR$/resources/views/incidentesEmpleado/incidentesEmpleadoList.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="346">
-          <caret line="67" column="30" selection-start-line="67" selection-start-column="30" selection-end-line="67" selection-end-column="30" />
+          <caret line="40" column="62" selection-start-line="40" selection-start-column="62" selection-end-line="40" selection-end-column="62" />
           <folding>
             <element signature="e#1395#1426#0#HTML" expanded="true" />
-            <element signature="e#1812#1843#0#HTML" expanded="true" />
+            <element signature="e#3690#3721#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>

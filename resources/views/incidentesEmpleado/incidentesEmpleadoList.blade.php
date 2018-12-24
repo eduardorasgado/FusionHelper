@@ -36,7 +36,9 @@
                                 <hr style="background-color: white">
                                 <p><span class="orange">Tipo: </span>
                                     @if(count($tipos) > 0)
-                                        {{ $tipos[$incidente->tipo]->nombre }}
+                                        {{-- el tipo de incidente[tipo - 1] debido a que array inicia en 0,
+                                         y el primer id del tipo de incidente es 1--}}
+                                        {{ $tipos[$incidente->tipo-1]->nombre }}
                                     @endif
                                 </p>
                                 <p><span class="orange">Prioridad: </span>
@@ -74,7 +76,7 @@
                                 <hr style="background-color: white">
                                 <p><span class="orange">Tipo: </span>
                                     @if(count($tipos) > 0)
-                                        {{ $tipos[$incidente->tipo]->nombre }}
+                                        {{ $tipos[$incidente->tipo-1]->nombre }}
                                     @endif
                                 </p>
                                 <p><span class="orange">Prioridad: </span>
