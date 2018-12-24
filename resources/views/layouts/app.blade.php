@@ -28,6 +28,25 @@
             margin: 0;
         }
 
+        .jumboColorDark {
+            background-color: #383d41;
+            margin: 0px;
+            padding: 12px;
+        }
+
+        .jumboColorDark p, .jumboColorDark h1 {
+            color: white;
+        }
+
+        .left {
+            margin-right: 20px;
+            margin-left: 20px;
+        }
+        .right {
+            margin-right: 20px;
+            margin-left: 20px;
+        }
+
         .blue {
             color: #227dc7;
         }
