@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Incidente;
+use App\TipoIncidente;
 use App\User;
 use Illuminate\Http\Request;
 use Exception;
@@ -92,6 +94,9 @@ class AdministradorController extends Controller
 
     public function deleteEmpleado(Request $request)
     {
+        // TODO: SI EL EMPLEADO TIENE INCIDENTES NO SE BORRA
+        // SE DESACTIVA
+
         // buscando al empleado a borrar
         $user = null;
         try{
@@ -118,9 +123,26 @@ class AdministradorController extends Controller
     // Muestra todos los incidentes como vista de administrador
     public function getIncidentes()
     {
-        // Mostrar la lista de todos los incidentes aun sin
-        // asignacion de ticket
-        return view('incidentesAdmin.incidentesList');
+        // recolectamos todos los incidentes del usuario en cuestion
+        $incidentesRegistrados = Incidente::where('etiquetado', '=', 1)->get();
+
+        $incidentesEnCola = Incidente::where('etiquetado', '=', 0)->get();
+
+        // tipos de incidente
+        $tipos = TipoIncidente::all();
+        // contamos cuanto de cada uno existe
+        $registradosCount  = count($incidentesRegistrados);
+        $encolaCount = count($incidentesEnCola);
+        $empleados = User::all();
+
+        // Mostrar la lista de todos los incidentes vista admin
+        return view('incidentesAdmin.incidentesList',
+            compact('incidentesRegistrados',
+                'incidentesEnCola',
+                'tipos',
+                'registradosCount',
+                'encolaCount',
+                'empleados'));
     }
 
     // UTILIDADES GENERALES
