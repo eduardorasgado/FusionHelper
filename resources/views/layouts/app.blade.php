@@ -29,13 +29,25 @@
         }
 
         .jumboColorDark {
-            background-color: #383d41;
+            background-color: #2d995b;
             margin: 0px;
             padding: 12px;
+            border-radius: 0px;
+            opacity: 0.8;
         }
 
         .jumboColorDark p, .jumboColorDark h1 {
             color: white;
+            margin: 0;
+        }
+
+        .jumboBox {
+            margin: 10px;
+            padding: 20px;
+            background-color: #1b4b72;
+            color: white;
+            border-radius: 0px;
+
         }
 
         .left {
@@ -49,6 +61,9 @@
 
         .blue {
             color: #227dc7;
+        }
+        .orange {
+            color: #f6993f;
         }
     </style>
 </head>
