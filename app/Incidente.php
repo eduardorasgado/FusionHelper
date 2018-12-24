@@ -8,7 +8,8 @@ class Incidente extends Model
 {
     //
     protected $fillable = [
-        'empleadoId', 'tipo', 'prioridad', 'caso', 'diagnostico',
+        'empleadoId', 'etiquetado', 'tipo', 'prioridad',
+        'caso', 'diagnostico',
         'solucion', 'descripcion_fallo'
     ];
 }

@@ -22,7 +22,7 @@
             </div>
             <div class="col-md-4 text-center">
                 <div class="jumbotron">
-                    <a href="{{url('registro/tecnico')}}"><button class="btn btn-success">Ver todos mis incidentes registrados</button></a>
+                    <a href="{{ route('incidentesEmpleadoIndex') }}"><button class="btn btn-success">Ver todos mis incidentes registrados</button></a>
                 </div>
             </div>
         </div>

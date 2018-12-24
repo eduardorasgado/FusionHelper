@@ -15,8 +15,11 @@ class CreateIncidentesTable extends Migration
     {
         Schema::create('incidentes', function (Blueprint $table) {
             $table->increments('id')->unique();
-            //
+            // el empleado que la reporto
             $table->integer('empleadoId');
+            // clasificacion para saber si ya tiene o no ticket
+            // 0: no etiqeutado, 1: etiquetado
+            $table->integer('etiquetado');
             // NAS, SAI, SOFTWARE
             // toma del modelo TipoIncidente
             $table->integer('tipo');

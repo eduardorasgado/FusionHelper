@@ -112,6 +112,14 @@ class AdministradorController extends Controller
             $nameDeleted.' ha sido eliminado. IMPORTANTE: Este proceso es irreversible.');
     }
 
+    // Muestra todos los incidentes como vista de administrador
+    public function getIncidentes()
+    {
+        // Mostrar la lista de todos los incidentes aun sin
+        // asignacion de ticket
+        return view('incidentesAdmin.incidentesList');
+    }
+
     // UTILIDADES GENERALES
 
     private function changeUserState($id, $state)

@@ -23,9 +23,7 @@ Route::group(['middleware' => ['auth']], function() {
     // rutas para el usuario debidamente regustrado
     Route::get('/empleado', 'EmpleadoController@index')
         ->name('empleado');
-
     // RUTAS PARA EL EMPLEADO O TECNICO
-
     // reporte de incidente
     Route::get('/incidente/empleado/registro',
         'IncidenteController@getRegistro')
@@ -34,8 +32,12 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('/incidente/empleado/registro',
         'IncidenteController@postRegistro')
         ->name('incidenteEmpleadoRegistro');
+    // Todos los registros de incidentes
+    Route::get('/empleado/incidentes',
+        'EmpleadoController@getIncidentes')->name('incidentesEmpleadoIndex');
 });
 
+// RUTAS PARA EL ADMINISTRADOR
 // este middleware se agrego en kernel tambien
 Route::group(['middleware' => ['is_admin']], function()
 {
@@ -70,8 +72,8 @@ Route::group(['middleware' => ['is_admin']], function()
         ->name('deleteEmpleado');
 
     // INCIDENTES Y TICKETS
-    Route::get('/incidentes',
-        'IncidenteController@index')->name('incidenteIndex');
+    Route::get('/admin/incidentes',
+        'AdministradorController@getIncidentes')->name('incidentesAdminIndex');
 
     // AREAS
     // mostrar todas las existentes

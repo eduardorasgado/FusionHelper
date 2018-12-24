@@ -11,4 +11,10 @@ class EmpleadoController extends Controller
     {
         return view('/empleadoHome');
     }
+
+    public function getIncidentes()
+    {
+        // todos los incidentes con vista de empleado
+        return view('incidentesEmpleado.incidentesEmpleadoList');
+    }
 }
