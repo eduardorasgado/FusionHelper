@@ -54,6 +54,9 @@ class AdministradorController extends Controller
             // en caso de error
             return redirect()->back()->with('Error','Ha ocurrido un error en el servidor, intentelo más tarde o notifiquelo si persiste');
         }
+        // eliminando al usuario
+        $user->delete();
+
         return redirect()->back()->with('userDeleted','El/La empleado/a '.$user->nombre.' ha sido rechazado/a.');
     }
 

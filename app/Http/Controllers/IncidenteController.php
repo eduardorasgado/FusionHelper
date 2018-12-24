@@ -12,6 +12,13 @@ class IncidenteController extends Controller
 {
     public function getRegistro()
     {
+        // en caso de que el usuario aun no este autorizado o
+        // que haya sido rechazado
+        if(Auth::user()->estado == 0 || Auth::user()->estado == 2)
+        {
+            return redirect('/empleado');
+        }
+        // form para el empleado
         // traemos todos los tipos de incidente registrados
         $tipos = TipoIncidente::all();
         // entregar el formulario de reporte de incidente
@@ -21,6 +28,13 @@ class IncidenteController extends Controller
 
     public function postRegistro(Request $request)
     {
+        // en caso de que el usuario aun no este autorizado o
+        // que haya sido rechazado
+        if(Auth::user()->estado == 0 || Auth::user()->estado == 2)
+        {
+            return redirect('/empleado');
+        }
+        // registro que hace el empleado
         $validatedData = $request->validate([
             'tipo' => 'required|integer',
             'prioridad' => 'required|integer',
