@@ -25,6 +25,7 @@ class CreateIncidentesTable extends Migration
             $table->integer('tipo');
             // alta 2, media 1, baja 0
             $table->integer('prioridad');
+            // jala el area dada en el modelo de area y areas existentes
             $table->integer('area');
             // string
             $table->string('caso');

@@ -9,7 +9,7 @@ class Incidente extends Model
     //
     protected $fillable = [
         'empleadoId', 'etiquetado', 'tipo', 'prioridad',
-        'caso', 'diagnostico',
+        'caso', 'diagnostico', 'area',
         'solucion', 'descripcion_fallo'
     ];
 }

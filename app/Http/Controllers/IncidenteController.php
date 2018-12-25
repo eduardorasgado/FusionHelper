@@ -55,18 +55,20 @@ class IncidenteController extends Controller
                 // id del tipo mostrado en el registro
                 // traido de el render dinamico del modelo TipoIncidente
                 'tipo' => $validatedData['tipo'],
-                'area' => $validatedData['area'],
                 // baja: 0, media: 1, alta: 2
                 'prioridad' => $validatedData['prioridad'],
+                'area' => $validatedData['area'],
                 'caso' => $validatedData['caso'],
                 'diagnostico' => $validatedData['diagnostico'],
                 'solucion' => $validatedData['solucion'],
                 'descripcion_fallo' => $validatedData['descripcion_fallo']
             ]);
+
         } catch (Exception $e)
         {
             // El caso de fallar la creacion del incidente
-            return redirect()->back()->with('Error','Ha ocurrido un error en el servidor, intentelo más tarde o notifiquelo si persiste');
+            return redirect()->back()
+                ->with('Error','Ha ocurrido un error en el servidor, intentelo más tarde o notifiquelo si persiste');
         }
 
         // Si el incidente se creo con exito
