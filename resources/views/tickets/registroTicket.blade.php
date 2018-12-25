@@ -13,7 +13,9 @@
 
             <div class="jumbotron  text-center">
                 <h3>El incidente es: {{ $incidente->caso }}</h3>
-                <a href="{{ route('postTicketRegistroAceptado', $incidente->id) }}" class="btn btn-success">Generar Ticket</a>
+                <a href="{{ route('postTicketRegistroAceptado', $incidente->id) }}"
+                   onclick="return confirm('Va a registrar un nuevo ticket. Está seguro/a?');"
+                   class="btn btn-success">Generar Ticket</a>
 
     </div>
 @endsection

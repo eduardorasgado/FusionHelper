@@ -17,6 +17,11 @@
                 <span class="text-success">{{ Session::get('success') }}</span>
             </div>
         @endif
+        @if(Session::has('Error'))
+            <div class="alert alert-danger" role="alert" style="margin-top: 5px">
+                <span class="text-success">{{ Session::get('Error') }}</span>
+            </div>
+        @endif
         <div class="row">
             <div class="col-md-5 jumbotron jumboColorDark left">
                 <div class="text-center">

@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Incidente;
+use App\Ticket;
 use Illuminate\Http\Request;
+use Exception;
 
 class TicketController extends Controller
 {
@@ -20,7 +22,35 @@ class TicketController extends Controller
 
     public function postRegistro(Request $request)
     {
-        // creando el ticket dentro de la base de datos
+        // verificamos que exista
+        $incidente = Incidente::where('id', '=', $request->id)->first();
+        if(!isset($incidente))
+        {
+            redirect('/admin/incidentes')
+                ->with('Error', 'No existe el incidente referido. Intentelo con uno válido.');
+        }
+        // si el ticket ya fue etiquetado, se rechaza la solucitud
+        if($incidente->etiquetado)
+        {
+            redirect('/admin/incidentes')
+                ->with('Error', 'No es posible volver a generar el ticket del incidente.');
+        }
+        // modificamos el incidente para actualizar su estado de ticket
+        $incidente->etiquetado = 1;
+        $incidente->save();
+
+        // creamos el ticket
+        try{
+            Ticket::create([
+                'incidenteId' => $request->id
+            ]);
+
+        } catch (Exception $e)
+        {
+            redirect('/admin/incidentes')
+                ->with('Error', 'Error al generar el ticket, inténtelo más tarde.');
+        }
+
         return redirect('/admin/incidentes')
             ->with('success','El incidente #'.$request->id.' ha sido etiquetado con éxito');
     }
