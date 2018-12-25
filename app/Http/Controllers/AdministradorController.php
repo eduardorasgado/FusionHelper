@@ -110,8 +110,23 @@ class AdministradorController extends Controller
         $nameDeleted = $user->nombre;
         // SI EL EMPLEADO ES UN ADMINISTRADOR ES IMPOSIBLE BORRARLO
         if(!$user->tipo_user){
-            return redirect("admin/empleados/registrados")->with('Error','No es posible eliminar a un administrador.');
+            return redirect("admin/empleados/registrados")
+                ->with('Error','No es posible eliminar a un administrador.');
         }
+
+        // buscar que el empleado no tenga incidentes
+        $incidentes = Incidente::where('empleadoId', '=', $user->id)->first();
+        if(isset($incidentes))
+        {
+            // el usuario no es eliminado devuelto a su estado rechazado
+            $user->estado = 2;
+            // guardamos
+            $user->save();
+            return redirect("admin/empleados/registrados")->with('Error','El/La empleado/a '.
+                $nameDeleted.' ha sido suspendido solamente, debido a que cuenta con incidentes
+                a su nombre.');
+        }
+        // en caso de que el user no tenga dependencias
         // Borrando al usuario que est dentro de los empleados
         // registrados
         $user->delete();

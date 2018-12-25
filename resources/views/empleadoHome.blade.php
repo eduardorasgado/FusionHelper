@@ -36,6 +36,6 @@
         <span class="alert alert-warning">Usted aún no ha sido autorizado. Espere la respuesta del administrador.
             En caso de demora, contáctele.</span>
     @else
-        <span class="alert alert-danger">Usted fue rechazado. Su cuenta será eliminada en un día.</span>
+        <span class="alert alert-danger">Esta cuenta está inhabilitada. No puede realizar ninguna acción.</span>
     @endif
 @endsection
