@@ -25,7 +25,8 @@ class CreateIncidentesTable extends Migration
             $table->integer('tipo');
             // alta 2, media 1, baja 0
             $table->integer('prioridad');
-            // ?
+            $table->integer('area');
+            // string
             $table->string('caso');
             $table->longText('diagnostico');
             $table->longText('solucion');

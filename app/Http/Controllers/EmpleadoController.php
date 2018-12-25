@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Area;
 use App\Incidente;
 use App\TipoIncidente;
 use Illuminate\Http\Request;
@@ -35,6 +36,7 @@ class EmpleadoController extends Controller
 
         // tipos de incidente
         $tipos = TipoIncidente::all();
+        $areas = Area::all();
         // contamos cuanto de cada uno existe
         $registradosCount  = count($incidentesRegistrados);
         $encolaCount = count($incidentesEnCola);
@@ -44,6 +46,7 @@ class EmpleadoController extends Controller
             compact('incidentesRegistrados',
                 'incidentesEnCola',
                 'tipos',
+                'areas',
                 'registradosCount',
                 'encolaCount'));
     }

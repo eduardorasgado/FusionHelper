@@ -38,6 +38,11 @@
                                     {{ $empleados[$incidente->empleadoId-1]->apellidos }}
                                 </p>
                                 <hr style="background-color: white">
+                                <p><span class="orange">Área: </span>
+                                    @if(count($areas) > 0)
+                                        {{ $areas[$incidente->area-1]->nombre }}
+                                    @endif
+                                </p>
                                 <p><span class="orange">Tipo: </span>
                                     @if(count($tipos) > 0)
                                         {{-- el tipo de incidente[tipo - 1] debido a que array inicia en 0,
@@ -89,6 +94,11 @@
                                     {{ $empleados[$incidente->empleadoId-1]->apellidos }}
                                 </p>
                                 <hr style="background-color: white">
+                                <p><span class="orange">Área: </span>
+                                    @if(count($areas) > 0)
+                                        {{ $areas[$incidente->area-1]->nombre }}
+                                    @endif
+                                </p>
                                 <p><span class="orange">Tipo: </span>
                                     @if(count($tipos) > 0)
                                         {{ $tipos[$incidente->tipo-1]->nombre }}

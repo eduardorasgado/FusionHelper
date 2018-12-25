@@ -33,6 +33,16 @@
                     </div>
 
                     <div class="form-group row">
+                        <label for="area" class="col-md-4 col-form-label text-md-right">{{ __('Área') }}</label>
+                        <select class="form-control col-md-6" id="area" name="area">
+                            <option value="">Seleccione un área</option>
+                            @foreach ($areas as $area)
+                                <option value="{{ $area->id }}">{{ $area->nombre }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+
+                    <div class="form-group row">
                         <label for="prioridad" class="col-md-4 col-form-label text-md-right">{{ __('Prioridad') }}</label>
                         <select class="form-control col-md-6" id="prioridad" name="prioridad">
                             <option value="">Seleccione prioridad</option>

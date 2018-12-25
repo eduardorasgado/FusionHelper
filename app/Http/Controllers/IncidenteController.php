@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Area;
 use App\Incidente;
 use App\TipoIncidente;
 use Illuminate\Http\Request;
@@ -21,9 +22,10 @@ class IncidenteController extends Controller
         // form para el empleado
         // traemos todos los tipos de incidente registrados
         $tipos = TipoIncidente::all();
+        $areas = Area::all();
         // entregar el formulario de reporte de incidente
         return view('incidentesEmpleado.incidentesEmpleadoRegistro',
-            compact('tipos'));
+            compact('tipos', 'areas'));
     }
 
     public function postRegistro(Request $request)
@@ -37,6 +39,7 @@ class IncidenteController extends Controller
         // registro que hace el empleado
         $validatedData = $request->validate([
             'tipo' => 'required|integer',
+            'area' => 'required|integer',
             'prioridad' => 'required|integer',
             'caso' => 'required|string|max:500',
             'diagnostico' => 'required|string|max:800',
@@ -52,6 +55,7 @@ class IncidenteController extends Controller
                 // id del tipo mostrado en el registro
                 // traido de el render dinamico del modelo TipoIncidente
                 'tipo' => $validatedData['tipo'],
+                'area' => $validatedData['area'],
                 // baja: 0, media: 1, alta: 2
                 'prioridad' => $validatedData['prioridad'],
                 'caso' => $validatedData['caso'],
