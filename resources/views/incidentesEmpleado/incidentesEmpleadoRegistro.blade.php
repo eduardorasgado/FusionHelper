@@ -27,7 +27,10 @@
                         <select class="form-control col-md-6" id="tipo" name="tipo">
                             <option value="">Seleccione un tipo de incidente</option>
                             @foreach ($tipos as $tipo)
-                                <option value="{{ $tipo->id }}">{{ $tipo->nombre }}</option>
+                                @if($tipo->estado)
+                                    {{-- Solo si el estado del tipo es activo este es elegible--}}
+                                    <option value="{{ $tipo->id }}">{{ $tipo->nombre }}</option>
+                                @endif
                             @endforeach
                         </select>
                     </div>

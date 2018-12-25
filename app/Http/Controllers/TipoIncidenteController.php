@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Incidente;
 use App\TipoIncidente;
 use Illuminate\Http\Request;
 use Exception;
-use PHPUnit\Framework\Error\Error;
 
 class TipoIncidenteController extends Controller
 {
@@ -61,20 +61,31 @@ class TipoIncidenteController extends Controller
         try{
             // en caso de que exista el area
             $tipoIncidente = TipoIncidente::where('id', $request->id)->first();
-            // TODO: SI EL AREA POSEE INCIDENTES NO ES ELIMINADO
+            // SI EL AREA POSEE INCIDENTES NO ES ELIMINADO
             // SE LE DESACTIVA
             $deletedTipo = $tipoIncidente->nombre;
+            $incidente = Incidente::where('tipo', '=', $request->id)->first();
+            if(isset($incidente))
+            {
+                // inactivamos el tipo de incidente
+                $tipoIncidente->estado = 0;
+                $tipoIncidente->save();
+
+                return redirect('/tipoincidente')
+                    ->with('success', 'El tipo de incidente '.$deletedTipo.' fue inactivado
+                    debido a que hay incidentes que dependen de él.');
+            }
             // borrar el area
             $tipoIncidente->delete();
             // eliminando el area
         } catch(Exception $e)
         {
             return redirect('/tipoincidente')
-                ->with('Error', 'Puede que el área no exista o que la conexión se haya perdido, intentelo más tarde');
+                ->with('Error', 'Puede que el tipo de incidente no exista o que la conexión se haya perdido, intentelo más tarde');
         }
 
         return redirect('/tipoincidente')
-            ->with('success', 'El área '.$deletedTipo.' ha sido eliminado/a.');
+            ->with('success', 'El tipo de incidente '.$deletedTipo.' ha sido eliminado/a.');
     }
 
 }

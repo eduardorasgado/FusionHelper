@@ -32,6 +32,8 @@
         @endif
         <div class="row">
             @foreach($allTiposIncidente as $tipo)
+                {{--Si el tipo de incidente esta desactivado no se muestra--}}
+                @if($tipo->estado)
                 <div class="col-md-4">
                     <div class="jumbotron jumboColorBlue">
                         <p>Nombre: <span class="blue">{{ $tipo->nombre }}</span></p>
@@ -49,6 +51,7 @@
                         </div>
                     </div>
                 </div>
+                @endif
             @endforeach
 
         </div>

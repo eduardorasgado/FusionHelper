@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             // refleja el estado del usuario
             // debido a que necesita una aceptacion del admin
             // al registrarse
-            // 0: no registrado, 1:  activo, 2: rechazado
+            // 0: no registrado, 1:  activo, 2: rechazado o inhabilitado
             $table->integer('estado');
             $table->string('nombre');
             $table->string('apellidos');
