@@ -73,8 +73,14 @@ Route::group(['middleware' => ['is_admin']], function()
         ->name('deleteEmpleado');
 
     // INCIDENTES Y TICKETS
+    // INCIDENTES
     Route::get('/admin/incidentes',
-        'AdministradorController@getIncidentes')->name('incidentesAdminIndex');
+        'AdministradorController@getIncidentes')
+        ->name('incidentesAdminIndex');
+    // TICKETS
+    Route::get('/admin/ticket/create/{id}',
+        'TicketController@getRegistro')
+        ->name('getTicketRegistro');
 
     // AREAS
     // mostrar todas las existentes

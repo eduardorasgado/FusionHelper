@@ -120,7 +120,7 @@
                                 <div class="row">
                                     <div class="col-md-8"></div>
                                     <div class="col-md-2">
-                                        <a href="" class="btn btn-primary">Crear ticket</a>
+                                        <a href="{{ route('getTicketRegistro', $incidente->id) }}" class="btn btn-primary">Crear ticket</a>
                                     </div>
                                 </div>
                             </div>
