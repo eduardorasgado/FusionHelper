@@ -54,4 +54,22 @@ class TicketController extends Controller
         return redirect('/admin/incidentes')
             ->with('success','El incidente #'.$request->id.' ha sido etiquetado con éxito');
     }
+
+    public function getTicketIndividual(Request $request)
+    {
+        // Muestra los datos de creacion de incidente y de creacion
+        // de ticket, mas algunos datos de incidente
+        /*
+         * TODO: CAMPOS A MOSTRAR:
+         * area
+            tipo de incidente -> tipo(incidente)*
+            empleado -> id del user(empleado/tecnico)
+            tiempo inici
+            tiempo cierre
+            fecha inicio
+            fecha final
+            estatus: en uso/disponible/no disponible
+         * */
+        return view('tickets.ticketIndividual');
+    }
 }

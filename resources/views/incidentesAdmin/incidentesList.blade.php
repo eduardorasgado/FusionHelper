@@ -71,7 +71,7 @@
                                 <div class="row">
                                     <div class="col-md-8"></div>
                                     <div class="col-md-2">
-                                        <a href="" class="btn btn-primary">Ver ticket</a>
+                                        <a href="{{ route('ticketIndividual', $incidente->id) }}" class="btn btn-primary">Ver ticket</a>
                                     </div>
                                 </div>
                             </div>
