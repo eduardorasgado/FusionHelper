@@ -28,7 +28,7 @@ class IncidenteController extends Controller
             compact('tipos', 'areas'));
     }
 
-    public function getRegistroAceptado(Request $request)
+    public function postRegistro(Request $request)
     {
         // en caso de que el usuario aun no este autorizado o
         // que haya sido rechazado

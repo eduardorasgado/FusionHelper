@@ -20,7 +20,7 @@ class TicketController extends Controller
             compact('incidente'));
     }
 
-    public function postRegistro(Request $request)
+    public function getRegistroAceptado(Request $request)
     {
         // verificamos que exista
         $incidente = Incidente::where('id', '=', $request->id)->first();
@@ -62,13 +62,13 @@ class TicketController extends Controller
         /*
          * TODO: CAMPOS A MOSTRAR:
          * area
-            tipo de incidente -> tipo(incidente)*
-            empleado -> id del user(empleado/tecnico)
-            tiempo inici
-            tiempo cierre
-            fecha inicio
-            fecha final
-            estatus: en uso/disponible/no disponible
+            tipo de incidente -> tipo(incidente)* ooo
+            empleado -> id del user(empleado/tecnico) ooo
+            tiempo inici ooo
+            tiempo cierre ooo
+            fecha inicio ooo
+            fecha final oo
+            estatus: en uso/disponible/no disponible xxx
          * */
         return view('tickets.ticketIndividual');
     }
