@@ -63,5 +63,8 @@ class IncidenteTableSeeder extends Seeder
             'descripcion_fallo' => 'Las lineas tienen un mes sin cumplir correctamente su función por lo que no está llegando completa la señal de los sensores de Ingeteam.',
             'created_at' => date("Y-m-d H:i:s")
         ]);
+
+        // llamando a la factoria de incidentes
+        factory(App\Incidente::class, 20)->create();
     }
 }
