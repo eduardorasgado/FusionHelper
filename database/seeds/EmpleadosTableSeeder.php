@@ -15,7 +15,6 @@ class EmpleadosTableSeeder extends Seeder
         DB::table('users')->insert([
             // empleado
             'tipo_user' => 1,
-            // activo
             'estado' => 0,
             'nombre' => 'Iginio',
             'apellidos' => 'iginio_moreno',
@@ -30,7 +29,6 @@ class EmpleadosTableSeeder extends Seeder
         DB::table('users')->insert([
             // tecnico
             'tipo_user' => 2,
-            // activo
             'estado' => 0,
             'nombre' => 'Dario',
             'apellidos' => 'Moreno Diaz',
@@ -45,7 +43,6 @@ class EmpleadosTableSeeder extends Seeder
         DB::table('users')->insert([
             // empleado
             'tipo_user' => 1,
-            // activo
             'estado' => 0,
             'nombre' => 'Bronco',
             'apellidos' => 'Salvador Carmona',
@@ -60,7 +57,6 @@ class EmpleadosTableSeeder extends Seeder
         DB::table('users')->insert([
             // tecnico
             'tipo_user' => 2,
-            // activo
             'estado' => 0,
             'nombre' => 'Eusebio',
             'apellidos' => 'Nicolas Garza',
@@ -72,5 +68,8 @@ class EmpleadosTableSeeder extends Seeder
             'password' => bcrypt('eusebioeusebio1'),
             'created_at' => date("Y-m-d H:i:s")
         ]);
+
+        // llamando a la factoria de usuarios
+        factory(App\User::class, 20)->create();
     }
 }

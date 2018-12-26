@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Eloquent\Model;
 
 class DatabaseSeeder extends Seeder
 {
@@ -11,6 +12,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        //desactivamos temporalmente la protección de asignación de
+        // los modelos a seedear, así podemos seedear todas las propiedades del
+        //modelo
+        Model::unguard();
         //https://laravel.com/docs/5.7/seeding
 
         // primero actualizamos el autoload de composer
@@ -39,5 +44,7 @@ class DatabaseSeeder extends Seeder
         $this->call(AreasTableSeeder::class);
         $this->call(TipoIncidenteTableSeeder::class);
         $this->call(IncidenteTableSeeder::class);
+
+        Model::reguard();
     }
 }
