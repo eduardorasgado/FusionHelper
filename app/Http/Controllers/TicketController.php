@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Incidente;
 use App\Ticket;
+use App\TipoIncidente;
+use App\User;
 use Illuminate\Http\Request;
 use Exception;
 
@@ -70,6 +72,26 @@ class TicketController extends Controller
             fecha final oo
             estatus: en uso/disponible/no disponible xxx
          * */
-        return view('tickets.ticketIndividual');
+        // devolviendo el incidente que tiene el id que viene en la
+        // url
+        try {
+            $incidente = Incidente::where('id', '=', $request->id)->first();
+            // buscamos el ticket de ese incidente
+            $ticket = Ticket::where('incidenteId', '=', $incidente->id)->first();
+            // el empleado al que le pertenece el incidente
+            $empleado = User::findOrFail($incidente->empleadoId);
+
+            $tipo = TipoIncidente::where('id', '=', $incidente->tipo)->first();
+
+            return view('tickets.ticketIndividual',
+                compact('incidente',
+                    'ticket',
+                    'empleado',
+                    'tipo'));
+        }  catch(Exception $e)
+        {
+            redirect('/admin/incidentes')
+                ->with('Error', 'Error al intentar mostrar el ticket, inténtelo más tarde.');
+        }
     }
 }
