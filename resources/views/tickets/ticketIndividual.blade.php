@@ -18,6 +18,7 @@
                           class="alert @if($empleado->estado == 1) alert-info @else alert-danger @endif">
                     @if($empleado->estado == 1) Activo @else Inactivo @endif</span>
                 </p>
+                <p><span class="blue">Área: </span> @if(isset($area->nombre)) {{ $area->nombre }} @endif</p>
                 <p><span class="blue">Tipo de incidente: </span>@if(isset($tipo->nombre)) {{ $tipo->nombre }} @endif</p>
                 <p><span class="blue">Fecha y hora de inicio: </span>{{ $incidente->created_at }}</p>
                 <p><span class="blue">Fecha y hora de cierre: </span>{{ $ticket->created_at }}</p>
