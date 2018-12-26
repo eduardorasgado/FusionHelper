@@ -65,6 +65,6 @@ class IncidenteTableSeeder extends Seeder
         ]);
 
         // llamando a la factoria de incidentes
-        factory(App\Incidente::class, 20)->create();
+        factory(App\Incidente::class, 120)->create();
     }
 }

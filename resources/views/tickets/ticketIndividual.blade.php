@@ -5,7 +5,8 @@
 
         <div class="row">
             <div class="col-md-10"></div>
-            <a class="btn btn-primary" href="{{ route('incidentesAdminIndex') }}">Atrás</a>
+            <a class="btn btn-primary"
+               href="{{ url()->previous() }}">Atrás</a>
         </div>
         <h1>Ticket #{{ $ticket->id }}</h1>
         <br><br>

@@ -143,9 +143,14 @@ class AdministradorController extends Controller
         // ordenamos y paginamos de 10 en 10
         $incidentesRegistrados = Incidente::where('etiquetado', '=', 1)
             ->orderBy('id','desc')
-            ->paginate(10);
+            // paginacion para la vista incidentesList
+            ->paginate(5,['*'], 'page1');
 
-        $incidentesEnCola = Incidente::where('etiquetado', '=', 0)->get();
+        $incidentesEnCola = Incidente::where('etiquetado', '=', 0)
+            // diferenciamos dos paginaciones para una misma vista
+            // vease la vista para notar el manejo de la doble
+            // paginacion dentro de una vista
+            ->paginate(5, ['*'], 'page2');
 
         // tipos de incidente
         $tipos = TipoIncidente::all();

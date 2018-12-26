@@ -27,6 +27,16 @@
                 <div class="text-center">
                     <h1>Etiquetados</h1>
                     <span class="alert alert-info">Ordenados del incidente con ticket más reciente al más antiguo</span>
+                    <div class="row text-center">
+                        @if($registradosCount)
+                            <div class="mt-2 mx-auto">
+                            {{-- Esto permite la paginacion de dos tablas en una misma view--}}
+                            {{$incidentesRegistrados->appends(['page1' => $incidentesRegistrados->currentPage(),
+                            'page2' => $incidentesEnCola->currentPage()])
+                            ->links()}}
+                            </div>
+                        @endif
+                    </div>
                     <hr style="background-color: #1b4b72">
                 </div>
                 <div>
@@ -81,12 +91,14 @@
                     @endforeach
                 </div>
                 <div class="row text-center">
-                    @if(count($incidentesRegistrados))
-                    <!--margin top y margin x en class-->
-                        <div class="mt-2 mx-auto">
-                            {{ $incidentesRegistrados->links('pagination::bootstrap-4')}}
-                        </div>
-                    @endif
+                        @if($registradosCount)
+                            <div class="mt-2 mx-auto">
+                                {{-- Esto permite la paginacion de dos tablas en una misma view--}}
+                                {{$incidentesRegistrados->appends(['page1' => $incidentesRegistrados->currentPage(),
+                                'page2' => $incidentesEnCola->currentPage()])
+                                ->links()}}
+                            </div>
+                        @endif
                 </div>
             </div>
 
@@ -94,6 +106,15 @@
                 <div class="text-center">
                     <h1>En cola</h1>
                     <span class="alert alert-info">Ordenados del incidente más antiguo al más reciente</span>
+                    <div class="row text-center">
+                        <div class="mt-2 mx-auto">
+                        @if($encolaCount)
+                                {{$incidentesEnCola->appends(['page1' => $incidentesRegistrados->currentPage(),
+                                'page2' => $incidentesEnCola->currentPage()])
+                                ->links()}}
+                        @endif
+                        </div>
+                    </div>
                     <hr style="background-color: #1b4b72">
                 </div>
                 <div>
@@ -145,7 +166,17 @@
                         @endif
                     @endforeach
                 </div>
+                <div class="row text-center">
+                    <div class="mt-2 mx-auto">
+                        @if($encolaCount)
+                            {{$incidentesEnCola->appends(['page1' => $incidentesRegistrados->currentPage(),
+                            'page2' => $incidentesEnCola->currentPage()])
+                            ->links()}}
+                        @endif
+                    </div>
+                </div>
             </div>
+
         </div>
     </div>
 @endsection
