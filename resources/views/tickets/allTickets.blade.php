@@ -22,47 +22,32 @@
         <table class="table table-hover">
             <thead>
             <tr>
-                <th scope="col">#</th>
+                <th scope="col">Ticket</th>
                 <th scope="col">Caso</th>
                 <th scope="col">Tipo</th>
                 <th scope="col">Area</th>
-                <th scope="col">Inicio</th>
-                <th scope="col">Cierre</th>
+                <th scope="col">Reportado por</th>
+                <th scope="col">Reportado</th>
+                <th scope="col">Etiquetado</th>
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>sdsfds</td>
-                <td>sdsfds</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-                <td>dfasd</td>
-                <td>dfasd</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
-                <td>sdfscds</td>
-                <td>sdfscds</td>
-            </tr>
+            <?php $i = 0?>
+
+            @foreach($tickets as $ticket)
+                <tr>
+                    <th scope="row">{{ $ticket->id }}</th>
+                    <td>{{ $incidentes[$i]->caso }}</td>
+                    <td>{{ $tipos[$i]->nombre }}</td>
+                    <td>{{ $areas[$i]->nombre }}</td>
+                    <td>{{ $empleados[$i] }}</td>
+                    <td>{{ $incidentes[$i]->created_at }}</td>
+                    <td>{{ $ticket->created_at }}</td>
+                </tr>
+                <?php $i++?>
+            @endforeach
             </tbody>
         </table>
-
-        <?php $i = 0?>
-        @foreach($tickets as $ticket)
-            <p>Ticket #{{ $ticket->id }}: {{ $incidentes[$i]->caso }} |
-                {{ $empleados[$i] }} | {{ $tipos[$i]->nombre }} | {{ $areas[$i]->nombre }}</p>
-            <?php $i++?>
-        @endforeach
 
         @if(count($tickets))
         <!--margin top y margin x en class-->
