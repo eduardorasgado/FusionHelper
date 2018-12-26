@@ -32,6 +32,7 @@
         @endif
         <div class="row">
             @foreach($todasAreas as $area)
+                @if($area->estado)
                     <div class="col-md-4">
                         <div class="jumbotron jumboColorBlue">
                             <p>Nombre: <span class="blue">{{ $area->nombre }}</span></p>
@@ -49,6 +50,7 @@
                             </div>
                         </div>
                     </div>
+                @endif
             @endforeach
 
         </div>

@@ -40,7 +40,9 @@
                         <select class="form-control col-md-6" id="area" name="area">
                             <option value="">Seleccione un área</option>
                             @foreach ($areas as $area)
+                                @if($area->estado)
                                 <option value="{{ $area->id }}">{{ $area->nombre }}</option>
+                                @endif
                             @endforeach
                         </select>
                     </div>

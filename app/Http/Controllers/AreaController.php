@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Area;
 use App\Http\Requests\AreaRequest;
+use App\Incidente;
 use Illuminate\Http\Request;
 use Exception;
 
@@ -53,13 +54,26 @@ class AreaController extends Controller
     // MANEJE LOS INCIDENTES PASADOS QUE LE TIENEN
     public function deleteArea(Request $request)
     {
-        // borrar un area existente el la database
+        // borrar un area existente en la database
         $deletedArea = null;
         try{
             // en caso de que exista el area
             $area = Area::where('id', $request->id)->first();
             // TODO: SI EL AREA POSEE INCIDENTES NO ES ELIMINADO
             // SE LE DESACTIVA
+            // en dado caso de que exista un solo incidente que dependa del area
+            // entonces el area es desactivada
+            $incidentes = Incidente::where("area", "=", $request->id)->first();
+            if(isset($incidentes))
+            {
+                // desactivamos el area
+                $area->estado = 0;
+                $area->save();
+                // redireccionamos al listado de areas
+                return redirect('/area')
+                ->with('success', 'El área '.$deletedArea.' ha sido solamente desactivada debido a que
+                hay incidentes que dependen de ella.');
+            }
             $deletedArea = $area->nombre;
             // borrar el area
             $area->delete();
