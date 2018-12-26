@@ -113,7 +113,29 @@ class TicketController extends Controller
                     ->firstOrFail());
         }
 
+        $empleados = [];
+        $tipos = [];
+        $areas = [];
+        foreach($incidentes as $incidente)
+        {
+            // agregando los respectivos empleados de cada incidente
+            // agregando solo el nombre completo del empleado
+            $emp = User::findOrFail($incidente->empleadoId);
+
+            array_push($empleados,
+                "$emp->nombre $emp->apellidos");
+
+            // agregando tipos y areas
+            array_push($tipos,
+                TipoIncidente::where('id', '=', $incidente->tipo)
+                    ->firstOrFail());
+            array_push($areas,
+                Area::where('id', '=', $incidente->area)
+                    ->firstOrFail());
+        }
+
         return view('tickets.allTickets',
-            compact('tickets', 'incidentes'));
+            compact('tickets', 'incidentes', 'empleados',
+                'tipos', 'areas'));
     }
 }
