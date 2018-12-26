@@ -29,14 +29,13 @@
         }
 
         .jumboColorDark {
-            background-color: #2d995b;
             margin: 0px;
             padding: 12px;
             border-radius: 0px;
             opacity: 0.8;
         }
 
-        .jumboColorDark p, .jumboColorDark h1 {
+        .jumboColorDark p {
             color: white;
             margin: 0;
         }

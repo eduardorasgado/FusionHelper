@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container-fluid">
 
         <div class="row">
             <div class="col-md-10"></div>
@@ -23,9 +23,11 @@
             </div>
         @endif
         <div class="row">
-            <div class="col-md-5 jumbotron jumboColorDark left">
+            <div class="col-md-6 jumbotron jumboColorDark">
                 <div class="text-center">
                     <h1>Etiquetados</h1>
+                    <span class="alert alert-info">Ordenados del incidente con ticket más reciente al más antiguo</span>
+                    <hr style="background-color: #1b4b72">
                 </div>
                 <div>
                     @if(!$registradosCount)
@@ -78,10 +80,21 @@
                         @endif
                     @endforeach
                 </div>
+                <div class="row text-center">
+                    @if(count($incidentesRegistrados))
+                    <!--margin top y margin x en class-->
+                        <div class="mt-2 mx-auto">
+                            {{ $incidentesRegistrados->links('pagination::bootstrap-4')}}
+                        </div>
+                    @endif
+                </div>
             </div>
-            <div class="col-md-5 jumbotron jumboColorDark right">
+
+            <div class="col-md-6 jumbotron jumboColorDark">
                 <div class="text-center">
                     <h1>En cola</h1>
+                    <span class="alert alert-info">Ordenados del incidente más antiguo al más reciente</span>
+                    <hr style="background-color: #1b4b72">
                 </div>
                 <div>
                     @if(!$encolaCount)

@@ -140,7 +140,10 @@ class AdministradorController extends Controller
     public function getIncidentes()
     {
         // recolectamos todos los incidentes del usuario en cuestion
-        $incidentesRegistrados = Incidente::where('etiquetado', '=', 1)->get();
+        // ordenamos y paginamos de 10 en 10
+        $incidentesRegistrados = Incidente::where('etiquetado', '=', 1)
+            ->orderBy('id','desc')
+            ->paginate(10);
 
         $incidentesEnCola = Incidente::where('etiquetado', '=', 0)->get();
 

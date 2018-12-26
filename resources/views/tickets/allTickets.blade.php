@@ -36,7 +36,8 @@
 
             @foreach($tickets as $ticket)
                 <tr>
-                    <th scope="row">{{ $ticket->id }}</th>
+                    <th scope="row"><a class="btn btn-dark"
+                                       href="{{ route('ticketIndividual', $incidentes[$i]->id) }}">{{ $ticket->id }}</a></th>
                     <td>{{ $incidentes[$i]->caso }}</td>
                     <td>{{ $tipos[$i]->nombre }}</td>
                     <td>{{ $areas[$i]->nombre }}</td>
@@ -49,12 +50,14 @@
             </tbody>
         </table>
 
-        @if(count($tickets))
-        <!--margin top y margin x en class-->
-            <div class="mt-2 mx-auto">
-                {{ $tickets->links('pagination::bootstrap-4')}}
-            </div>
-        @endif
+        <div class="row text-center">
+            @if(count($tickets))
+            <!--margin top y margin x en class-->
+                <div class="mt-2 mx-auto">
+                    {{ $tickets->links('pagination::bootstrap-4')}}
+                </div>
+            @endif
+        </div>
     </div>
 @endsection
 
