@@ -29,10 +29,15 @@ class EmpleadoController extends Controller
         }
         // recolectamos todos los incidentes del usuario en cuestion
         $incidentesRegistrados = Incidente::where('empleadoId', '=', Auth::user()->id)
-                    ->where('etiquetado', '=', 1)->get();
+                    ->where('etiquetado', '=', 1)
+                    ->orderBy('id','desc')
+                    // paginacion para la vista incidentesList
+                    ->paginate(5,['*'], 'page1');
 
         $incidentesEnCola = Incidente::where('empleadoId', '=', Auth::user()->id)
-            ->where('etiquetado', '=', 0)->get();
+            ->where('etiquetado', '=', 0)
+            ->orderBy('id','desc')
+            ->paginate(5, ['*'], 'page2');
 
         // tipos de incidente
         $tipos = TipoIncidente::all();
