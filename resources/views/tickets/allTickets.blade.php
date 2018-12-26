@@ -56,6 +56,17 @@
             </tr>
             </tbody>
         </table>
+
+        @foreach($tickets as $ticket)
+            <p>Ticket es: {{ $ticket->id }}</p>
+        @endforeach
+
+        @if(count($tickets))
+        <!--margin top y margin x en class-->
+            <div class="mt-2 mx-auto">
+                {{ $tickets->links('pagination::bootstrap-4')}}
+            </div>
+        @endif
     </div>
 @endsection
 

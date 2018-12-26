@@ -100,6 +100,9 @@ class TicketController extends Controller
     {
         // devulve la lista del administrador para todos los tickets
         // disponibles en el sistema
-        return view('tickets.allTickets');
+        // TODO: PROBANDO PAGINATION
+        $tickets = Ticket::latest()->paginate(10);
+        return view('tickets.allTickets',
+            compact('tickets'));
     }
 }
