@@ -102,9 +102,18 @@ class TicketController extends Controller
         // disponibles en el sistema
         $tickets = Ticket::latest()->paginate(10);
 
-        // todos los demas datos
+        // array vacio donde meter todos los incidenes de los
+        // tikets seleccionados por la paginacion
+        $incidentes = [];
+        foreach ($tickets as $ticket)
+        {
+            // agregando al array los incidentes que corresponde por ticket
+            array_push($incidentes,
+                Incidente::where('id', '=', $ticket->incidenteId)
+                    ->firstOrFail());
+        }
 
         return view('tickets.allTickets',
-            compact('tickets'));
+            compact('tickets', 'incidentes'));
     }
 }

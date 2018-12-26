@@ -57,8 +57,10 @@
             </tbody>
         </table>
 
+        {{ $i = 0 }}
         @foreach($tickets as $ticket)
-            <p>Ticket es: {{ $ticket->id }}</p>
+            <p>Ticket #{{ $ticket->id }}: {{ $incidentes[$i]->caso }}</p>
+            {{ $i++ }}
         @endforeach
 
         @if(count($tickets))
