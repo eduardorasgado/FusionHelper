@@ -89,6 +89,10 @@ Route::group(['middleware' => ['is_admin']], function()
     Route::get('/admin/ticket/{id}',
         'TicketController@getTicketIndividual')
         ->name('ticketIndividual');
+    // ir a todos los tickets
+    Route::get('/admin/tickets/all',
+        'TicketController@getAllTickets')
+        ->name('getAllTickets');
 
     // AREAS
     // mostrar todas las existentes

@@ -93,5 +93,13 @@ class TicketController extends Controller
             redirect('/admin/incidentes')
                 ->with('Error', 'Error al intentar mostrar el ticket, inténtelo más tarde.');
         }
+        return redirect()->back();
+    }
+
+    public function getAllTickets()
+    {
+        // devulve la lista del administrador para todos los tickets
+        // disponibles en el sistema
+        return view('tickets.allTickets');
     }
 }
