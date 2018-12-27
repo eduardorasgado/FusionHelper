@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Proveedor;
 use Illuminate\Http\Request;
+use Exception;
 
 class ProveedorController extends Controller
 {
@@ -17,6 +18,8 @@ class ProveedorController extends Controller
             'email' => 'required|string|max:150',
             'rfc' => 'required|string|max:150'
         ]);
+
+        // TODO: VERIFICAR SI NO EXISTE YA EL PROVEEDOR
 
         $proveedor = Proveedor::create([
             'nombre' => $validatedData['nombre'],
@@ -40,7 +43,21 @@ class ProveedorController extends Controller
 
     public function delete(Request $request)
     {
+        $proveedorName = '';
+        try{
+            $proveedor = Proveedor::findOrFail($request->id);
+            $proveedorName = "$proveedor->nombre $proveedor->apellidos";
+            // TODO VERIFICAR QUE EL PROVEDOR NO DEPENDA DE OTROS Y
+            // ENTONCES SOLO DESACTIVAR
+
+            $proveedor->delete();
+        } catch(Exception $e)
+        {
+            return redirect('/almacen/listas')
+                ->with('Error', 'El proveedor no pudo ser eliminado, intentelo más tarde.');
+        }
         // eliminando un proveedor
-        return var_dump("proveedor delete");
+        return redirect('/almacen/listas')
+            ->with('successProveedor', "Se ha eliminado el proveedor $proveedorName");
     }
 }

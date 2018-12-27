@@ -20,8 +20,13 @@
                 Presione el mismo botón para cerrar la tabla en la que se encuentra.</span>
             <br><br><br>
             @if(Session::has('successProveedor'))
-                <div class="alert alert-warning" role="alert" style="margin-top: 5px">
+                <div class="alert alert-success" role="alert" style="margin-top: 5px">
                     <span class="text-success">{{ Session::get('successProveedor') }}</span>
+                </div>
+            @endif
+            @if(Session::has('Error'))
+                <div class="alert alert-danger" role="alert" style="margin-top: 5px">
+                    <span class="text-success">{{ Session::get('Error') }}</span>
                 </div>
             @endif
             <div class="row text-center">
@@ -53,8 +58,12 @@
                     <div class="card card-body">
                         @foreach($proveedores as $proveedor)
                             <p>{{ $proveedor->nombre }} | {{ $proveedor->apellidos }} | {{ $proveedor->email }}
-                                <a class="btn btn-dark" href="{{ route('updateProveedor', $proveedor->id) }}">Modificar</a>
-                                <a class="btn btn-danger" href="{{ route('deleteProveedor', $proveedor->id) }}">Eliminar</a>
+                                <a class="btn btn-dark"
+                                   href="{{ route('updateProveedor', $proveedor->id) }}"
+                                    onclick="return confirm('Está seguro de querer modificar este proveedor?')">Modificar</a>
+                                <a class="btn btn-danger"
+                                   href="{{ route('deleteProveedor', $proveedor->id) }}"
+                                   onclick="return confirm('Está seguro de querer eliminar este proveedor?')">Eliminar</a>
                             </p>
                         @endforeach
                     </div>

@@ -140,11 +140,11 @@ Route::group(['middleware' => ['is_admin']], function()
     Route::post('/almacen/proveedor/create',
         'ProveedorController@postProveedor')
         ->name('postProveedorRegistro');
-
+    // actualizar
     Route::get('/almacen/proveedor/update/{id}',
         'ProveedorController@update')
         ->name('updateProveedor');
-
+    // eliminar
     Route::get('/almacen/proveedor/delete/{id}',
         'ProveedorController@delete')
         ->name('deleteProveedor');
