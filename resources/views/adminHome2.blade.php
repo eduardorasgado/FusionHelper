@@ -61,10 +61,10 @@
                 <div class="jumbotron text-center">
                     <div class="dropdown">
                         <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                            Almacenamiento
+                            Almacén
                         </button>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{{url('registro/tecnico')}}">No registrados</a>
+                            <a class="dropdown-item" href="{{ route('proveedores') }}">Proveedores</a>
                             <a class="dropdown-item" href="{{url('registro/tecnico')}}">Registrados</a>
                             <a class="dropdown-item" href="{{url('registro/tecnico')}}">Todos</a>
                         </div>

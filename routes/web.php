@@ -124,4 +124,9 @@ Route::group(['middleware' => ['is_admin']], function()
     Route::get('/tipoincidente/delete/{id}',
         'TipoIncidenteController@delete')
         ->name('deleteTipoIncidente');
+
+    // PROVEEDORES
+    Route::get('/proveedores',
+        'ProveedorController@index')
+    ->name('proveedores');
 });
