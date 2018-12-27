@@ -125,12 +125,20 @@ Route::group(['middleware' => ['is_admin']], function()
         'TipoIncidenteController@delete')
         ->name('deleteTipoIncidente');
 
-    // PROVEEDORES
+    // ALMACEN
     Route::get('/almacen/registros',
         'AlmacenController@index')
     ->name('registros');
+
+    // tablas de activos, accesorios y proveedores
+    Route::get('/almacen/listas',
+        'AlmacenController@getListarAlmacen')
+        ->name('listarAlmacen');
+
+    // PROVEEDORES
     // registro del proveedor
     Route::post('/almacen/proveedor/create',
         'ProveedorController@postProveedor')
         ->name('postProveedorRegistro');
+
 });
