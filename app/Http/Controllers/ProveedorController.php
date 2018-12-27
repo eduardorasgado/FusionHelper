@@ -37,8 +37,25 @@ class ProveedorController extends Controller
 
     public function update(Request $request)
     {
-        // actualizando un prveedor
-        return var_dump("proveedor update");
+        // actualizando un prveedor -> get del formulario
+        $proveedor = null;
+        try {
+            $proveedor = Proveedor::findOrFail($request->id);
+
+        } catch(Exception $e)
+        {
+            return redirect('/almacen/listas')
+                ->with('Error', 'El proveedor no pudo ser actualizado, intentelo más tarde.');
+        }
+
+        // en caso de encontrar el proveedor
+        return view('almacen.updateProveedor',
+            compact('proveedor'));
+    }
+
+    public function postUpdate(Request $request)
+    {
+        return "[PROVEEDOR DEBIDAMENTE ACTUALIZADO] Id: $request->id";
     }
 
     public function delete(Request $request)

@@ -144,6 +144,10 @@ Route::group(['middleware' => ['is_admin']], function()
     Route::get('/almacen/proveedor/update/{id}',
         'ProveedorController@update')
         ->name('updateProveedor');
+    // actualizar proveedor post
+    Route::post('/almacen/proveedor/update/{id}',
+        'ProveedorController@postUpdate')
+        ->name('postUpdateProveedor');
     // eliminar
     Route::get('/almacen/proveedor/delete/{id}',
         'ProveedorController@delete')
