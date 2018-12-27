@@ -31,4 +31,16 @@ class ProveedorController extends Controller
         return redirect('/almacen/registros')->with('successProveedor', 'El proveedor '.$proveedor->nombre.
             ' ha sido creado con éxito.');
     }
+
+    public function update(Request $request)
+    {
+        // actualizando un prveedor
+        return var_dump("proveedor update");
+    }
+
+    public function delete(Request $request)
+    {
+        // eliminando un proveedor
+        return var_dump("proveedor delete");
+    }
 }

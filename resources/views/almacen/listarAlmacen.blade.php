@@ -52,7 +52,10 @@
                     </div>
                     <div class="card card-body">
                         @foreach($proveedores as $proveedor)
-                            <p>{{ $proveedor->nombre }} | {{ $proveedor->apellidos }} | {{ $proveedor->email }}</p>
+                            <p>{{ $proveedor->nombre }} | {{ $proveedor->apellidos }} | {{ $proveedor->email }}
+                                <a class="btn btn-dark" href="{{ route('updateProveedor', $proveedor->id) }}">Modificar</a>
+                                <a class="btn btn-danger" href="{{ route('deleteProveedor', $proveedor->id) }}">Eliminar</a>
+                            </p>
                         @endforeach
                     </div>
                 </div>

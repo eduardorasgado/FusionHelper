@@ -141,4 +141,12 @@ Route::group(['middleware' => ['is_admin']], function()
         'ProveedorController@postProveedor')
         ->name('postProveedorRegistro');
 
+    Route::get('/almacen/proveedor/update/{id}',
+        'ProveedorController@update')
+        ->name('updateProveedor');
+
+    Route::get('/almacen/proveedor/delete/{id}',
+        'ProveedorController@delete')
+        ->name('deleteProveedor');
+
 });
