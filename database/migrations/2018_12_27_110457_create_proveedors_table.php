@@ -23,6 +23,7 @@ class CreateProveedorsTable extends Migration
             // activo, desactivado
             // desactivado cuando no pueda eliminarse debido a sus
             //dependencias
+            // 0: inactivo, 1: estado activo
             $table->integer('estado');
             $table->timestamps();
         });

@@ -62,17 +62,6 @@ class TicketController extends Controller
     {
         // Muestra los datos de creacion de incidente y de creacion
         // de ticket, mas algunos datos de incidente
-        /*
-         * TODO: CAMPOS A MOSTRAR:
-         * area
-            tipo de incidente -> tipo(incidente)* ooo
-            empleado -> id del user(empleado/tecnico) ooo
-            tiempo inici ooo
-            tiempo cierre ooo
-            fecha inicio ooo
-            fecha final oo
-            estatus: en uso/disponible/no disponible xxx
-         * */
         // devolviendo el incidente que tiene el id que viene en la
         // url
         try {
