@@ -55,6 +55,30 @@ class ProveedorController extends Controller
 
     public function postUpdate(Request $request)
     {
+        // buscando la existecia de el proveedor
+        try{
+            $validatedData = $request->validate([
+                'nombre' => 'string|required|max:100',
+                'apellidos' => 'string|required|max:200',
+                'telefono' => 'required',
+                'email' => 'string|required|max: 200',
+                'rfc' => 'string|max:200'
+            ]);
+
+            $proveedor = Proveedor::find($request->id);
+
+            $proveedor->nombre = $validatedData["nombre"];
+            $proveedor->apellidos = $validatedData["apellidos"];
+            $proveedor->telefono = $validatedData["telefono"];
+            $proveedor->email = $validatedData["email"];
+            $proveedor->rfc = $validatedData["rfc"];
+
+            $proveedor->save();
+        } catch(Exception $e)
+        {
+            // Implementar error
+            return False;
+        }
         return "[PROVEEDOR DEBIDAMENTE ACTUALIZADO] Id: $request->id";
     }
 
