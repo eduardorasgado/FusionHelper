@@ -23,6 +23,8 @@ class CreateActivosTable extends Migration
             $table->string('color')->default('');
             // 0: disponible, 1: en uso
             $table->integer('status')->default(0);
+            $table->text('descripcion');
+            // podemos agregar un campo para guardar una url de imagen
 
             $table->timestamps();
         });
