@@ -56,6 +56,7 @@ class ProveedorController extends Controller
     public function postUpdate(Request $request)
     {
         // buscando la existecia de el proveedor
+        $proveedorName = "";
         try{
             $validatedData = $request->validate([
                 'nombre' => 'string|required|max:100',
@@ -74,12 +75,15 @@ class ProveedorController extends Controller
             $proveedor->rfc = $validatedData["rfc"];
 
             $proveedor->save();
+            $proveedorName = $proveedor->nombre;
         } catch(Exception $e)
         {
             // Implementar error
-            return False;
+            return redirect('/almacen/listas')
+                ->with('Error', 'El proveedor no pudo ser actualizado, intentelo más tarde.');
         }
-        return "[PROVEEDOR DEBIDAMENTE ACTUALIZADO] Id: $request->id";
+        return redirect('/almacen/listas')
+            ->with('successProveedor', 'El proveedor '.$proveedorName.' ha sido actualizado con éxito');
     }
 
     public function delete(Request $request)
