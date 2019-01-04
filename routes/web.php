@@ -153,4 +153,9 @@ Route::group(['middleware' => ['is_admin']], function()
         'ProveedorController@delete')
         ->name('deleteProveedor');
 
+    // ACTIVOS
+    Route::post('/almacen/activo/create',
+        'ActivoController@postRegistro')
+        ->name('postActivoRegistro');
+
 });
