@@ -66,7 +66,7 @@ class ProveedorController extends Controller
                 'rfc' => 'string|max:200'
             ]);
 
-            $proveedor = Proveedor::find($request->id);
+            $proveedor = Proveedor::findOrFail($request->id);
 
             $proveedor->nombre = $validatedData["nombre"];
             $proveedor->apellidos = $validatedData["apellidos"];

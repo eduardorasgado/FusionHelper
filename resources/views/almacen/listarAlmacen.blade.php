@@ -56,6 +56,9 @@
                         <h3>Proveedores</h3>
                     </div>
                     <div class="card card-body">
+                        @if(count($proveedores) == 0)
+                            <p>Aún no hay proveedores</p>
+                        @endif
                         @foreach($proveedores as $proveedor)
                             <p>{{ $proveedor->nombre }} | {{ $proveedor->apellidos }} | {{ $proveedor->email }}
                                 <a class="btn btn-dark"
