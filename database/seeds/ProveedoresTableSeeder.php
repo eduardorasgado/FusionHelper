@@ -12,6 +12,6 @@ class ProveedoresTableSeeder extends Seeder
     public function run()
     {
         // creaando 20 ejemplos de proveedor
-
+        factory(App\Proveedor::class, 20)->create();
     }
 }

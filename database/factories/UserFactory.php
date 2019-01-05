@@ -58,6 +58,17 @@ $factory->define(App\Incidente::class, function(Faker $faker)
 });
 
 //
+$factory->define(App\Proveedor::class, function(Faker $faker){
+    return [
+        'nombre' => $faker->firstName,
+        'apellidos' => $faker->lastName,
+        'telefono' => $faker->numberBetween($min=1287654321, $max=2147483645),
+        'email' => $faker->email,
+        'rfc' => $faker->swiftBicNumber,
+        // 1: activo, 0:inactivo
+        'estado' => 1
+    ];
+});
 
 $factory->define(App\Activo::class, function(Faker $faker){
     return [
@@ -67,6 +78,7 @@ $factory->define(App\Activo::class, function(Faker $faker){
         'marca' => $faker->company,
         'modelo' => $faker->tld,
         'color' => $faker->colorName,
+        // disponible
         'status' => 0,
         'descripcion' => $faker->paragraph($nbSentences = 3, $variableNbSentences = true)
     ];
