@@ -56,3 +56,18 @@ $factory->define(App\Incidente::class, function(Faker $faker)
         'created_at' => date("Y-m-d H:i:s")
     ];
 });
+
+//
+
+$factory->define(App\Activo::class, function(Faker $faker){
+    return [
+        'nombre' => $faker->word,
+        'serie' => $faker->numberBetween($min=1287654321, $max=2147483645),
+        'etiqueta' => $faker->swiftBicNumber,
+        'marca' => $faker->company,
+        'modelo' => $faker->tld,
+        'color' => $faker->colorName,
+        'status' => 0,
+        'descripcion' => $faker->paragraph($nbSentences = 3, $variableNbSentences = true)
+    ];
+});
