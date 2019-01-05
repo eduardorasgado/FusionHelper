@@ -1,0 +1,47 @@
+	Accesorios
+		nombre de accesorio
+		activo al que pertenece, activoId(listado de activos)
+		serie de accesorio
+		service tag
+		modelo
+		imagen
+	Resguardos        -> REPORTE IMPRESO
+		empleadoId
+		proveedorId
+		activoId
+		accesorioId
+		horaasignacion
+		horaentrega
+		fecha asignacion
+		fechaentrega
+		
+-CRUD-
+
+REPORTE
+pdfs de:
+Empleado
+Incidentes
+Tickets
+Areas
+
+FUSIONDESK TODO:
+
+Desarrollar almacenamiento:
+Activos
+Accesorios
+Reguardos
+
+REPORTE
+pdfs de:
+Empleado
+Incidentes
+Tickets
+Areas
+
+------later-----
+
+-filtros para los tickets en todos los tickets: https://www.youtube.com/watch?v=rpIWL4MPhkE
+-Sección modificar para áreas y tipo de incidente
+-Descargar fuente nunito en layout
+
+
