@@ -45,4 +45,21 @@ class ActivoController extends Controller
         return redirect('/almacen/registros')->with('successProveedor', 'El activo '.$request->nombre.
             ' ha sido creado con éxito.');
     }
+
+    public function update(Request $request)
+    {
+        //
+        return "[EDITANDO::GET ACTIVO]";
+    }
+
+    public function postUpdate(Request $request)
+    {
+        return "[EDITANDO::POST ACTIVO]";
+    }
+
+    public function delete(Request $request)
+    {
+        //
+        return "[ELIMINANDO ACTIVO]";
+    }
 }

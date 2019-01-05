@@ -158,4 +158,16 @@ Route::group(['middleware' => ['is_admin']], function()
         'ActivoController@postRegistro')
         ->name('postActivoRegistro');
 
+    Route::get('/almacen/activo/update/{id}',
+        'ActivoController@update')
+        ->name('updateActivo');
+
+    Route::post('/almacen/activo/update/{id}',
+        'ActivoController@postUpdate')
+        ->name('postUpdateActivo');
+
+    Route::get('/almacen/activo/delete/{id}',
+        'ActivoController@delete')
+        ->name('deleteActivo');
+
 });

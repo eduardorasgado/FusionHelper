@@ -80,7 +80,20 @@
                         <h3>Activos</h3>
                     </div>
                     <div class="card card-body">
-
+                        @if(count($activos) == 0)
+                            <p>Aún no hay Activos</p>
+                        @endif
+                        @foreach($activos as $activo)
+                            <p>{{ $activo->nombre }} | {{ $activo->serie }} | {{ $activo->marca }} |
+                                {{ $activo->modelo }} | {{ $activo->color }} |
+                                <a class="btn btn-dark"
+                                   href="{{ route('updateActivo', $activo->id) }}"
+                                   onclick="return confirm('Está seguro de querer modificar este activo?')">Modificar</a>
+                                <a class="btn btn-danger"
+                                   href="{{ route('deleteActivo', $activo->id) }}"
+                                   onclick="return confirm('Está seguro de querer eliminar este activo?')">Eliminar</a>
+                            </p>
+                        @endforeach
                     </div>
                 </div>
             </div>

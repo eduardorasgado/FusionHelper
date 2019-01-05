@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Activo;
 use App\Proveedor;
 use Illuminate\Http\Request;
 
@@ -18,11 +19,13 @@ class AlmacenController extends Controller
     {
         // Reunimos proveedores, activos y accesorios
         $proveedores = Proveedor::all();
+        $activos = Activo::all();
 
         // TODO: ACTIVOS Y ACCESORIOS, PAGINACION MULTIPLE
 
         // retornamos la vista de las tablas
         return view('almacen.listarAlmacen',
-            compact('proveedores'));
+            compact('proveedores',
+                'activos'));
     }
 }
