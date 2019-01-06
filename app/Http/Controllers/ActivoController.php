@@ -62,7 +62,38 @@ class ActivoController extends Controller
 
     public function postUpdate(Request $request)
     {
-        return "[EDITANDO::POST ACTIVO]".$request->id;
+        $RULE = 'required|string|max:50';
+        try {
+            $validatedData = $request->validate([
+                'nombre' => $RULE,
+                'serie' => $RULE,
+                'etiqueta' => $RULE,
+                'marca' => $RULE,
+                'modelo' => $RULE,
+                'color' => 'required|string|max:20',
+                'descripcion' => 'required|string|max:300'
+            ]);
+
+            $activo = Activo::findOrFail($request->id);
+            $activo->nombre = $validatedData['nombre'];
+            $activo->serie = $validatedData['serie'];
+            $activo->etiqueta = $validatedData['etiqueta'];
+            $activo->marca = $validatedData['marca'];
+            $activo->modelo = $validatedData['modelo'];
+            $activo->color = $validatedData['color'];
+            $activo->descripcion = $validatedData['descripcion'];
+
+            // guardando el activo actualizado
+            $activo->save();
+
+        } catch(Exception $e)
+        {
+            return redirect('/almacen/listas')
+                ->with('Error', 'El activo no pudo ser actualizado, intentelo más tarde.');
+        }
+
+        return redirect('/almacen/listas')
+            ->with('successProveedor', 'El activo se actualizo con éxito.');
     }
 
     public function delete(Request $request)
