@@ -49,12 +49,20 @@ class ActivoController extends Controller
     public function update(Request $request)
     {
         //
-        return "[EDITANDO::GET ACTIVO]";
+        try{
+            $activo = Activo::findOrFail($request->id);
+        } catch(Exception $e)
+        {
+            return redirect('/almacen/listas')
+                ->with('Error', 'El activo no pudo ser actualizado, intentelo más tarde.');
+        }
+        return view('almacen.updateActivo',
+            compact('activo'));
     }
 
     public function postUpdate(Request $request)
     {
-        return "[EDITANDO::POST ACTIVO]";
+        return "[EDITANDO::POST ACTIVO]".$request->id;
     }
 
     public function delete(Request $request)
