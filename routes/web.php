@@ -82,8 +82,8 @@ Route::group(['middleware' => ['is_admin']], function()
         'TicketController@getRegistro')
         ->name('getTicketRegistro');
     // generacion del ticket de cierto incidente
-    Route::get('/admin/ticket/create/aceptado/{id}',
-        'TicketController@getRegistroAceptado')
+    Route::post('/admin/ticket/create/{id}',
+        'TicketController@postRegistro')
         ->name('postTicketRegistroAceptado');
     // vista individual de ticket para administrador
     Route::get('/admin/ticket/{id}',

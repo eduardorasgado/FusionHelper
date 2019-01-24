@@ -21,7 +21,6 @@ class IncidenteController extends Controller
         }
         // form para el empleado
         // traemos todos los tipos de incidente registrados
-        $tipos = TipoIncidente::all();
         $areas = Area::all();
         // entregar el formulario de reporte de incidente
         return view('incidentesEmpleado.incidentesEmpleadoRegistro',
@@ -38,13 +37,9 @@ class IncidenteController extends Controller
         }
         // registro que hace el empleado
         $validatedData = $request->validate([
-            'tipo' => 'required|integer',
             'area' => 'required|integer',
             'prioridad' => 'required|integer',
-            'caso' => 'required|string|max:500',
-            'diagnostico' => 'required|string|max:800',
-            'solucion' => 'required|string|max:800',
-            'descripcion_fallo' => 'required|string|max:800'
+            'caso' => 'required|string|max:500'
         ]);
 
         try{
@@ -52,16 +47,10 @@ class IncidenteController extends Controller
             $newIncidente = Incidente::create([
                 'empleadoId' => Auth::user()->id,
                 'etiquetado' => 0,
-                // id del tipo mostrado en el registro
-                // traido de el render dinamico del modelo TipoIncidente
-                'tipo' => $validatedData['tipo'],
                 // baja: 0, media: 1, alta: 2
                 'prioridad' => $validatedData['prioridad'],
                 'area' => $validatedData['area'],
-                'caso' => $validatedData['caso'],
-                'diagnostico' => $validatedData['diagnostico'],
-                'solucion' => $validatedData['solucion'],
-                'descripcion_fallo' => $validatedData['descripcion_fallo']
+                'caso' => $validatedData['caso']
             ]);
 
         } catch (Exception $e)

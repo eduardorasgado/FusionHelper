@@ -17,14 +17,13 @@ class TicketController extends Controller
     {
         // Trae el formulario para generar el ticket de cierto incidente
         $incidente = Incidente::where('id', '=', $request->id)->first();
-
+        $tipos = TipoIncidente::all();
         // retormanos la vista
         return view('tickets.registroTicket',
-            compact('incidente'));
+            compact('incidente', 'tipos'));
     }
 
-    public function getRegistroAceptado(Request $request)
-    {
+    public function postRegistro(Request $request){
         // verificamos que exista
         $incidente = Incidente::where('id', '=', $request->id)->first();
         if(!isset($incidente))
@@ -42,10 +41,24 @@ class TicketController extends Controller
         $incidente->etiquetado = 1;
         $incidente->save();
 
+        $validatedData = $request->validate([
+            // Se valida mas data del incidente
+            'tipo' => 'required|integer',
+            'diagnostico' => 'required|string|max:800',
+            'solucion' => 'required|string|max:800',
+            'descripcion_fallo' => 'required|string|max:800'
+        ]);
+
         // creamos el ticket
         try{
             Ticket::create([
-                'incidenteId' => $request->id
+                'incidenteId' => $request->id,
+                // id del tipo mostrado en el registro
+                // traido de el render dinamico del modelo TipoIncidente
+                'tipo' => $validatedData['tipo'],
+                'diagnostico' => $validatedData['diagnostico'],
+                'solucion' => $validatedData['solucion'],
+                'descripcion_fallo' => $validatedData['descripcion_fallo']
             ]);
 
         } catch (Exception $e)

@@ -16,6 +16,11 @@ class CreateTicketsTable extends Migration
         Schema::create('tickets', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('incidenteId');
+            // toma del modelo TipoIncidente
+            $table->integer('tipo');
+            $table->longText('diagnostico');
+            $table->longText('solucion');
+            $table->longText('descripcion_fallo');
             $table->timestamps();
         });
     }

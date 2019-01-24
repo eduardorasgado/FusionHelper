@@ -21,17 +21,14 @@ class CreateIncidentesTable extends Migration
             // 0: no etiqeutado, 1: etiquetado
             $table->integer('etiquetado');
             // NAS, SAI, SOFTWARE
-            // toma del modelo TipoIncidente
-            $table->integer('tipo');
+
             // alta 2, media 1, baja 0
             $table->integer('prioridad');
             // jala el area dada en el modelo de area y areas existentes
             $table->integer('area');
             // string
             $table->string('caso');
-            $table->longText('diagnostico');
-            $table->longText('solucion');
-            $table->longText('descripcion_fallo');
+
             $table->timestamps();
         });
     }
