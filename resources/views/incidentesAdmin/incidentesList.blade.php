@@ -138,11 +138,7 @@
                                         {{ $areas[$incidente->area-1]->nombre }}
                                     @endif
                                 </p>
-                                <p><span class="orange">Tipo: </span>
-                                    @if(count($tipos) > 0)
-                                        {{ $tipos[$incidente->tipo-1]->nombre }}
-                                    @endif
-                                </p>
+
                                 <p><span class="orange">Prioridad: </span>
                                     @if($incidente->prioridad == 0)
                                         Baja
@@ -152,9 +148,6 @@
                                         Alta
                                     @endif
                                 </p>
-                                <p><span class="orange">Diagnóstico: </span>{{ $incidente->diagnostico }}</p>
-                                <p><span class="orange">Solución: </span>{{ $incidente->solucion }}</p>
-                                <p><span class="orange">Descripción del fallo: </span>{{ $incidente->descripcion_fallo }}</p>
                                 <p><span class="orange">Fecha de registro: </span> {{ $incidente->created_at }}</p>
                                 <div class="row">
                                     <div class="col-md-8"></div>

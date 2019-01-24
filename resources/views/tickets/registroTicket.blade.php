@@ -17,7 +17,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{ __('Area de registro de tipo de incidentes') }}</div>
+                    <div class="card-header">{{ __('Rellene aqui los datos del ticket a generar') }}</div>
                     @if(Session::has('Error'))
                         <div class="alert alert-warning" role="alert" style="margin-top: 5px">
                             <span class="text-success">{{ Session::get('Error') }}</span>

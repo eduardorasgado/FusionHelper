@@ -21,6 +21,10 @@
                 </p>
                 <p><span class="blue">Área: </span> @if(isset($area->nombre)) {{ $area->nombre }} @endif</p>
                 <p><span class="blue">Tipo de incidente: </span>@if(isset($tipo->nombre)) {{ $tipo->nombre }} @endif</p>
+                <p><span class="blue">Diagnóstico: </span>{{ $incidente->diagnostico }}</p>
+                <p><span class="blue">Solución: </span>{{ $incidente->solucion }}</p>
+                <p><span class="blue">Descripción del fallo: </span>{{ $incidente->descripcion_fallo }}</p>
+                <p><span class="blue">Fecha de registro: </span> {{ $incidente->created_at }}</p>
                 <p><span class="blue">Fecha y hora de inicio: </span>{{ $incidente->created_at }}</p>
                 <p><span class="blue">Fecha y hora de cierre: </span>{{ $ticket->created_at }}</p>
             </div>
