@@ -31,7 +31,7 @@
 
                     <div class="card-body">
                         <form method="POST" action="{{ route('postTicketRegistroAceptado', $incidente->id) }}"
-                              onsubmit="return confirm('Va a registrar una nueva área. Está seguro/a?');">
+                              onsubmit="return confirm('Va a registrar un ticket nuevo. Está seguro/a?');">
                             @csrf
 
                             @csrf
