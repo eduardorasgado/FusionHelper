@@ -3,14 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="cddbc456-9ab5-4391-995f-6537bde7d221" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdministradorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdministradorController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TicketController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TicketController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Incidente.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Incidente.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Ticket.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Ticket.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/IncidenteTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/IncidenteTableSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/incidentesAdmin/incidentesList.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/incidentesAdmin/incidentesList.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/tickets/registroTicket.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tickets/registroTicket.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/tickets/ticketIndividual.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tickets/ticketIndividual.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -155,11 +150,11 @@
                     </provider>
                   </entry>
                 </file>
-                <file pinned="false" current-in-tab="true">
+                <file pinned="false" current-in-tab="false">
                   <entry file="file://$PROJECT_DIR$/resources/views/tickets/registroTicket.blade.php">
                     <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="1170">
-                        <caret line="45" column="100" selection-start-line="45" selection-start-column="100" selection-end-line="45" selection-end-column="100" />
+                      <state relative-caret-position="286">
+                        <caret line="47" column="142" selection-start-line="47" selection-start-column="142" selection-end-line="47" selection-end-column="142" />
                       </state>
                     </provider>
                   </entry>
@@ -167,17 +162,20 @@
                 <file pinned="false" current-in-tab="false">
                   <entry file="file://$PROJECT_DIR$/resources/views/incidentesAdmin/incidentesList.blade.php">
                     <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="288">
-                        <caret line="66" column="65" selection-start-line="66" selection-start-column="65" selection-end-line="66" selection-end-column="65" />
+                      <state relative-caret-position="132">
+                        <caret line="72" column="52" lean-forward="true" selection-start-line="72" selection-start-column="52" selection-end-line="72" selection-end-column="52" />
                       </state>
                     </provider>
                   </entry>
                 </file>
-                <file pinned="false" current-in-tab="false">
+                <file pinned="false" current-in-tab="true">
                   <entry file="file://$PROJECT_DIR$/resources/views/tickets/ticketIndividual.blade.php">
                     <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="494">
-                        <caret line="19" column="83" lean-forward="true" selection-start-line="19" selection-start-column="83" selection-end-line="19" selection-end-column="83" />
+                      <state relative-caret-position="806">
+                        <caret line="31" column="10" lean-forward="true" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
+                        <folding>
+                          <element signature="e#626#665#0#HTML" expanded="true" />
+                        </folding>
                       </state>
                     </provider>
                   </entry>
@@ -225,8 +223,8 @@
                 <file pinned="false" current-in-tab="true">
                   <entry file="file://$PROJECT_DIR$/resources/views/incidentesEmpleado/incidentesEmpleadoRegistro.blade.php">
                     <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="442">
-                        <caret line="17" column="12" lean-forward="true" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
+                      <state relative-caret-position="300">
+                        <caret line="51" column="47" lean-forward="true" selection-start-line="51" selection-start-column="47" selection-end-line="51" selection-end-column="47" />
                       </state>
                     </provider>
                   </entry>
@@ -286,11 +284,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.49499545">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/routes/web.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="221">
-                  <caret line="75" column="17" lean-forward="true" selection-start-line="75" selection-start-column="17" selection-end-line="75" selection-end-column="17" />
+                <state relative-caret-position="663">
+                  <caret line="92" column="36" lean-forward="true" selection-start-line="92" selection-start-column="36" selection-end-line="92" selection-end-column="36" />
                 </state>
               </provider>
             </entry>
@@ -379,10 +377,10 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdministradorController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="442">
+                <state relative-caret-position="-182">
                   <caret line="152" column="71" selection-start-line="152" selection-start-column="71" selection-end-line="152" selection-end-column="71" />
                   <folding>
                     <element signature="e#39#52#0#PHP" expanded="true" />
@@ -407,8 +405,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TicketController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="312">
-                  <caret line="45" column="47" selection-start-line="45" selection-start-column="47" selection-end-line="45" selection-end-column="47" />
+                <state relative-caret-position="260">
+                  <caret line="94" selection-start-line="94" selection-end-line="94" />
                   <folding>
                     <element signature="e#40#53#0#PHP" expanded="true" />
                   </folding>
@@ -486,18 +484,18 @@
         <option value="$PROJECT_DIR$/database/migrations/2018_12_23_042312_create_incidentes_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2018_12_24_181545_create_tickets_table.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/IncidenteController.php" />
-        <option value="$PROJECT_DIR$/resources/views/tickets/ticketIndividual.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/incidentesEmpleado/incidentesEmpleadoRegistro.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/incidentesEmpleado/incidentesEmpleadoList.blade.php" />
         <option value="$PROJECT_DIR$/database/factories/UserFactory.php" />
         <option value="$PROJECT_DIR$/database/seeds/IncidenteTableSeeder.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Ticket.php" />
         <option value="$PROJECT_DIR$/app/Incidente.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/AdministradorController.php" />
         <option value="$PROJECT_DIR$/resources/views/tickets/registroTicket.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/incidentesAdmin/incidentesList.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/AdministradorController.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/TicketController.php" />
+        <option value="$PROJECT_DIR$/resources/views/tickets/ticketIndividual.blade.php" />
       </list>
     </option>
   </component>
@@ -729,21 +727,7 @@
       <workItem from="1546801950904" duration="3661000" />
       <workItem from="1546994867197" duration="643000" />
       <workItem from="1548319440441" duration="271000" />
-      <workItem from="1548321070110" duration="10886000" />
-    </task>
-    <task id="LOCAL-00032" summary="Administrador/Tipo de incidente: eliminar tipo listo y eliminar area listo. estado en area y tipo incidente controller">
-      <created>1545608427733</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1545608427733</updated>
-    </task>
-    <task id="LOCAL-00033" summary="Administrador/Incidente: Creación de formulario de incidente y controlador del post del incidente, con validador.">
-      <created>1545625318884</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1545625318884</updated>
+      <workItem from="1548321070110" duration="12554000" />
     </task>
     <task id="LOCAL-00034" summary="Administrador/Incidente: Ruta completa del listado de incidentes. Guardado del registro del nuevo incidente.&#10;Refactor de las rutas de admin y empleado de los incidentes.">
       <created>1545674055119</created>
@@ -1074,11 +1058,25 @@
       <option name="project" value="LOCAL" />
       <updated>1548326196833</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="General: refactor p4: depuracion de muestra de listado de tickets en el admin">
+      <created>1548332082577</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1548332082577</updated>
+    </task>
+    <task id="LOCAL-00082" summary="General: refactor p5: handling empty data in new ticket form">
+      <created>1548332662782</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1548332662782</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="208261000" />
+    <option name="totallyTimeSpent" value="209929000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1366" y="30" width="2560" height="1050" extended-state="6" />
@@ -1134,8 +1132,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Seeder: Creación de factory para incidentes, usado en seeder del mismo.&#10;Administrador/tickets: pendiente" />
-    <MESSAGE value="Administrador/ticket: en vista individual manejo de errores y devolución de área." />
     <MESSAGE value="Administrador/ticket: mandando tickets e incidentes con la paginacion en vista de todos los tickets" />
     <MESSAGE value="Administrador/ticket: mandando tipos, areas y empleados a la paginacion de todos los tickets." />
     <MESSAGE value="Administrador/ticket: formato de tabla para la vista de todos los tickets" />
@@ -1159,7 +1155,9 @@
     <MESSAGE value="General: refactor p1: campos de incidente pasan a ticket de acorde a la revision con el cliente." />
     <MESSAGE value="General: refactor p2: Cambio en los formularios de incidente y ticket, asi como en la vista de los listados." />
     <MESSAGE value="General: refactor p3: cambios en views de empleado" />
-    <option name="LAST_COMMIT_MESSAGE" value="General: refactor p3: cambios en views de empleado" />
+    <MESSAGE value="General: refactor p4: depuracion de muestra de listado de tickets en el admin" />
+    <MESSAGE value="General: refactor p5: handling empty data in new ticket form" />
+    <option name="LAST_COMMIT_MESSAGE" value="General: refactor p5: handling empty data in new ticket form" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/Http/Requests/AreaRequest.php">
@@ -1365,8 +1363,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_04_113109_create_activos_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="832">
-          <caret line="34" column="6" selection-start-line="34" selection-start-column="6" selection-end-line="34" selection-end-column="6" />
+        <state relative-caret-position="494">
+          <caret line="21" column="50" selection-start-line="21" selection-start-column="50" selection-end-line="21" selection-end-column="50" />
         </state>
       </provider>
     </entry>
@@ -1416,13 +1414,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/tickets/ticketIndividual.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="19" column="83" lean-forward="true" selection-start-line="19" selection-start-column="83" selection-end-line="19" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/incidentesAdmin/tiposIncidenteRegistro.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="78">
@@ -1468,13 +1459,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="75" column="17" lean-forward="true" selection-start-line="75" selection-start-column="17" selection-end-line="75" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/almacen/listarAlmacen.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="314">
@@ -1489,13 +1473,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/IncidenteTableSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="634">
-          <caret line="62" column="14" selection-start-line="62" selection-start-column="14" selection-end-line="62" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TipoIncidenteController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="793">
@@ -1506,16 +1483,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/incidentesEmpleado/incidentesEmpleadoRegistro.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="17" column="12" lean-forward="true" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdministradorController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
+        <state relative-caret-position="-182">
           <caret line="152" column="71" selection-start-line="152" selection-start-column="71" selection-end-line="152" selection-end-column="71" />
           <folding>
             <element signature="e#39#52#0#PHP" expanded="true" />
@@ -1523,26 +1493,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/incidentesAdmin/incidentesList.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/incidentesEmpleado/incidentesEmpleadoRegistro.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="66" column="65" selection-start-line="66" selection-start-column="65" selection-end-line="66" selection-end-column="65" />
+        <state relative-caret-position="300">
+          <caret line="51" column="47" lean-forward="true" selection-start-line="51" selection-start-column="47" selection-end-line="51" selection-end-column="47" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/tickets/registroTicket.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1170">
-          <caret line="45" column="100" selection-start-line="45" selection-start-column="100" selection-end-line="45" selection-end-column="100" />
+        <state relative-caret-position="286">
+          <caret line="47" column="142" selection-start-line="47" selection-start-column="142" selection-end-line="47" selection-end-column="142" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/seeds/IncidenteTableSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="634">
+          <caret line="62" column="14" selection-start-line="62" selection-start-column="14" selection-end-line="62" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="92" column="36" lean-forward="true" selection-start-line="92" selection-start-column="36" selection-end-line="92" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/incidentesAdmin/incidentesList.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="72" column="52" lean-forward="true" selection-start-line="72" selection-start-column="52" selection-end-line="72" selection-end-column="52" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TicketController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="45" column="47" selection-start-line="45" selection-start-column="47" selection-end-line="45" selection-end-column="47" />
+        <state relative-caret-position="260">
+          <caret line="94" selection-start-line="94" selection-end-line="94" />
           <folding>
             <element signature="e#40#53#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/tickets/ticketIndividual.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="806">
+          <caret line="31" column="10" lean-forward="true" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
+          <folding>
+            <element signature="e#626#665#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -84,13 +84,17 @@ class TicketController extends Controller
         // devolviendo el incidente que tiene el id que viene en la
         // url
         try {
-            $incidente = Incidente::where('id', '=', $request->id)->firstOrFail();
-            // buscamos el ticket de ese incidente
-            $ticket = Ticket::where('incidenteId', '=', $incidente->id)->firstOrFail();
+            $ticket = Ticket::where('id', '=', $request->id)->firstOrFail();
+
+            $incidente = Incidente::where('id', '=', $ticket->incidenteId)->firstOrFail();
+
             // el empleado al que le pertenece el incidente
             $empleado = User::findOrFail($incidente->empleadoId);
-            $tipo = TipoIncidente::where('id', '=', $incidente->tipo)->firstOrFail();
+
+            $tipo = TipoIncidente::where('id', '=', $ticket->tipo)->firstOrFail();
+
             $area = Area::where('id', '=', $incidente->area)->firstOrFail();
+
             return view('tickets.ticketIndividual',
                 compact('incidente',
                     'ticket',
