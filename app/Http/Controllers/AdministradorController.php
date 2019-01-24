@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 use App\Area;
 use App\Incidente;
+use App\Ticket;
 use App\TipoIncidente;
 use App\User;
 use Illuminate\Http\Request;
 use Exception;
+use Illuminate\Support\Facades\DB;
+
 
 class AdministradorController extends Controller
 {
@@ -146,6 +149,10 @@ class AdministradorController extends Controller
             // paginacion para la vista incidentesList
             ->paginate(5,['*'], 'page1');
 
+        // TODO: tratar de optimizar, toma todos los tickets
+        // podria tomar todos paginados como los incidentes registrados
+        $tickets = Ticket::all();
+
         $incidentesEnCola = Incidente::where('etiquetado', '=', 0)
             // diferenciamos dos paginaciones para una misma vista
             // vease la vista para notar el manejo de la doble
@@ -168,7 +175,8 @@ class AdministradorController extends Controller
                 'areas',
                 'registradosCount',
                 'encolaCount',
-                'empleados'));
+                'empleados',
+                'tickets'));
     }
 
     // UTILIDADES GENERALES

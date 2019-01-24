@@ -8,6 +8,6 @@ class Ticket extends Model
 {
     //
     protected $fillable = [
-        'incidenteId', 'solucion', 'descripcion_fallo', 'tipo'
+        'incidenteId', 'solucion', 'descripcion_fallo', 'tipo', 'diagnostico'
     ];
 }

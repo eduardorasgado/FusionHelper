@@ -9,6 +9,11 @@
         <h1>Registro del ticket del incidente {{ $incidente->id }}</h1>
         <br><br>
         <br>
+        @if(Session::has('Error'))
+            <div class="alert alert-warning" role="alert" style="margin-top: 5px">
+                <span class="text-success">{{ Session::get('Error') }}</span>
+            </div>
+        @endif
 
             <div class="jumbotron  text-center">
                 <h3>El incidente es: {{ $incidente->caso }}</h3>
@@ -38,7 +43,7 @@
 
                             <div class="form-group row">
                                 <label for="tipo" class="col-md-4 col-form-label text-md-right">{{ __('Tipo de incidente') }}</label>
-                                <select class="form-control col-md-6" id="tipo" name="tipo">
+                                <select class="form-control col-md-6" id="tipo" name="tipo" required>
                                     <option value="">Seleccione un tipo de incidente</option>
                                     @foreach ($tipos as $tipo)
                                         @if($tipo->estado)

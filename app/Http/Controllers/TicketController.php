@@ -37,20 +37,20 @@ class TicketController extends Controller
             redirect('/admin/incidentes')
                 ->with('Error', 'No es posible volver a generar el ticket del incidente.');
         }
-        // modificamos el incidente para actualizar su estado de ticket
-        $incidente->etiquetado = 1;
-        $incidente->save();
 
-        $validatedData = $request->validate([
-            // Se valida mas data del incidente
-            'tipo' => 'required|integer',
-            'diagnostico' => 'required|string|max:800',
-            'solucion' => 'required|string|max:800',
-            'descripcion_fallo' => 'required|string|max:800'
-        ]);
+        // TODO: Si falla el required del tipo en el frontend
+        // falla el create pero no se registra el error y no lo reporta
 
         // creamos el ticket
         try{
+            $validatedData = $request->validate([
+                // Se valida mas data del incidente
+                'tipo' => 'required|integer',
+                'diagnostico' => 'required|string|max:800',
+                'solucion' => 'required|string|max:800',
+                'descripcion_fallo' => 'required|string|max:800'
+            ]);
+
             Ticket::create([
                 'incidenteId' => $request->id,
                 // id del tipo mostrado en el registro
@@ -60,6 +60,10 @@ class TicketController extends Controller
                 'solucion' => $validatedData['solucion'],
                 'descripcion_fallo' => $validatedData['descripcion_fallo']
             ]);
+
+            // modificamos el incidente para actualizar su estado de ticket
+            $incidente->etiquetado = 1;
+            $incidente->save();
 
         } catch (Exception $e)
         {

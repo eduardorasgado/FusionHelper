@@ -42,15 +42,15 @@ $factory->define(App\Incidente::class, function(Faker $faker)
         'empleadoId'=> $faker->numberBetween($min=2, $max=8),
         'etiquetado' => 0,
         // tipo de incidente
-        'tipo' => $faker->numberBetween($min=1, $max=3),
+        //'tipo' => $faker->numberBetween($min=1, $max=3),
         // depende del area de igual forma
         'area' => $faker->numberBetween($min=1, $max=2),
         // baja, media, alta
         'prioridad' => $faker->numberBetween($min=0, $max=2),
         'caso' => $faker->sentence($nbWords = 6, $variableNbWords = true),
-        'diagnostico' => $faker->text($max=150),
-        'solucion' => $faker->text($max=150),
-        'descripcion_fallo' => $faker->paragraph($nbSentences = 3, $variableNbSentences = true),
+        //'diagnostico' => $faker->text($max=150),
+        //'solucion' => $faker->text($max=150),
+        //'descripcion_fallo' => $faker->paragraph($nbSentences = 3, $variableNbSentences = true),
         // insertando una fecha
         //'created_at' => $faker->dateTime($format="Y-m-d H:i:s", $max = 'now')
         'created_at' => date("Y-m-d H:i:s")

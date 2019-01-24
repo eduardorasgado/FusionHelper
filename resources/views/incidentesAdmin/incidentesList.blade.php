@@ -47,47 +47,50 @@
                         </div>
                     @endif
                     @foreach($incidentesRegistrados as $incidente)
-                        @if($incidente->etiquetado)
-                            <div class="jumbotron jumboBox">
-                                <h4><span class="orange">Caso: </span>{{ $incidente->caso }}</h4>
-                                <p><span class="orange">Reportado por:</span>
-                                    {{ $empleados[$incidente->empleadoId-1]->nombre }}
-                                    {{ $empleados[$incidente->empleadoId-1]->apellidos }}
-                                </p>
-                                <hr style="background-color: white">
-                                <p><span class="orange">Área: </span>
-                                    @if(count($areas) > 0)
-                                        {{ $areas[$incidente->area-1]->nombre }}
-                                    @endif
-                                </p>
-                                <p><span class="orange">Tipo: </span>
-                                    @if(count($tipos) > 0)
-                                        {{-- el tipo de incidente[tipo - 1] debido a que array inicia en 0,
-                                         y el primer id del tipo de incidente es 1--}}
-                                        {{ $tipos[$incidente->tipo-1]->nombre }}
-                                    @endif
-                                </p>
-                                <p><span class="orange">Prioridad: </span>
-                                    @if($incidente->prioridad == 0)
-                                        Baja
-                                    @elseif($incidente->prioridad == 1)
-                                        Media
-                                    @elseif($incidente->prioridad == 2)
-                                        Alta
-                                    @endif
-                                </p>
-                                <p><span class="orange">Diagnóstico: </span>{{ $incidente->diagnostico }}</p>
-                                <p><span class="orange">Solución: </span>{{ $incidente->solucion }}</p>
-                                <p><span class="orange">Descripción del fallo: </span>{{ $incidente->descripcion_fallo }}</p>
-                                <p><span class="orange">Fecha de registro: </span> {{ $incidente->created_at }}</p>
-                                <div class="row">
-                                    <div class="col-md-8"></div>
-                                    <div class="col-md-2">
-                                        <a href="{{ route('ticketIndividual', $incidente->id) }}" class="btn btn-primary">Ver ticket</a>
+                        @foreach($tickets as $ticket)
+                                @if($ticket->incidenteId == $incidente->id)
+                                    <div class="jumbotron jumboBox">
+                                        <h4><span class="orange">Caso: </span>{{ $incidente->caso }}</h4>
+                                        <p><span class="orange">Reportado por:</span>
+                                            {{ $empleados[$incidente->empleadoId-1]->nombre }}
+                                            {{ $empleados[$incidente->empleadoId-1]->apellidos }}
+                                        </p>
+                                        <hr style="background-color: white">
+                                        <p><span class="orange">Área: </span>
+                                            @if(count($areas) > 0)
+                                                {{ $areas[$incidente->area-1]->nombre }}
+                                            @endif
+                                        </p>
+
+                                        <p><span class="orange">Tipo: </span>
+                                            @if(count($tipos) > 0)
+                                                {{ $tipos[$ticket->tipo-1]->nombre }}
+                                            @endif
+                                        </p>
+
+                                        <p><span class="orange">Prioridad: </span>
+                                            @if($incidente->prioridad == 0)
+                                                Baja
+                                            @elseif($incidente->prioridad == 1)
+                                                Media
+                                            @elseif($incidente->prioridad == 2)
+                                                Alta
+                                            @endif
+                                        </p>
+                                        <p><span class="orange">Diagnóstico: </span>{{ $ticket->diagnostico }}</p>
+                                        <p><span class="orange">Solución: </span>{{ $ticket->solucion }}</p>
+                                        <p><span class="orange">Descripción del fallo: </span>{{ $ticket->descripcion_fallo }}</p>
+                                        <p><span class="orange">Fecha de registro: </span> {{ $ticket->created_at }}</p>
+
+                                        <div class="row">
+                                            <div class="col-md-8"></div>
+                                            <div class="col-md-2">
+                                                <a href="{{ route('ticketIndividual', $incidente->id) }}" class="btn btn-primary">Ver ticket</a>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                        @endif
+                                @endif
+                        @endforeach
                     @endforeach
                 </div>
                 <div class="row text-center">
