@@ -43,15 +43,24 @@
 
                             <div class="form-group row">
                                 <label for="tipo" class="col-md-4 col-form-label text-md-right">{{ __('Tipo de incidente') }}</label>
-                                <select class="form-control col-md-6" id="tipo" name="tipo" required>
-                                    <option value="">Seleccione un tipo de incidente</option>
-                                    @foreach ($tipos as $tipo)
-                                        @if($tipo->estado)
-                                            {{-- Solo si el estado del tipo es activo este es elegible--}}
-                                            <option value="{{ $tipo->id }}">{{ $tipo->nombre }}</option>
-                                        @endif
-                                    @endforeach
-                                </select>
+                                <div class="col-md-6">
+
+                                    <select class="form-control{{ $errors->has('tipo') ? ' is-invalid' : '' }}" id="tipo" name="tipo" required>
+                                        <option value="">Seleccione un tipo de incidente</option>
+                                        @foreach ($tipos as $tipo)
+                                            @if($tipo->estado)
+                                                {{-- Solo si el estado del tipo es activo este es elegible--}}
+                                                <option value="{{ $tipo->id }}">{{ $tipo->nombre }}</option>
+                                            @endif
+                                        @endforeach
+                                    </select>
+                                    @if ($errors->has('tipo'))
+                                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('tipo') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+
                             </div>
 
                             <div class="form-group row">
