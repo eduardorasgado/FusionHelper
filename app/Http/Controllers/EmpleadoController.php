@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Area;
 use App\Incidente;
+use App\Ticket;
 use App\TipoIncidente;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -34,6 +35,8 @@ class EmpleadoController extends Controller
                     // paginacion para la vista incidentesList
                     ->paginate(5,['*'], 'page1');
 
+        $tickets = Ticket::all();
+
         $incidentesEnCola = Incidente::where('empleadoId', '=', Auth::user()->id)
             ->where('etiquetado', '=', 0)
             ->orderBy('id','desc')
@@ -53,6 +56,7 @@ class EmpleadoController extends Controller
                 'tipos',
                 'areas',
                 'registradosCount',
-                'encolaCount'));
+                'encolaCount',
+                'tickets'));
     }
 }
