@@ -49,13 +49,21 @@
                                         <hr style="background-color: white">
                                         <p><span class="orange">Área: </span>
                                             @if(count($areas) > 0)
-                                                {{ $areas[$incidente->area-1]->nombre }}
+                                                @foreach($areas as $area)
+                                                    @if($area->id == $incidente->area)
+                                                        {{ $area->nombre }}
+                                                    @endif
+                                                @endforeach
                                             @endif
                                         </p>
 
                                         <p><span class="orange">Tipo: </span>
                                             @if(count($tipos) > 0)
-                                                {{ $tipos[$ticket->tipo-1]->nombre }}
+                                                @foreach($tipos as $tipo)
+                                                    @if($tipo->id == $ticket->tipo)
+                                                        {{ $tipo->nombre }}
+                                                    @endif
+                                                @endforeach
                                             @endif
                                         </p>
 
@@ -118,7 +126,11 @@
                                 <hr style="background-color: white">
                                 <p><span class="orange">Área: </span>
                                     @if(count($areas) > 0)
-                                        {{ $areas[$incidente->area-1]->nombre }}
+                                        @foreach($areas as $area)
+                                            @if($area->id == $incidente->area)
+                                                {{ $area->nombre }}
+                                            @endif
+                                        @endforeach
                                     @endif
                                 </p>
                                 <p><span class="orange">Prioridad: </span>
