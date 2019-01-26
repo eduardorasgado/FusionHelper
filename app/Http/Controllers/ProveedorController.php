@@ -20,6 +20,7 @@ class ProveedorController extends Controller
         ]);
 
         // TODO: VERIFICAR SI NO EXISTE YA EL PROVEEDOR
+        // TODO: Manejo de errores
 
         $proveedor = Proveedor::create([
             'nombre' => $validatedData['nombre'],

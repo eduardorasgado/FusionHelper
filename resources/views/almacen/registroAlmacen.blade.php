@@ -24,6 +24,11 @@
                     <span class="text-success">{{ Session::get('successProveedor') }}</span>
                 </div>
             @endif
+            @if(Session::has('Error'))
+                <div class="alert alert-warning" role="alert" style="margin-top: 5px">
+                    <span class="text-danger">{{ Session::get('Error') }}</span>
+                </div>
+            @endif
             <div class="row text-center">
                 {{-- MENSAJES DE SUCCESS DESDE LOS CONTROLLERS DE PROVEEDOR, ACTIVO Y ACCESORIOS--}}
                 <div class="col-md-5"></div>
@@ -54,14 +59,7 @@
                         <form action="{{ route('postProveedorRegistro') }}"
                               method="POST" onsubmit="return confirm('Está seguro de hacer este registro?')">
                             @csrf
-                            {{--
-                                nombre
-                                apellidos
-                                telefono
-                                email
-                                rfc
-                                estado
-                            --}}
+
                             <div class="form-group row">
                                 <label for="nombre" class="col-md-4 col-form-label text-md-right">{{ __('Nombre') }}</label>
 
@@ -156,7 +154,7 @@
                                     <label for="nombre" class="col-md-4 col-form-label text-md-right">{{ __('Nombre') }}</label>
 
                                     <div class="col-md-6">
-                                        <input id="nombre" type="text" class="form-control{{ $errors->has('nombre') ? ' is-invalid' : '' }}" name="nombre" value="{{ old('name') }}" required autofocus>
+                                        <input id="nombre" type="text" class="form-control{{ $errors->has('nombre') ? ' is-invalid' : '' }}" name="nombre" value="{{ old('nombre') }}" required autofocus>
 
                                         @if ($errors->has('nombre'))
                                             <span class="invalid-feedback" role="alert">
@@ -277,7 +275,7 @@
                                     <label for="nombre" class="col-md-4 col-form-label text-md-right">{{ __('Nombre') }}</label>
 
                                     <div class="col-md-6">
-                                        <input id="nombre" type="text" class="form-control{{ $errors->has('nombre') ? ' is-invalid' : '' }}" name="nombre" value="{{ old('name') }}" required autofocus>
+                                        <input id="nombre" type="text" class="form-control{{ $errors->has('nombre') ? ' is-invalid' : '' }}" name="nombre" value="{{ old('nombre') }}" required autofocus>
 
                                         @if ($errors->has('nombre'))
                                             <span class="invalid-feedback" role="alert">
@@ -287,8 +285,8 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="activo" class="col-md-4 col-form-label text-md-right">{{ __('Activo') }}</label>
-                                    <select class="form-control col-md-6" id="activo" name="activo">
+                                    <label for="activoId" class="col-md-4 col-form-label text-md-right">{{ __('Activo') }}</label>
+                                    <select class="form-control col-md-6" id="activoId" name="activoId">
                                         <option value="">Seleccione un activo</option>
                                         @foreach ($activos as $activo)
                                             <option value="{{ $activo->id }}">{{ $activo->nombre }} |
@@ -313,7 +311,7 @@
                                     <label for="service_tag" class="col-md-4 col-form-label text-md-right">{{ __('Service tag') }}</label>
 
                                     <div class="col-md-6">
-                                        <input id="service_tag" type="text" class="form-control{{ $errors->has('service_tag') ? ' is-invalid' : '' }}" name="tag" value="{{ old('tag') }}" required>
+                                        <input id="service_tag" type="text" class="form-control{{ $errors->has('service_tag') ? ' is-invalid' : '' }}" name="service_tag" value="{{ old('service_tag') }}" required>
 
                                         @if ($errors->has('service_tag'))
                                             <span class="invalid-feedback" role="alert">

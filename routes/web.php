@@ -136,6 +136,9 @@ Route::group(['middleware' => ['is_admin']], function()
         ->name('listarAlmacen');
 
     // PROVEEDORES
+    Route::get('/almacen/proveedor/create',
+        function(){ return redirect('/');})
+        ->name('postProveedorRegistro');
     // registro del proveedor
     Route::post('/almacen/proveedor/create',
         'ProveedorController@postProveedor')
@@ -154,6 +157,10 @@ Route::group(['middleware' => ['is_admin']], function()
         ->name('deleteProveedor');
 
     // ACTIVOS
+    Route::get('/almacen/activo/create',
+        function(){ return redirect('/');})
+        ->name('postActivoRegistro');
+
     Route::post('/almacen/activo/create',
         'ActivoController@postRegistro')
         ->name('postActivoRegistro');
@@ -171,6 +178,9 @@ Route::group(['middleware' => ['is_admin']], function()
         ->name('deleteActivo');
 
     // ACCESORIOS
+    Route::get('/almacen/accesorio/create',
+        function(){ return redirect('/');})
+        ->name('postAccesorioRegistro');
     Route::post('/almacen/accesorio/create',
         'AccesorioController@postRegistro')
         ->name('postAccesorioRegistro');
