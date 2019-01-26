@@ -105,7 +105,27 @@
                         <h3>Accesorios</h3>
                     </div>
                     <div class="card card-body">
-
+                        @if(count($accesorios) == 0)
+                            <p>Aún no hay Activos</p>
+                        @endif
+                        @foreach($accesorios as $accesorio)
+                            <p> Nombre: {{ $accesorio->nombre }}
+                                | Serie:{{ $accesorio->serie }}
+                                | Marca: {{ $accesorio->marca }} |
+                                Modelo: {{ $accesorio->modelo }} |
+                                @foreach($activos as $activo)
+                                    @if($accesorio->activoId == $activo->id)
+                                        Activo al que pertenece: {{ $activo->nombre }}
+                                    @endif
+                                @endforeach
+                                <a class="btn btn-dark"
+                                   href="{{ route('updateActivo', $accesorio->id) }}"
+                                   onclick="return confirm('Está seguro de querer modificar este activo?')">Modificar</a>
+                                <a class="btn btn-danger"
+                                   href="{{ route('deleteActivo', $accesorio->id) }}"
+                                   onclick="return confirm('Está seguro de querer eliminar este activo?')">Eliminar</a>
+                            </p>
+                        @endforeach
                     </div>
                 </div>
             </div>

@@ -23,12 +23,14 @@ class AlmacenController extends Controller
         // Reunimos proveedores, activos y accesorios
         $proveedores = Proveedor::all();
         $activos = Activo::all();
+        $accesorios = Accesorio::all();
 
         // TODO: ACTIVOS Y ACCESORIOS, PAGINACION MULTIPLE
 
         // retornamos la vista de las tablas
         return view('almacen.listarAlmacen',
             compact('proveedores',
-                'activos'));
+                'activos',
+                    'accesorios'));
     }
 }
