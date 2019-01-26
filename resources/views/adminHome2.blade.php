@@ -19,8 +19,10 @@
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="{{route('incidentesAdminIndex')}}">Incidentes</a>
                             <a class="dropdown-item" href="{{ route('getAllTickets') }}">Tickets</a>
+                            <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{ route('incidenteEmpleadoRegistro') }}">Agregar un incidente</a>
                             <a class="dropdown-item" href="{{ route('incidentesEmpleadoIndex') }}">Mis incidentes registrados</a>
+                            <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{ route('tiposIncidenteRegistro') }}">Agregar tipo de incidente</a>
                             <a class="dropdown-item" href="{{ route('tiposIncidente') }}">Ver tipos de incidente</a>
                         </div>
