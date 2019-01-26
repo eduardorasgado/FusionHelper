@@ -119,10 +119,10 @@
                                     @endif
                                 @endforeach
                                 <a class="btn btn-dark"
-                                   href="{{ route('updateActivo', $accesorio->id) }}"
+                                   href="{{ route('updateAccesorio', $accesorio->id) }}"
                                    onclick="return confirm('Está seguro de querer modificar este activo?')">Modificar</a>
                                 <a class="btn btn-danger"
-                                   href="{{ route('deleteActivo', $accesorio->id) }}"
+                                   href="{{ route('deleteAccesorio', $accesorio->id) }}"
                                    onclick="return confirm('Está seguro de querer eliminar este activo?')">Eliminar</a>
                             </p>
                         @endforeach

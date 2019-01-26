@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cddbc456-9ab5-4391-995f-6537bde7d221" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/laravel-plugin.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AccesorioController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AccesorioController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProveedorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProveedorController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/almacen/registroAlmacen.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/almacen/registroAlmacen.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/almacen/listarAlmacen.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/almacen/listarAlmacen.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -68,7 +69,7 @@
           <splitter split-orientation="horizontal" split-proportion="0.8043956">
             <split-first>
               <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-                <file pinned="false" current-in-tab="true">
+                <file pinned="false" current-in-tab="false">
                   <entry file="file://$PROJECT_DIR$/resources/views/almacen/registroAlmacen.blade.php">
                     <provider selected="true" editor-type-id="text-editor">
                       <state relative-caret-position="-422">
@@ -140,11 +141,11 @@
                     </provider>
                   </entry>
                 </file>
-                <file pinned="false" current-in-tab="false">
+                <file pinned="false" current-in-tab="true">
                   <entry file="file://$PROJECT_DIR$/resources/views/almacen/listarAlmacen.blade.php">
                     <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="2132">
-                        <caret line="82" column="49" selection-start-line="82" selection-start-column="49" selection-end-line="82" selection-end-column="49" />
+                      <state relative-caret-position="314">
+                        <caret line="124" column="66" selection-start-line="124" selection-start-column="66" selection-end-line="124" selection-end-column="66" />
                       </state>
                     </provider>
                   </entry>
@@ -292,8 +293,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="185" column="40" lean-forward="true" selection-start-line="185" selection-start-column="40" selection-end-line="185" selection-end-column="40" />
+            <state relative-caret-position="39">
+              <caret line="184" column="4" selection-start-line="184" selection-start-column="4" selection-end-line="184" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AccesorioController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="91">
+              <caret line="42" column="34" selection-start-line="42" selection-start-column="34" selection-end-line="42" selection-end-column="34" />
+              <folding>
+                <element signature="e#40#58#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -334,27 +347,6 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AccesorioController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="22" column="56" selection-start-line="22" selection-start-column="56" selection-end-line="22" selection-end-column="56" />
-              <folding>
-                <element signature="e#40#58#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2018_12_23_042312_create_incidentes_table.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="24" column="38" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_25_224055_create_accesorios_table.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -369,6 +361,18 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="338">
               <caret line="22" column="34" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
+              <folding>
+                <element signature="e#40#58#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AlmacenController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="399">
+              <caret line="33" column="20" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
               <folding>
                 <element signature="e#40#58#0#PHP" expanded="true" />
               </folding>
@@ -424,7 +428,6 @@
         <option value="$PROJECT_DIR$/resources/views/almacen/updateProveedor.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_01_04_113109_create_activos_table.php" />
         <option value="$PROJECT_DIR$/app/Activo.php" />
-        <option value="$PROJECT_DIR$/resources/views/almacen/listarAlmacen.blade.php" />
         <option value="$PROJECT_DIR$/database/seeds/ProveedoresTableSeeder.php" />
         <option value="$PROJECT_DIR$/database/seeds/ActivosTableSeeder.php" />
         <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
@@ -448,10 +451,11 @@
         <option value="$PROJECT_DIR$/resources/views/incidentesEmpleado/incidentesEmpleadoList.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_01_25_224055_create_accesorios_table.php" />
         <option value="$PROJECT_DIR$/app/Accesorio.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/AlmacenController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ProveedorController.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/almacen/registroAlmacen.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/AlmacenController.php" />
+        <option value="$PROJECT_DIR$/resources/views/almacen/listarAlmacen.blade.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AccesorioController.php" />
       </list>
     </option>
@@ -685,21 +689,7 @@
       <workItem from="1546994867197" duration="643000" />
       <workItem from="1548319440441" duration="271000" />
       <workItem from="1548321070110" duration="13412000" />
-      <workItem from="1548466822948" duration="9306000" />
-    </task>
-    <task id="LOCAL-00038" summary="Empleado/Incidente: Clasificacion de incidentes en etiquetados y en cola. Frontend definido y render de los incidentes.[TIPOS: Debugged].">
-      <created>1545685629867</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1545685629867</updated>
-    </task>
-    <task id="LOCAL-00039" summary="Empleado/Incidente: Manejo de mensajes en caso de no ser aun aceotado: restricciones.&#10;Al ser rechazado el empleado será eliminado.&#10;TIME: Tiempo y zona horaria cambiada a cdmx.">
-      <created>1545687669320</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1545687669320</updated>
+      <workItem from="1548466822948" duration="10692000" />
     </task>
     <task id="LOCAL-00040" summary="Administrador/Incidente: Frontend de lista de incidentes, etiquetados y no etiquetados.">
       <created>1545692622136</created>
@@ -1030,11 +1020,25 @@
       <option name="project" value="LOCAL" />
       <updated>1548481095096</updated>
     </task>
-    <option name="localTasksCounter" value="87" />
+    <task id="LOCAL-00087" summary="Administrador: Guardando un accesorio y manejo de errores y validaciones.">
+      <created>1548484285901</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1548484285901</updated>
+    </task>
+    <task id="LOCAL-00088" summary="Administrador: Renderear todos los accesorios en la lista del almacen">
+      <created>1548485118821</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1548485118822</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="220093000" />
+    <option name="totallyTimeSpent" value="221479000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1366" y="30" width="1366" height="738" extended-state="6" />
@@ -1090,8 +1094,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Administrador/Incidentes: paginado dual e independiente de etiquetados y en cola en vista de todos los incidentes. Seeder: creacion de 124 incidentes para testing." />
-    <MESSAGE value="Empleados/Incidentes: paginacion independiente en etiiquetados y en cola, en todos los incidentes por empleado." />
     <MESSAGE value="Empleados/Proveedor: Ruta, migración, modelo, controlador y vista." />
     <MESSAGE value="Empleados/Proveedor: Creación de formulario y procesamiento de la petición post. Creación de controlador de almacén." />
     <MESSAGE value="Empleados/Proveedor: Creación de ruta y creación de vista para listar activos, accesorios y proveedores. carga de proveedores en la vista." />
@@ -1115,7 +1117,9 @@
     <MESSAGE value="General: refactor p7: El listado de empleado e incidentes ya esta depurado" />
     <MESSAGE value="Administrador: Creacion de modelo, controlador y migracion de accesorio. Formulario de registro de accesorio." />
     <MESSAGE value="Administrador: Ruta para el nuevo accesorio" />
-    <option name="LAST_COMMIT_MESSAGE" value="Administrador: Ruta para el nuevo accesorio" />
+    <MESSAGE value="Administrador: Guardando un accesorio y manejo de errores y validaciones." />
+    <MESSAGE value="Administrador: Renderear todos los accesorios en la lista del almacen" />
+    <option name="LAST_COMMIT_MESSAGE" value="Administrador: Renderear todos los accesorios en la lista del almacen" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php">
@@ -1337,13 +1341,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/almacen/listarAlmacen.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2132">
-          <caret line="82" column="49" selection-start-line="82" selection-start-column="49" selection-end-line="82" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/incidentesAdmin/tiposIncidenteRegistro.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="78">
@@ -1410,16 +1407,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AlmacenController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-65">
-          <caret line="17" column="32" lean-forward="true" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
-          <folding>
-            <element signature="e#40#58#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Accesorio.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
@@ -1461,16 +1448,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ProveedorController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="22" column="34" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
-          <folding>
-            <element signature="e#40#58#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_04_113109_create_activos_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="325">
@@ -1488,13 +1465,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="185" column="40" lean-forward="true" selection-start-line="185" selection-start-column="40" selection-end-line="185" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/almacen/registroAlmacen.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-422">
@@ -1502,10 +1472,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AlmacenController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="33" column="20" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
+          <folding>
+            <element signature="e#40#58#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/almacen/listarAlmacen.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="124" column="66" selection-start-line="124" selection-start-column="66" selection-end-line="124" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ProveedorController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="22" column="34" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
+          <folding>
+            <element signature="e#40#58#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="39">
+          <caret line="184" column="4" selection-start-line="184" selection-start-column="4" selection-end-line="184" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AccesorioController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="22" column="56" selection-start-line="22" selection-start-column="56" selection-end-line="22" selection-end-column="56" />
+        <state relative-caret-position="91">
+          <caret line="42" column="34" selection-start-line="42" selection-start-column="34" selection-end-line="42" selection-end-column="34" />
           <folding>
             <element signature="e#40#58#0#PHP" expanded="true" />
           </folding>

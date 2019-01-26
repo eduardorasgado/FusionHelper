@@ -181,8 +181,21 @@ Route::group(['middleware' => ['is_admin']], function()
     Route::get('/almacen/accesorio/create',
         function(){ return redirect('/');})
         ->name('postAccesorioRegistro');
+
     Route::post('/almacen/accesorio/create',
         'AccesorioController@postRegistro')
         ->name('postAccesorioRegistro');
+
+    Route::get('/almacen/accesorio/update/{id}',
+    'AccesorioController@update')
+    ->name('updateAccesorio');
+
+    Route::post('/almacen/accesorio/update/{id}',
+        'AccesorioController@postUpdate')
+        ->name('postUpdateAccesorio');
+
+    Route::get('/almacen/accesorio/delete/{id}',
+        'AccesorioController@delete')
+        ->name('deleteAccesorio');
 
 });

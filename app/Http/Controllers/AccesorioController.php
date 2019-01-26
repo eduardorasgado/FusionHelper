@@ -37,4 +37,19 @@ class AccesorioController extends Controller
         return redirect('/almacen/registros')->with('successProveedor', 'El accesorio'.$acc_name.
             ' ha sido creado con éxito.');
     }
+
+    public function update(Request $request){
+        //
+        return "Update accesorio: ".$request->id;
+    }
+
+    public function postUpdate(Request $request){
+        //
+    }
+
+    public function delete(Request $request)
+    {
+        //
+        return "Delete accesorio: ".$request->id;
+    }
 }
