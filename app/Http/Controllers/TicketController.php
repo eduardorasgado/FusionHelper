@@ -117,16 +117,21 @@ class TicketController extends Controller
         // array vacio donde meter todos los incidenes de los
         // tikets seleccionados por la paginacion
         $incidentes = [];
+        $tipos = [];
         foreach ($tickets as $ticket)
         {
             // agregando al array los incidentes que corresponde por ticket
             array_push($incidentes,
                 Incidente::where('id', '=', $ticket->incidenteId)
                     ->firstOrFail());
+
+            // agregando tipos
+            array_push($tipos,
+                TipoIncidente::where('id', '=', $ticket->tipo)
+                    ->firstOrFail());
         }
 
         $empleados = [];
-        $tipos = [];
         $areas = [];
         foreach($incidentes as $incidente)
         {
@@ -137,10 +142,7 @@ class TicketController extends Controller
             array_push($empleados,
                 "$emp->nombre $emp->apellidos");
 
-            // agregando tipos y areas
-            array_push($tipos,
-                TipoIncidente::where('id', '=', $incidente->tipo)
-                    ->firstOrFail());
+            // agregando areas
             array_push($areas,
                 Area::where('id', '=', $incidente->area)
                     ->firstOrFail());

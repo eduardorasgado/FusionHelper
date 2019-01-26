@@ -37,7 +37,7 @@
             @foreach($tickets as $ticket)
                 <tr>
                     <th scope="row"><a class="btn btn-dark"
-                                       href="{{ route('ticketIndividual', $incidentes[$i]->id) }}">{{ $ticket->id }}</a></th>
+                                       href="{{ route('ticketIndividual', $ticket->id) }}">{{ $ticket->id }}</a></th>
                     <td>{{ $incidentes[$i]->caso }}</td>
                     <td>{{ $tipos[$i]->nombre }}</td>
                     <td>{{ $areas[$i]->nombre }}</td>
