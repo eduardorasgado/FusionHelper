@@ -21,9 +21,17 @@
                     <a href="{{ route('incidentesEmpleadoIndex') }}"><button class="btn btn-success">Ver todos mis incidentes registrados</button></a>
                 </div>
             </div>
-            <div class="col-md-4 text-center">
-                <div class="jumbotron">
-                    <a href="{{route('empleado')}}"><button class="btn btn-success">Solicitar un activo</button></a>
+            <div class="col-md-4">
+                <div class="jumbotron text-center">
+                    <div class="dropdown">
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                            Activos
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{{route('empleado')}}">Solicitar un activo</a>
+                            <a class="dropdown-item" href="{{route('empleado')}}">Ver mis activos</a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
