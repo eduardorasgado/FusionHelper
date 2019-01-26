@@ -170,4 +170,9 @@ Route::group(['middleware' => ['is_admin']], function()
         'ActivoController@delete')
         ->name('deleteActivo');
 
+    // ACCESORIOS
+    Route::post('/almacen/accesorio/create',
+        'AccesorioController@postRegistro')
+        ->name('postAccesorioRegistro');
+
 });

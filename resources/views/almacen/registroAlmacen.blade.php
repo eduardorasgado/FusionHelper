@@ -269,7 +269,7 @@
                     </div>
                     <div class="card card-body">
                         <div class="card card-body">
-                            <form action="{{ route('postActivoRegistro') }}"
+                            <form action="{{ route('postAccesorioRegistro') }}"
                                   method="POST" onsubmit="return confirm('Está seguro de hacer este registro?')">
                                 @csrf
 
