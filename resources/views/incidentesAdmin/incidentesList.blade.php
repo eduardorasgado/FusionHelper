@@ -61,7 +61,11 @@
                                         <hr style="background-color: white">
                                         <p><span class="orange">Área: </span>
                                             @if(count($areas) > 0)
-                                                {{ $areas[$incidente->area-1]->nombre }}
+                                                @foreach($areas as $area)
+                                                    @if($area->id == $incidente->area)
+                                                        {{ $area->nombre }}
+                                                        @endif
+                                                @endforeach
                                             @endif
                                         </p>
 
@@ -145,7 +149,11 @@
                                 <hr style="background-color: white">
                                 <p><span class="orange">Área: </span>
                                     @if(count($areas) > 0)
-                                        {{ $areas[$incidente->area-1]->nombre }}
+                                        @foreach($areas as $area)
+                                            @if($area->id == $incidente->area)
+                                                {{ $area->nombre }}
+                                            @endif
+                                        @endforeach
                                     @endif
                                 </p>
 

@@ -14,6 +14,7 @@ class EmpleadoController extends Controller
     //
     public function index()
     {
+        if(Auth::user()->tipo_user == 0) { return redirect("/admin"); }
         // si el usuario ya fue activado o no
         $authorized = Auth::user()->estado;
         // retornar al tablero pero con el dato de la autoizacion
