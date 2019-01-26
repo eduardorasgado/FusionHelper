@@ -151,14 +151,7 @@
                             <form action="{{ route('postActivoRegistro') }}"
                                   method="POST" onsubmit="return confirm('Está seguro de hacer este registro?')">
                                 @csrf
-                                {{--
-                                    nombre
-                                    apellidos
-                                    telefono
-                                    email
-                                    rfc
-                                    estado
-                                --}}
+
                                 <div class="form-group row">
                                     <label for="nombre" class="col-md-4 col-form-label text-md-right">{{ __('Nombre') }}</label>
 
@@ -275,7 +268,84 @@
                         <h3>Registro de Accesorio</h3>
                     </div>
                     <div class="card card-body">
+                        <div class="card card-body">
+                            <form action="{{ route('postActivoRegistro') }}"
+                                  method="POST" onsubmit="return confirm('Está seguro de hacer este registro?')">
+                                @csrf
 
+                                <div class="form-group row">
+                                    <label for="nombre" class="col-md-4 col-form-label text-md-right">{{ __('Nombre') }}</label>
+
+                                    <div class="col-md-6">
+                                        <input id="nombre" type="text" class="form-control{{ $errors->has('nombre') ? ' is-invalid' : '' }}" name="nombre" value="{{ old('name') }}" required autofocus>
+
+                                        @if ($errors->has('nombre'))
+                                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('nombre') }}</strong>
+                                    </span>
+                                        @endif
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="activo" class="col-md-4 col-form-label text-md-right">{{ __('Activo') }}</label>
+                                    <select class="form-control col-md-6" id="activo" name="activo">
+                                        <option value="">Seleccione un activo</option>
+                                        @foreach ($activos as $activo)
+                                            <option value="{{ $activo->id }}">{{ $activo->nombre }} |
+                                                marca: {{ $activo->marca }} | modelo: {{ $activo->modelo }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="serie" class="col-md-4 col-form-label text-md-right">{{ __('Serie') }}</label>
+
+                                    <div class="col-md-6">
+                                        <input id="serie" type="text" class="form-control{{ $errors->has('serie') ? ' is-invalid' : '' }}" name="serie" value="{{ old('serie') }}" required>
+
+                                        @if ($errors->has('serie'))
+                                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('serie') }}</strong>
+                                    </span>
+                                        @endif
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="service_tag" class="col-md-4 col-form-label text-md-right">{{ __('Service tag') }}</label>
+
+                                    <div class="col-md-6">
+                                        <input id="service_tag" type="text" class="form-control{{ $errors->has('service_tag') ? ' is-invalid' : '' }}" name="tag" value="{{ old('tag') }}" required>
+
+                                        @if ($errors->has('service_tag'))
+                                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('service_tag') }}</strong>
+                                    </span>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="modelo" class="col-md-4 col-form-label text-md-right">{{ __('Modelo') }}</label>
+
+                                    <div class="col-md-6">
+                                        <input id="modelo" type="text" class="form-control{{ $errors->has('modelo') ? ' is-invalid' : '' }}" name="modelo" value="{{ old('modelo') }}" required>
+
+                                        @if ($errors->has('modelo'))
+                                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('modelo') }}</strong>
+                                    </span>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <div class="form-group row mb-0 text-center">
+                                    <div class="col-md-6 offset-md-4">
+                                        <button type="submit" class="btn btn-primary">
+                                            {{ __('Guardar Accesorio') }}
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>

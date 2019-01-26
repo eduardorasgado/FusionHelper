@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Accesorio;
 use App\Activo;
 use App\Proveedor;
 use Illuminate\Http\Request;
@@ -12,7 +13,9 @@ class AlmacenController extends Controller
     public function index()
     {
         // devuelve la pagina de registros de almacem
-        return view('almacen.registroAlmacen');
+        $activos = Activo::all();
+        return view('almacen.registroAlmacen',
+            compact('activos'));
     }
 
     public function getListarAlmacen()
