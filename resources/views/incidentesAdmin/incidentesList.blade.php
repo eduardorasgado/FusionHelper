@@ -52,8 +52,11 @@
                                     <div class="jumbotron jumboBox">
                                         <h4><span class="orange">Caso: </span>{{ $incidente->caso }}</h4>
                                         <p><span class="orange">Reportado por:</span>
-                                            {{ $empleados[$incidente->empleadoId-1]->nombre }}
-                                            {{ $empleados[$incidente->empleadoId-1]->apellidos }}
+                                            @foreach($empleados as $empleado)
+                                                @if($empleado->id == $incidente->empleadoId)
+                                                    {{ $empleado->nombre }} {{ $empleado->apellidos }}
+                                                @endif
+                                            @endforeach
                                         </p>
                                         <hr style="background-color: white">
                                         <p><span class="orange">Área: </span>
@@ -64,7 +67,11 @@
 
                                         <p><span class="orange">Tipo: </span>
                                             @if(count($tipos) > 0)
-                                                {{ $tipos[$ticket->tipo-1]->nombre }}
+                                                @foreach($tipos as $tipo)
+                                                    @if($tipo->id == $ticket->tipo)
+                                                        {{ $tipo->nombre }}
+                                                    @endif
+                                                @endforeach
                                             @endif
                                         </p>
 

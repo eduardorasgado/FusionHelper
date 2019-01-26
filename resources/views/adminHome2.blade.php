@@ -19,6 +19,7 @@
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="{{route('incidentesAdminIndex')}}">Incidentes</a>
                             <a class="dropdown-item" href="{{ route('getAllTickets') }}">Tickets</a>
+                            <a class="dropdown-item" href="{{ route('incidenteEmpleadoRegistro') }}">Agregar un incidente</a>
                             <a class="dropdown-item" href="{{ route('tiposIncidenteRegistro') }}">Agregar tipo de incidente</a>
                             <a class="dropdown-item" href="{{ route('tiposIncidente') }}">Ver tipos de incidente</a>
                         </div>
@@ -75,7 +76,7 @@
             <div class="col-md-4">
                 <div class="jumbotron text-center">
                     <div class="dropdown">
-                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" disabled>
                             Mantenimiento
                         </button>
                         <div class="dropdown-menu">
@@ -105,7 +106,8 @@
         <h2>Otras acciones</h2>
         <div class="row">
             <div class="jumbotron col-md-6">
-                <a href="{{url('registro/tecnico')}}"><button class="btn btn-success">Otra tarea aqui</button></a></div>
+                <a href="{{url('registro/tecnico')}}"><button class="btn btn-success" disabled>
+                        Otra tarea aqui</button></a></div>
             </div>
         </div>
     </div>

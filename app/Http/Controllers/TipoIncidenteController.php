@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Incidente;
+use App\Ticket;
 use App\TipoIncidente;
 use Illuminate\Http\Request;
 use Exception;
@@ -57,15 +58,16 @@ class TipoIncidenteController extends Controller
         // solamente lo desactiva
 
         // borrar un area existente el la database
-        $deletedTipo = null;
+        $deletedTipo = '';
         try{
             // en caso de que exista el area
             $tipoIncidente = TipoIncidente::where('id', $request->id)->first();
             // SI EL AREA POSEE INCIDENTES NO ES ELIMINADO
             // SE LE DESACTIVA
             $deletedTipo = $tipoIncidente->nombre;
-            $incidente = Incidente::where('tipo', '=', $request->id)->first();
-            if(isset($incidente))
+            $ticket = Ticket::where('tipo', '=', $request->id)->first();
+
+            if(isset($ticket))
             {
                 // inactivamos el tipo de incidente
                 $tipoIncidente->estado = 0;
@@ -75,9 +77,9 @@ class TipoIncidenteController extends Controller
                     ->with('success', 'El tipo de incidente '.$deletedTipo.' fue inactivado
                     debido a que hay incidentes que dependen de él.');
             }
-            // borrar el area
+            // borrar el tipo de incidente
             $tipoIncidente->delete();
-            // eliminando el area
+            // eliminando el tipo de incidente
         } catch(Exception $e)
         {
             return redirect('/tipoincidente')
