@@ -99,6 +99,15 @@ class ActivoController extends Controller
     public function delete(Request $request)
     {
         //
-        return "[ELIMINANDO ACTIVO]";
+        try{
+            $activo = Activo::findOrFail($request->id);
+            $activo->delete();
+        } catch(Exception $e){
+            //
+            return redirect('/almacen/listas')
+                ->with('Error', 'El activo no pudo ser eliminado, intentelo más tarde.');
+        }
+        return redirect('/almacen/listas')
+            ->with('successProveedor', 'El activo se ha eliminado');
     }
 }
