@@ -84,7 +84,14 @@ class AccesorioController extends Controller
 
     public function delete(Request $request)
     {
-        //
-        return "Delete accesorio: ".$request->id;
+        try{
+            $accesorio = Accesorio::find($request->id);
+            $accesorio->delete();
+        } catch(Exception $e){
+            return redirect('/almacen/listas')
+                ->with('Error', 'El accesorio no pudo ser eliminado, intentelo más tarde.');
+        }
+        return redirect('/almacen/listas')
+            ->with('successProveedor', 'El accesorio ha sido eliminado con éxito');
     }
 }
