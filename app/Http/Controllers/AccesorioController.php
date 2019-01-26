@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Accesorio;
+use App\Activo;
 use Illuminate\Http\Request;
 use Exception;
 
@@ -39,12 +40,46 @@ class AccesorioController extends Controller
     }
 
     public function update(Request $request){
-        //
-        return "Update accesorio: ".$request->id;
+        // devolver el formulario autocompletado
+        $accesorio = Accesorio::findOrFail($request->id);
+        $activos = Activo::all();
+        return view('almacen.updateAccesorio',
+            compact('accesorio',
+                'activos'));
     }
 
     public function postUpdate(Request $request){
         //
+         // buscando la existecia de el proveedor
+        $accesorioName = "";
+        try{
+            $RULE = 'string|required|max:100';
+            $validatedData = $request->validate([
+                'nombre' => $RULE,
+                'activoId' => 'required',
+                'serie' => $RULE,
+                'service_tag' => $RULE,
+                'modelo' => $RULE
+            ]);
+
+            $accesorio = Accesorio::findOrFail($request->id);
+
+            $accesorio->nombre = $validatedData["nombre"];
+            $accesorio->activoId = $validatedData["activoId"];
+            $accesorio->serie = $validatedData["serie"];
+            $accesorio->service_tag = $validatedData["service_tag"];
+            $accesorio->modelo = $validatedData["modelo"];
+
+            $accesorio->save();
+            $accesorioName = $accesorio->nombre;
+        } catch(Exception $e)
+        {
+            // Implementar error
+            return redirect('/almacen/listas')
+                ->with('Error', 'El accesorio no pudo ser actualizado, intentelo más tarde.');
+        }
+        return redirect('/almacen/listas')
+            ->with('successProveedor', 'El accesorio '.$accesorioName.' ha sido actualizado con éxito');
     }
 
     public function delete(Request $request)
