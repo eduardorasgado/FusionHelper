@@ -18,8 +18,12 @@ class ResguardoController extends Controller
         //
         $user_resguardos = Resguardo::where('empleadoId', '=', Auth::id())->get();
 
+        $activos = Activo::all();
+        $accesorios = Accesorio::all();
         return view('resguardos.allResguardosEmpleado',
-            compact('user_resguardos'));
+            compact('user_resguardos',
+                            'activos',
+                                'accesorios'));
     }
     //
     public function getRegistro(Request $request)
