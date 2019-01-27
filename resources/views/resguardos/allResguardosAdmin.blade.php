@@ -37,7 +37,7 @@
                 <th scope="col">Hora de asignacion</th>
                 <th scope="col">Fecha de entrega</th>
                 <th scope="col">Hora de entrega</th>
-                <th scope="col">Aprobar(PDF)</th>
+                <th scope="col">Aprobar(vale/PDF)</th>
             </tr>
             </thead>
             <tbody>
@@ -88,7 +88,8 @@
                     <td>@if(isset($resguardo->fecha_entrega)) {{ $resguardo->fecha_entrega }} @else sin asignar @endif</td>
                     <td>@if(isset($resguardo->hora_entrega)) {{ $resguardo->hora_entrega }} @else sin asignar @endif</td>
                     <td>@if($resguardo->estado == 0)
-                            <a class="btn btn-success" href="{{ route('generateResguardoPDF', $resguardo->id) }}">PDF</a>
+                            <a class="btn btn-success" href="{{ route('generateResguardoPDF', $resguardo->id) }}"
+                            onclick="return confirm('Seguro de generar el Vale?')">PDF</a>
                             @else
                             Entregado
                         @endif</td>

@@ -6,13 +6,13 @@ use App\Accesorio;
 use App\Activo;
 use App\Resguardo;
 use App\User;
+use Barryvdh\DomPDF\Facade as PDF;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Exception;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use function MongoDB\BSON\toJSON;
-use PhpParser\Node\Expr\Array_;
+use Illuminate\Support\Facades\Storage;
 
 class ResguardoController extends Controller
 {
@@ -97,7 +97,11 @@ class ResguardoController extends Controller
     public function generateResguardoPDF(Request $request){
         $meses = ["enero", "febrero", "marzo", "abril", "mayo", "junio",
             "julio", "agosto", "septiembre", "octubre", "novimbre", "diciembre"];
+
         try {
+            if(Resguardo::findOrFail($request->id)->estado != 0){
+                redirect()->back();
+            }
             // generando el pdf y devolviendo en forma de descarga
             /*
              LOGICA DE GENERACION DE PDF
@@ -139,6 +143,25 @@ class ResguardoController extends Controller
                     ." Service tag: ".$accesorio_object->service_tag;
                 array_push($accesorios, $descripcion);
             }
+            /*
+             * AQUI SE GENERA EL PDF
+             * */
+            // Empaquetando los datos
+            $data = array(
+                'descripciones' => $descripciones,
+                'marcas' => $marcas,
+                'modelos' => $modelos,
+                'accesorios' => $accesorios);
+
+            // dentro de la carpeta resguardos hay una vista pdf
+            $pdf = PDF::loadview('resguardos.pdf_vale', $data);
+
+            // el tiempo se separa como fecha hora, aqui lo justamos fecha-hora
+            $time_stamp = explode(" ", Carbon::now()->toDateTimeString());
+            $pdf_name = 'resguardo.'.$time_stamp[0]."-".$time_stamp[1].".pdf";
+
+            // guardando el pdf
+            Storage::disk('local')->put($pdf_name, $pdf->output());
 
             // si todoo sale bien, cambiamos el estado del resguardo
             // con su pdf generado
@@ -152,8 +175,11 @@ class ResguardoController extends Controller
                     ->with('Error', 'Ya se ha generado un PDF para este resguardo.');
             }
 
+            // guardando el nuevo estado
             $resguardo->save();
-            return "Generar PDF de resguardo: ".$resguardo->id;
+            // descargando el pdf
+            return $pdf->download($pdf_name);
+
         } catch(Exception $e){
             return redirect('/admin/resguardos/all')
                 ->with('Error', 'No se pudo generar el PDF del resguardo, intentelo más tarde.');
