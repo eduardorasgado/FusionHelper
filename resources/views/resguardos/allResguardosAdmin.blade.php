@@ -40,8 +40,26 @@
             @foreach($resguardos as $resguardo)
                 <tr>
                     <td>{{ $resguardo->id }}</td>
-                    <td>saf</td>
-                    <td>sadf</td>
+                    <td>
+                        @foreach($empleados as $empleado)
+                            @if($empleado->id == $resguardo->empleadoId)
+                                {{ $empleado-> nombre }} {{ $empleado->apellidos }}
+                            @endif
+                        @endforeach
+                    </td>
+                    <?php $i = 1; ?>
+                    <td>@foreach(explode(",", $resguardo->activosId) as $activo_id)
+                            @foreach($activos as $activo)
+                                @if($activo->id == $activo_id)
+                                    {{ $activo->nombre }}
+                                    @if($i != count(explode(",", $resguardo->activosId)))
+                                        |
+                                    @endif
+                                    <?php ++$i?>
+                                @endif
+                            @endforeach
+                        @endforeach
+                    </td>
                     <td>asda</td>
                     <td>sdas</td>
                     <td>sdas</td>

@@ -81,7 +81,7 @@ class ResguardoController extends Controller
     public function adminListAll(){
         // llevar todos los resguardos paginados al front
         try{
-            $resguardos = DB::table('resguardos')->paginate(10);
+            $resguardos = DB::table('resguardos')->paginate(5);
             $activos = Activo::all();
             $accesorios = Accesorio::all();
             $empleados = User::all();
