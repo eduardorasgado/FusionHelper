@@ -19,6 +19,11 @@
                         <span class="text-success">{{ Session::get('success') }}</span>
                     </div>
                 @endif
+                @if(Session::has('Error'))
+                    <div class="alert alert-warning" role="alert" style="margin-top: 5px">
+                        <span class="text-success">{{ Session::get('Error') }}</span>
+                    </div>
+                @endif
             </div>
         </div>
         <table class="table table-hover">
@@ -83,7 +88,7 @@
                     <td>@if(isset($resguardo->fecha_entrega)) {{ $resguardo->fecha_entrega }} @else sin asignar @endif</td>
                     <td>@if(isset($resguardo->hora_entrega)) {{ $resguardo->hora_entrega }} @else sin asignar @endif</td>
                     <td>@if($resguardo->estado == 0)
-                            <a class="btn btn-success" href="">PDF</a>
+                            <a class="btn btn-success" href="{{ route('generateResguardoPDF', $resguardo->id) }}">PDF</a>
                             @else
                             <a class="btn btn-info" href="">Ver PDF</a>
                         @endif</td>

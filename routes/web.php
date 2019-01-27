@@ -212,8 +212,12 @@ Route::group(['middleware' => ['is_admin']], function()
         ->name('deleteAccesorio');
 
     // RESGUARDOS: LISTADO Y APROBACION
-    Route::get('/resguardos/all',
+    Route::get('/admin/resguardos/all',
         'ResguardoController@adminListAll')
         ->name('listarReguardosAdmin');
 
+    // PDFS
+    Route::get('/admin/resguardos/pdf/generate/{id}',
+        'ResguardoController@generateResguardoPDF')
+        ->name('generateResguardoPDF');
 });

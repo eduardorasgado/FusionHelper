@@ -93,6 +93,33 @@ class ResguardoController extends Controller
             compact('resguardos', 'activos', 'accesorios', 'empleados'));
     }
 
+    public function generateResguardoPDF(Request $request){
+        try {
+            // generando el pdf y devolviendo en forma de descarga
+            /*
+             *  LOGICA DE GENERACION DE PDF
+             * */
+            // si todoo sale bien, cambiamos el estado del resguardo
+            // con su pdf generado
+            $resguardo = Resguardo::findOrFail($request->id);
+            if($resguardo->estado == 0){
+                // cambiando el estado a 1: generado o asignado
+                $resguardo->estado = 1;
+            } else{
+                // en caso de que se quiera cambiar el estado por la fuerza
+                // aun ya estando en 1
+                return redirect('/admin/resguardos/all')
+                    ->with('Error', 'Ya se ha generado un PDF para este resguardo.');
+            }
+
+            $resguardo->save();
+            return "Generar PDF de resguardo: ".$resguardo->id;
+        } catch(Exception $e){
+            return redirect('/admin/resguardos/all')
+                ->with('Error', 'No se pudo generar el PDF del resguardo, intentelo más tarde.');
+        }
+    }
+
     // UTILIDADES --------------------------
 
     private function addtoArray(Array $activos){
