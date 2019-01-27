@@ -5,6 +5,9 @@
 
 
         <div class="row">
+            <div class="col-md-10">
+
+            </div>
             <a class="btn btn-primary" href="{{ route('empleado')  }}">Atrás</a>
         </div>
         <br>
