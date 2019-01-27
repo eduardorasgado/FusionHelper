@@ -90,7 +90,7 @@
                     <td>@if($resguardo->estado == 0)
                             <a class="btn btn-success" href="{{ route('generateResguardoPDF', $resguardo->id) }}">PDF</a>
                             @else
-                            <a class="btn btn-info" href="">Ver PDF</a>
+                            Entregado
                         @endif</td>
                 </tr>
             @endforeach

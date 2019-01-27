@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Exception;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use function MongoDB\BSON\toJSON;
 use PhpParser\Node\Expr\Array_;
 
 class ResguardoController extends Controller
@@ -94,14 +95,44 @@ class ResguardoController extends Controller
     }
 
     public function generateResguardoPDF(Request $request){
+        $meses = ["enero", "febrero", "marzo", "abril", "mayo", "junio",
+            "julio", "agosto", "septiembre", "octubre", "novimbre", "diciembre"];
         try {
             // generando el pdf y devolviendo en forma de descarga
             /*
-             *  LOGICA DE GENERACION DE PDF
+             LOGICA DE GENERACION DE PDF
              * */
+            // campos del pdf
+            $fecha_de_generacion = Carbon::now()->format("d-m-Y");
+            $fecha_de_generacion_arr = explode("-", $fecha_de_generacion);
+
+            $fecha_g_spanish = $fecha_de_generacion_arr[0]." de "
+                .$meses[Carbon::now()->month-1]." de "
+                .$fecha_de_generacion_arr[2];
+
+            $resguardo = Resguardo::findOrFail($request->id);
+            $activosId = explode(",", $resguardo->activosId);
+            // nombre, modelo, tipo
+            $descripciones = [];
+            $activos_size = sizeof($activosId);
+            for($i = 0; $i < $activos_size; ++$i){
+                // buscando cada elemento de los activos del reguardo y agregando
+                // sus propiedades deseadas en el string
+                $activo_object = Activo::findOrFail($activosId[$i]);
+                $descripcion = $activo_object->nombre." marca".$activo_object->marca
+                    ." Modelo:".$activo_object->modelo." color ".$activo_object->color;
+                array_push($descripciones, $descripcion);
+            }
+            return $descripciones;
+            $marca = '';
+            // modelo y sn
+            $modelo = '';
+            // lista de string: nombre con SN: service_tag
+            $accesorios = [];
+
+
             // si todoo sale bien, cambiamos el estado del resguardo
             // con su pdf generado
-            $resguardo = Resguardo::findOrFail($request->id);
             if($resguardo->estado == 0){
                 // cambiando el estado a 1: generado o asignado
                 $resguardo->estado = 1;
@@ -119,6 +150,7 @@ class ResguardoController extends Controller
                 ->with('Error', 'No se pudo generar el PDF del resguardo, intentelo más tarde.');
         }
     }
+
 
     // UTILIDADES --------------------------
 
