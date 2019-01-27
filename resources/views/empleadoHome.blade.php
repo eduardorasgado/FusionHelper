@@ -28,8 +28,8 @@
                             Activos
                         </button>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{{route('empleado')}}">Solicitar un activo</a>
-                            <a class="dropdown-item" href="{{route('empleado')}}">Ver mis activos</a>
+                            <a class="dropdown-item" href="{{route('resguardoEmpleadoRegistro')}}">Solicitar un activo</a>
+                            <a class="dropdown-item" href="{{route('allResguardosIndividual')}}">Ver mis activos solicitados</a>
                         </div>
                     </div>
                 </div>

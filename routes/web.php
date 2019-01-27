@@ -36,6 +36,19 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/empleado/incidentes',
         'EmpleadoController@getIncidentes')
         ->name('incidentesEmpleadoIndex');
+
+    // rutas para el registro de resguardo | solicitud de activo
+    Route::get('/empleado/resguardos/all',
+        'ResguardoController@index')
+        ->name('allResguardosIndividual');
+
+    // crear una solicitud para resguardo, por parte del empleado
+    Route::get('/empleado/resguardos/create',
+        'ResguardoController@getRegistro')
+        ->name('resguardoEmpleadoRegistro');
+    Route::post('/empleado/resguardos/create',
+        'ResguardoController@postRegistro')
+        ->name('resguardoEmpleadoRegistro');
 });
 
 // RUTAS PARA EL ADMINISTRADOR
