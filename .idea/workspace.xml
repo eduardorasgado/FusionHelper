@@ -5,6 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ResguardoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ResguardoController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/resguardos/allResguardosAdmin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/resguardos/allResguardosAdmin.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/resguardos/allResguardosEmpleado.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/resguardos/allResguardosEmpleado.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,8 +51,8 @@
             <file pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/resources/views/resguardos/allResguardosEmpleado.blade.php">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="634">
-                    <caret line="62" column="16" selection-start-line="62" selection-start-column="16" selection-end-line="62" selection-end-column="16" />
+                  <state relative-caret-position="764">
+                    <caret line="64" column="42" selection-start-line="64" selection-start-column="42" selection-end-line="64" selection-end-column="42" />
                   </state>
                 </provider>
               </entry>
@@ -244,8 +245,8 @@
             <file pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/resources/views/resguardos/allResguardosAdmin.blade.php">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="496">
-                    <caret line="51" column="57" selection-start-line="51" selection-start-column="57" selection-end-line="51" selection-end-column="57" />
+                  <state relative-caret-position="288">
+                    <caret line="43" column="62" lean-forward="true" selection-start-line="43" selection-start-column="62" selection-end-line="43" selection-end-column="62" />
                   </state>
                 </provider>
               </entry>
@@ -316,8 +317,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ResguardoController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="520">
-                  <caret line="89" column="9" lean-forward="true" selection-start-line="89" selection-start-column="9" selection-end-line="89" selection-end-column="9" />
+                <state relative-caret-position="390">
+                  <caret line="30" column="49" lean-forward="true" selection-start-line="30" selection-start-column="49" selection-end-line="30" selection-end-column="49" />
                   <folding>
                     <element signature="e#40#58#0#PHP" expanded="true" />
                   </folding>
@@ -490,11 +491,11 @@
         <option value="$PROJECT_DIR$/database/migrations/2019_01_26_032402_create_resguardos_table.php" />
         <option value="$PROJECT_DIR$/app/Resguardo.php" />
         <option value="$PROJECT_DIR$/resources/views/resguardos/solicitud_resguardo.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/resguardos/allResguardosEmpleado.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/adminHome2.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ResguardoController.php" />
         <option value="$PROJECT_DIR$/resources/views/resguardos/allResguardosAdmin.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/resguardos/allResguardosEmpleado.blade.php" />
       </list>
     </option>
   </component>
@@ -742,21 +743,7 @@
       <workItem from="1548321070110" duration="13412000" />
       <workItem from="1548466822948" duration="22190000" />
       <workItem from="1548560277435" duration="20142000" />
-      <workItem from="1548613218300" duration="1615000" />
-    </task>
-    <task id="LOCAL-00058" summary="Administrador/ticket: mandando tipos, areas y empleados a la paginacion de todos los tickets.">
-      <created>1545820577093</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1545820577093</updated>
-    </task>
-    <task id="LOCAL-00059" summary="Administrador/ticket: formato de tabla para la vista de todos los tickets">
-      <created>1545823378571</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1545823378571</updated>
+      <workItem from="1548613218300" duration="3333000" />
     </task>
     <task id="LOCAL-00060" summary="Administrador/ticket: formato de tabla para la vista de todos los tickets">
       <created>1545824281248</created>
@@ -1087,11 +1074,25 @@
       <option name="project" value="LOCAL" />
       <updated>1548583203662</updated>
     </task>
-    <option name="localTasksCounter" value="107" />
+    <task id="LOCAL-00107" summary="Administrador: Mostrando empleados y activos por esguardo">
+      <created>1548614913162</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1548614913163</updated>
+    </task>
+    <task id="LOCAL-00108" summary="Administrador: Mostrando accesorios. Refactor de optimizacion en blade de listado de resguardos.">
+      <created>1548615723153</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1548615723153</updated>
+    </task>
+    <option name="localTasksCounter" value="109" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="254734000" />
+    <option name="totallyTimeSpent" value="256452000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1366" y="30" width="2560" height="1050" extended-state="7" />
@@ -1147,8 +1148,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="General: refactor p5: handling empty data in new ticket form" />
-    <MESSAGE value="General: refactor p6: ticket individual refactorizado." />
     <MESSAGE value="General: refactor p7: El listado de empleado e incidentes ya esta depurado" />
     <MESSAGE value="Administrador: Creacion de modelo, controlador y migracion de accesorio. Formulario de registro de accesorio." />
     <MESSAGE value="Administrador: Ruta para el nuevo accesorio" />
@@ -1172,7 +1171,9 @@
     <MESSAGE value="Empleado: Mostrando tabla con resguardos." />
     <MESSAGE value="Empleado: Mostrando tabla con resguardos, paginando los resultados." />
     <MESSAGE value="Administrador, ruta y vista para mostrar todos los resguardos en el sistema" />
-    <option name="LAST_COMMIT_MESSAGE" value="Administrador, ruta y vista para mostrar todos los resguardos en el sistema" />
+    <MESSAGE value="Administrador: Mostrando empleados y activos por esguardo" />
+    <MESSAGE value="Administrador: Mostrando accesorios. Refactor de optimizacion en blade de listado de resguardos." />
+    <option name="LAST_COMMIT_MESSAGE" value="Administrador: Mostrando accesorios. Refactor de optimizacion en blade de listado de resguardos." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdministradorController.php">
@@ -1531,13 +1532,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/resguardos/allResguardosEmpleado.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="634">
-          <caret line="62" column="16" selection-start-line="62" selection-start-column="16" selection-end-line="62" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_26_032402_create_resguardos_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
@@ -1547,8 +1541,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ResguardoController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="89" column="9" lean-forward="true" selection-start-line="89" selection-start-column="9" selection-end-line="89" selection-end-column="9" />
+        <state relative-caret-position="390">
+          <caret line="30" column="49" lean-forward="true" selection-start-line="30" selection-start-column="49" selection-end-line="30" selection-end-column="49" />
           <folding>
             <element signature="e#40#58#0#PHP" expanded="true" />
           </folding>
@@ -1557,8 +1551,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/resguardos/allResguardosAdmin.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="51" column="57" selection-start-line="51" selection-start-column="57" selection-end-line="51" selection-end-column="57" />
+        <state relative-caret-position="288">
+          <caret line="43" column="62" lean-forward="true" selection-start-line="43" selection-start-column="62" selection-end-line="43" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/resguardos/allResguardosEmpleado.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="764">
+          <caret line="64" column="42" selection-start-line="64" selection-start-column="42" selection-end-line="64" selection-end-column="42" />
         </state>
       </provider>
     </entry>

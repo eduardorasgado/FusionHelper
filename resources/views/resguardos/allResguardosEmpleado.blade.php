@@ -36,20 +36,34 @@
             <tbody>
 
             @foreach($user_resguardos as $resguardo)
+                <?php $activos_arr =  explode(",", $resguardo->activosId);
+                $accesorios_arr =  explode(",", $resguardo->accesoriosId);
+                $activos_count =  count($activos_arr);
+                $accesorios_count = count($accesorios_arr); ?>
                 <tr>
                     <th scope="row"><a class="btn btn-dark"
                                        href="{{-- route('ticketIndividual', $resguardo->id) --}}">{{ $resguardo->id }}</a></th>
-                    <td>@foreach(explode(",",$resguardo->activosId) as $activo_id)
+                    <?php $i = 1;?>
+                    <td>@foreach($activos_arr as $activo_id)
                             @foreach($activos as $activo)
                                 @if($activo->id == $activo_id)
-                                    {{ $activo->nombre }} |
+                                    {{ $activo->nombre }}
+                                    @if($i != $activos_count)
+                                        ,
+                                    @endif
+                                    <?php ++$i?>
                                 @endif
                             @endforeach
                         @endforeach</td>
-                    <td>@foreach(explode(",",$resguardo->accesoriosId) as $accesorios_id)
+                    <?php $j = 1;?>
+                    <td>@foreach($accesorios_arr as $accesorios_id)
                             @foreach($accesorios as $accesorio)
                                 @if($accesorio->id == $accesorios_id)
-                                    {{ $accesorio->nombre }} |
+                                    {{ $accesorio->nombre }}
+                                    @if($j != $accesorios_count)
+                                        ,
+                                    @endif
+                                    <?php ++$i?>
                                 @endif
                             @endforeach
                         @endforeach</td>

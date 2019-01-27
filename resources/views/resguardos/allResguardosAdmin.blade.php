@@ -78,10 +78,10 @@
                             @endforeach
                         @endforeach
                     </td>
-                    <td>sdas</td>
-                    <td>sdas</td>
-                    <td>sdas</td>
-                    <td>sdas</td>
+                    <td>{{ $resguardo->fecha_asignacion }}</td>
+                    <td>{{ explode(" ", $resguardo->created_at)[1] }}</td>
+                    <td>@if(isset($resguardo->fecha_entrega)) {{ $resguardo->fecha_entrega }} @else sin asignar @endif</td>
+                    <td>@if(isset($resguardo->hora_entrega)) {{ $resguardo->hora_entrega }} @else sin asignar @endif</td>
                     <td>@if($resguardo->estado == 0)
                             <a class="btn btn-success" href="">PDF</a>
                             @else
