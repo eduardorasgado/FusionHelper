@@ -18,8 +18,13 @@ class CreateResguardosTable extends Migration
             // 0: por procesar, 1: pdf generado
             $table->integer("estado");
             $table->integer('empleadoId');
-            $table->integer('activoId');
-            $table->integer('accesorioId');
+            // activos y accesorios son guardados como string
+            // estos son luego procesados por php para obtener un
+            // array del string. El string se guarda asi:
+            // 1,2,3,4,5,6
+            $table->string('activosId');
+            // el resguardo puede tener 0, 1 o varios accesorios
+            $table->string('accesoriosId')->default('');
             // manejo de fechas:
             // https://stackoverflow.com/questions/28109179/getting-current-date-time-day-in-laravel
             $table->date('fecha_asignacion');
