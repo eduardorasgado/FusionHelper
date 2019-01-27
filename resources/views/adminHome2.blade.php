@@ -70,7 +70,7 @@
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="{{ route('registros') }}">Registros de almacén</a>
                             <a class="dropdown-item" href="{{ route('listarAlmacen') }}">Listas de activos, accesorios y proveedores</a>
-                            <a class="dropdown-item" href="">Resguardos</a>
+                            <a class="dropdown-item" href="{{ route('listarReguardosAdmin') }}">Resguardos</a>
                         </div>
                     </div>
                 </div>
@@ -93,7 +93,7 @@
             <div class="col-md-4">
                 <div class="jumbotron text-center">
                     <div class="dropdown">
-                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" disabled>
                             Reporte
                         </button>
                         <div class="dropdown-menu">

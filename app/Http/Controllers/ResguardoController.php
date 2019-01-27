@@ -5,10 +5,12 @@ namespace App\Http\Controllers;
 use App\Accesorio;
 use App\Activo;
 use App\Resguardo;
+use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Exception;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use PhpParser\Node\Expr\Array_;
 
 class ResguardoController extends Controller
@@ -74,6 +76,21 @@ class ResguardoController extends Controller
         }
         return redirect('/empleado/resguardos/all')
             ->with('success', 'La solicitud fue enviada con exito');
+    }
+
+    public function adminListAll(){
+        // llevar todos los resguardos paginados al front
+        try{
+            $resguardos = DB::table('resguardos')->paginate(10);
+            $activos = Activo::all();
+            $accesorios = Accesorio::all();
+            $empleados = User::all();
+        } catch (Exception $e){
+            return "Error al traer todos los elementos de resguardo. Intentelo mas tarde.";
+        }
+
+        return view('resguardos.allResguardosAdmin',
+            compact('resguardos', 'activos', 'accesorios', 'empleados'));
     }
 
     // UTILIDADES --------------------------

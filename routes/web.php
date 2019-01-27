@@ -211,4 +211,9 @@ Route::group(['middleware' => ['is_admin']], function()
         'AccesorioController@delete')
         ->name('deleteAccesorio');
 
+    // RESGUARDOS: LISTADO Y APROBACION
+    Route::get('/resguardos/all',
+        'ResguardoController@adminListAll')
+        ->name('listarReguardosAdmin');
+
 });
