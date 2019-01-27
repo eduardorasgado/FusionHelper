@@ -114,6 +114,8 @@ class ResguardoController extends Controller
             $activosId = explode(",", $resguardo->activosId);
             // nombre, modelo, tipo
             $descripciones = [];
+            $marcas = [];
+            $modelos = [];
             $activos_size = sizeof($activosId);
             for($i = 0; $i < $activos_size; ++$i){
                 // buscando cada elemento de los activos del reguardo y agregando
@@ -122,14 +124,21 @@ class ResguardoController extends Controller
                 $descripcion = $activo_object->nombre." marca".$activo_object->marca
                     ." Modelo:".$activo_object->modelo." color ".$activo_object->color;
                 array_push($descripciones, $descripcion);
+                array_push($marcas, $activo_object->marca);
+                array_push($modelos, $activo_object->modelo);
             }
-            return $descripciones;
-            $marca = '';
-            // modelo y sn
-            $modelo = '';
+
             // lista de string: nombre con SN: service_tag
             $accesorios = [];
-
+            $accesoriosId = explode(',', $resguardo->accesoriosId);
+            $accesorios_size = count($accesoriosId);
+            for($i = 0; $i <$accesorios_size; ++$i){
+                // agregar la descripcion de cada accesorio
+                $accesorio_object = Accesorio::find($accesoriosId[$i]);
+                $descripcion = $accesorio_object->nombre." modelo ".$accesorio_object->modelo
+                    ." Service tag: ".$accesorio_object->service_tag;
+                array_push($accesorios, $descripcion);
+            }
 
             // si todoo sale bien, cambiamos el estado del resguardo
             // con su pdf generado
