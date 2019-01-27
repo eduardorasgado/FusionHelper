@@ -16,7 +16,7 @@ class ResguardoController extends Controller
     public function index()
     {
         //
-        $user_resguardos = Resguardo::where('empleadoId', '=', Auth::id())->get();
+        $user_resguardos = Resguardo::where('empleadoId', '=', Auth::id())->paginate(5);
 
         $activos = Activo::all();
         $accesorios = Accesorio::all();

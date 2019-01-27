@@ -15,7 +15,6 @@
             <div class="row">
                 <span class="alert alert-info">Se listan todos los resguardos a tu nombre en el sistema. Aquellos que tu solicitaste.</span>
                 @if(Session::has('success'))
-                    <br>
                     <div class="alert alert-warning" role="alert" style="margin-top: 5px">
                         <span class="text-success">{{ Session::get('success') }}</span>
                     </div>
@@ -62,5 +61,13 @@
             @endforeach
             </tbody>
         </table>
+        <div class="row text-center">
+        @if(count($user_resguardos))
+            <!--margin top y margin x en class-->
+                <div class="mt-2 mx-auto">
+                    {{ $user_resguardos->links('pagination::bootstrap-4')}}
+                </div>
+            @endif
+        </div>
     </div>
 @endsection
