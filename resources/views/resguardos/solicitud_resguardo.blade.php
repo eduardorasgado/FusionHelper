@@ -17,6 +17,11 @@
                         Seleccione sus activos o activo, Ctrl + Click derecho en cada uno de los activos/Accesorios que desea. <br>
                         Vuelva a hacer click para deseleccionar el elemento. <br>
                     </span>
+                    @if(Session::has('Error'))
+                        <div class="alert alert-warning" role="alert" style="margin-top: 5px">
+                            <span class="text-success">{{ Session::get('Error') }}</span>
+                        </div>
+                    @endif
                 </div>
                 <div class="card card-body">
                     <div class="card card-body">

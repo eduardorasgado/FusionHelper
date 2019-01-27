@@ -29,9 +29,9 @@ class CreateResguardosTable extends Migration
             // https://stackoverflow.com/questions/28109179/getting-current-date-time-day-in-laravel
             $table->date('fecha_asignacion');
             // fecha en que se genera el pdf
-            $table->date('fecha_entrega');
+            $table->date('fecha_entrega')->nullable();
             // la hora en que se acepta y se genera el pdf de resguardo
-            $table->dateTime('hora_entrega');
+            $table->dateTime('hora_entrega')->nullable();
             $table->timestamps();
         });
     }
