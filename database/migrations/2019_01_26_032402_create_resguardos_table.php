@@ -18,7 +18,6 @@ class CreateResguardosTable extends Migration
             // 0: por procesar, 1: pdf generado
             $table->integer("estado");
             $table->integer('empleadoId');
-            $table->integer('proveedorId');
             $table->integer('activoId');
             $table->integer('accesorioId');
             // manejo de fechas:

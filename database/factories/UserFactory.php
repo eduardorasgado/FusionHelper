@@ -80,6 +80,19 @@ $factory->define(App\Activo::class, function(Faker $faker){
         'color' => $faker->colorName,
         // disponible
         'status' => 0,
-        'descripcion' => $faker->paragraph($nbSentences = 3, $variableNbSentences = true)
+        'descripcion' => $faker->paragraph($nbSentences = 3, $variableNbSentences = true),
+        'created_at' => date("Y-m-d H:i:s")
+    ];
+});
+
+$factory->define(App\Accesorio::class, function(Faker $faker){
+    return [
+        // accesorio facking engine
+        'nombre' => $faker->word.' de '.$faker->word,
+        'activoId' => $faker->numberBetween($min=1, $max=20),
+        'serie' => $faker->numberBetween($min=1287654321, $max=2147483645),
+        'service_tag' => $faker->tld,
+        'modelo' => $faker->swiftBicNumber,
+        'created_at' => date("Y-m-d H:i:s")
     ];
 });

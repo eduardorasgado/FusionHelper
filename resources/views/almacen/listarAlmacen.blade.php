@@ -60,7 +60,8 @@
                             <p>Aún no hay proveedores</p>
                         @endif
                         @foreach($proveedores as $proveedor)
-                            <p>{{ $proveedor->nombre }} | {{ $proveedor->apellidos }} | {{ $proveedor->email }}
+                            <p>Nombre: {{ $proveedor->nombre }} {{ $proveedor->apellidos }} | Email: {{ $proveedor->email }}
+                                | Telefono: {{ $proveedor->telefono }}
                                 <a class="btn btn-dark"
                                    href="{{ route('updateProveedor', $proveedor->id) }}"
                                     onclick="return confirm('Está seguro de querer modificar este proveedor?')">Modificar</a>
@@ -84,8 +85,8 @@
                             <p>Aún no hay Activos</p>
                         @endif
                         @foreach($activos as $activo)
-                            <p>{{ $activo->nombre }} | {{ $activo->serie }} | {{ $activo->marca }} |
-                                {{ $activo->modelo }} | {{ $activo->color }} |
+                            <p>Nombre: {{ $activo->nombre }} | Serie: {{ $activo->serie }} | Marca: {{ $activo->marca }} |
+                                Modelo: {{ $activo->modelo }} | Color: {{ $activo->color }} |
                                 <a class="btn btn-dark"
                                    href="{{ route('updateActivo', $activo->id) }}"
                                    onclick="return confirm('Está seguro de querer modificar este activo?')">Modificar</a>
@@ -106,7 +107,7 @@
                     </div>
                     <div class="card card-body">
                         @if(count($accesorios) == 0)
-                            <p>Aún no hay Activos</p>
+                            <p>Aún no hay Accesorios</p>
                         @endif
                         @foreach($accesorios as $accesorio)
                             <p> Nombre: {{ $accesorio->nombre }}
@@ -120,10 +121,10 @@
                                 @endforeach
                                 <a class="btn btn-dark"
                                    href="{{ route('updateAccesorio', $accesorio->id) }}"
-                                   onclick="return confirm('Está seguro de querer modificar este activo?')">Modificar</a>
+                                   onclick="return confirm('Está seguro de querer modificar este accesorio?')">Modificar</a>
                                 <a class="btn btn-danger"
                                    href="{{ route('deleteAccesorio', $accesorio->id) }}"
-                                   onclick="return confirm('Está seguro de querer eliminar este activo?')">Eliminar</a>
+                                   onclick="return confirm('Está seguro de querer eliminar este accesorio?')">Eliminar</a>
                             </p>
                         @endforeach
                     </div>

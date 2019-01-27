@@ -46,6 +46,7 @@ class DatabaseSeeder extends Seeder
         $this->call(IncidenteTableSeeder::class);
         $this->call(ProveedoresTableSeeder::class);
         $this->call(ActivosTableSeeder::class);
+        $this->call(AccesoriosTableSeeder::class);
 
         Model::reguard();
     }

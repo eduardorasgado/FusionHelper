@@ -15,7 +15,7 @@ class EmpleadosTableSeeder extends Seeder
         DB::table('users')->insert([
             // empleado
             'tipo_user' => 1,
-            'estado' => 0,
+            'estado' => 1,
             'nombre' => 'Iginio',
             'apellidos' => 'iginio_moreno',
             'email' => 'iginio_moreno@gmail.com',
@@ -29,7 +29,7 @@ class EmpleadosTableSeeder extends Seeder
         DB::table('users')->insert([
             // tecnico
             'tipo_user' => 2,
-            'estado' => 0,
+            'estado' => 1,
             'nombre' => 'Dario',
             'apellidos' => 'Moreno Diaz',
             'email' => 'dario_pena@gmail.com',
