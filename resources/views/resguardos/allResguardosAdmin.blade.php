@@ -38,6 +38,10 @@
             <tbody>
 
             @foreach($resguardos as $resguardo)
+                <?php $activos_arr =  explode(",", $resguardo->activosId);
+                $accesorios_arr =  explode(",", $resguardo->accesoriosId);
+                $activos_count =  count($activos_arr);
+                $accesorios_count = count($accesorios_arr); ?>
                 <tr>
                     <td>{{ $resguardo->id }}</td>
                     <td>
@@ -48,19 +52,32 @@
                         @endforeach
                     </td>
                     <?php $i = 1; ?>
-                    <td>@foreach(explode(",", $resguardo->activosId) as $activo_id)
+                    <td>@foreach($activos_arr as $activo_id)
                             @foreach($activos as $activo)
                                 @if($activo->id == $activo_id)
                                     {{ $activo->nombre }}
-                                    @if($i != count(explode(",", $resguardo->activosId)))
-                                        |
+                                    @if($i != $activos_count)
+                                        ,
                                     @endif
                                     <?php ++$i?>
                                 @endif
                             @endforeach
                         @endforeach
                     </td>
-                    <td>asda</td>
+                    <td>
+                        <?php $j = 1; ?>
+                        @foreach($accesorios_arr as $accesorio_id)
+                            @foreach($accesorios as $accesorio)
+                                @if($accesorio->id == $accesorio_id)
+                                    {{ $accesorio->nombre }}
+                                    @if($j != $accesorios_count)
+                                        ,
+                                    @endif
+                                    <?php ++$j?>
+                                @endif
+                            @endforeach
+                        @endforeach
+                    </td>
                     <td>sdas</td>
                     <td>sdas</td>
                     <td>sdas</td>
