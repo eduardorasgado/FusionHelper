@@ -128,8 +128,8 @@ class ResguardoController extends Controller
                 // buscando cada elemento de los activos del reguardo y agregando
                 // sus propiedades deseadas en el string
                 $activo_object = Activo::findOrFail($activosId[$i]);
-                $descripcion = $activo_object->nombre." marca".$activo_object->marca
-                    ." Modelo:".$activo_object->modelo." color ".$activo_object->color;
+                $descripcion = $activo_object->nombre." marca ".$activo_object->marca
+                    ." Modelo: ".$activo_object->modelo." color ".$activo_object->color;
                 array_push($descripciones, $descripcion);
                 array_push($marcas, $activo_object->marca);
                 array_push($modelos, $activo_object->modelo);
@@ -151,6 +151,7 @@ class ResguardoController extends Controller
              * */
             // Empaquetando los datos
             $data = array(
+                'fecha' => $fecha_g_spanish,
                 'descripciones' => $descripciones,
                 'marcas' => $marcas,
                 'modelos' => $modelos,

@@ -13,8 +13,47 @@
     </style>
 </head>
 <body>
-    <div class="jumbotron">
-        pdf
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10"></div>
+            <div class="col-md-2">{{ $fecha }}</div>
+        </div>
+        <div>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Descripcion</th>
+                    <th scope="col">Marca</th>
+                    <th scope="col">Modelo</th>
+                    <th scope="col">Accesorios</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        @foreach($descripciones as $descripcion)
+                            {{ $descripcion }}<br><br>
+                        @endforeach
+                    </td>
+                    <td>
+                        @foreach($marcas as $marca)
+                            {{ $marca }}<br><br>
+                        @endforeach
+                    </td>
+                    <td>
+                        @foreach($modelos as $modelo)
+                            {{ $modelo }}<br><br>
+                        @endforeach
+                    </td>
+                    <td>
+                        @foreach($accesorios as $accesorio)
+                            {{ $accesorio }}<br><br>
+                        @endforeach
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </body>
 
