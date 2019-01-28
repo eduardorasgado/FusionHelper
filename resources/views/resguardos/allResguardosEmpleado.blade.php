@@ -63,7 +63,7 @@
                                     @if($j != $accesorios_count)
                                         ,
                                     @endif
-                                    <?php ++$i?>
+                                    <?php ++$j?>
                                 @endif
                             @endforeach
                         @endforeach</td>

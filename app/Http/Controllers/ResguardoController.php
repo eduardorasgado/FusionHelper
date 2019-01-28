@@ -68,7 +68,8 @@ class ResguardoController extends Controller
                 'fecha_asignacion' => Carbon::now(),
                 // por asignar
                 'fecha_entrega' => null,
-                'hora_entrega' => null
+                'hora_entrega' => null,
+                'storage_link' => null,
             ]);
         } catch(Exception $e){
             //return $e->getMessage();
@@ -99,8 +100,10 @@ class ResguardoController extends Controller
             "julio", "agosto", "septiembre", "octubre", "novimbre", "diciembre"];
 
         try {
+            // en caso de que el boton de generar pdf sea presionado de nuevo
             if(Resguardo::findOrFail($request->id)->estado != 0){
-                redirect()->back();
+                return redirect('/admin/resguardos/all')
+                    ->with('Error', 'Ya se ha generado un PDF para este resguardo.');
             }
             // generando el pdf y devolviendo en forma de descarga
             /*
@@ -168,6 +171,8 @@ class ResguardoController extends Controller
             if($resguardo->estado == 0){
                 // cambiando el estado a 1: generado o asignado
                 $resguardo->estado = 1;
+                // guardar el nombre del archivo para acceder a el en otro momento
+                $resguardo->storage_link = $pdf_name;
             } else{
                 // en caso de que se quiera cambiar el estado por la fuerza
                 // aun ya estando en 1
@@ -175,8 +180,11 @@ class ResguardoController extends Controller
                     ->with('Error', 'Ya se ha generado un PDF para este resguardo.');
             }
 
+            // TODO: Guardar el nombre del pdf en un campo de la tabla para su posterior
+            // descarga
             // guardando el nuevo estado
             $resguardo->save();
+
             // descargando el pdf
             return $pdf->download($pdf_name);
 

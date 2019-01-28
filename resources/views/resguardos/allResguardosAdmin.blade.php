@@ -41,7 +41,6 @@
             </tr>
             </thead>
             <tbody>
-
             @foreach($resguardos as $resguardo)
                 <?php $activos_arr =  explode(",", $resguardo->activosId);
                 $accesorios_arr =  explode(",", $resguardo->accesoriosId);
@@ -97,6 +96,11 @@
             @endforeach
             </tbody>
         </table>
+        <div class="text-center">
+            @if(count($resguardos) <= 0)
+                Aun no hay resgistros
+            @endif
+        </div>
         <div class="row text-center">
         @if(count($resguardos))
             <!--margin top y margin x en class-->

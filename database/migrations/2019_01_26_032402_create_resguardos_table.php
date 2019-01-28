@@ -32,6 +32,8 @@ class CreateResguardosTable extends Migration
             $table->date('fecha_entrega')->nullable();
             // la hora en que se acepta y se genera el pdf de resguardo
             $table->dateTime('hora_entrega')->nullable();
+            // link donde se encuentra localmente almacenado el pdf
+            $table->string('storage_link')->nullable();
             $table->timestamps();
         });
     }

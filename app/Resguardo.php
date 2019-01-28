@@ -9,6 +9,6 @@ class Resguardo extends Model
     //
     protected $fillable = [
         'estado', 'empleadoId', 'activosId', 'accesoriosId',
-        'fecha_asignacion', 'fecha_entrega', 'hora_entrega'
+        'fecha_asignacion', 'fecha_entrega', 'hora_entrega', 'storage_link'
     ];
 }
