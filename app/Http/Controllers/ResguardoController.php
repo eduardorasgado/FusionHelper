@@ -200,7 +200,7 @@ class ResguardoController extends Controller
             $resguardo = Resguardo::findOrFail($request->id);
             if ($resguardo){
                 // descargar el pdf ya generado con el link del resguardo especifico
-                return Storage::disk('local')->get($resguardo->storage_link);
+                return response()->download(storage_path("app/{$resguardo->storage_link}"));
             }
         } catch (Exception $e) {
             return redirect('/admin/resguardos/all')
