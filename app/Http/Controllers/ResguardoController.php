@@ -159,6 +159,10 @@ class ResguardoController extends Controller
             // dentro de la carpeta resguardos hay una vista pdf
             $pdf = PDF::loadview('resguardos.pdf_vale', $data);
 
+            /*** SOLO PARA TESTING DEL DISEÑO DEL PDF****/
+            return $pdf->stream('resguardos.pdf_vale');
+            /***************/
+
             // el tiempo se separa como fecha hora, aqui lo justamos fecha-hora
             $time_stamp = explode(" ", Carbon::now()->toDateTimeString());
             $pdf_name = 'resguardo.'.$time_stamp[0]."-".$time_stamp[1].".pdf";
