@@ -14,9 +14,14 @@
 </head>
 <body>
     <div class="container">
+        <div class="row text-right">
+            <div>
+                <p>Hca. Cd. de Juchitan de Zaragoza, Oaxaca, a {{ $fecha }}</p>
+            </div>
+        </div>
         <div class="row">
-            <div class="col-md-10"></div>
-            <div class="col-md-2">{{ $fecha }}</div>
+            <p>Fusion Electrica de Mexico S.A. de C.V. asigna al : Ing.
+                {{ $solicitante->nombre }} {{ $solicitante->apellidos }} lo siguiente:</p>
         </div>
         <div>
             <table class="table">

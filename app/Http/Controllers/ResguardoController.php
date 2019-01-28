@@ -146,12 +146,15 @@ class ResguardoController extends Controller
                     ." Service tag: ".$accesorio_object->service_tag;
                 array_push($accesorios, $descripcion);
             }
+
+            $solicitante = User::findOrFail($resguardo->empleadoId);
             /*
              * AQUI SE GENERA EL PDF
              * */
             // Empaquetando los datos
             $data = array(
                 'fecha' => $fecha_g_spanish,
+                'solicitante' => $solicitante,
                 'descripciones' => $descripciones,
                 'marcas' => $marcas,
                 'modelos' => $modelos,
