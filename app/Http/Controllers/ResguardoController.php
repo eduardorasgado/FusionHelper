@@ -194,6 +194,19 @@ class ResguardoController extends Controller
         }
     }
 
+    public function downloadResguardoPDF(Request $request){
+        // acceder al link del resguardo y descargarlo
+        try{
+            $resguardo = Resguardo::findOrFail($request->id);
+            if ($resguardo){
+                // descargar el pdf ya generado con el link del resguardo especifico
+                return Storage::disk('local')->get($resguardo->storage_link);
+            }
+        } catch (Exception $e) {
+            return redirect('/admin/resguardos/all')
+                ->with('Error', 'No se pudo descargar el PDF, puede que el resguardo no exista, intentelo más tarde.');
+        }
+    }
 
     // UTILIDADES --------------------------
 

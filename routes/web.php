@@ -217,7 +217,12 @@ Route::group(['middleware' => ['is_admin']], function()
         ->name('listarReguardosAdmin');
 
     // PDFS
+    // generar pdf
     Route::get('/admin/resguardos/pdf/generate/{id}',
         'ResguardoController@generateResguardoPDF')
         ->name('generateResguardoPDF');
+    // ver pdf
+    Route::get('/admin/resguardos/pdf/download/{id}',
+        'ResguardoController@downloadResguardoPDF')
+        ->name('downloadResguardoPDF');
 });

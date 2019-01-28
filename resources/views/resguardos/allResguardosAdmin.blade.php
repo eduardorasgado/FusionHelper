@@ -90,7 +90,7 @@
                             <a class="btn btn-success" href="{{ route('generateResguardoPDF', $resguardo->id) }}"
                             onclick="return confirm('Seguro de generar el Vale?')">PDF</a>
                             @else
-                            Entregado
+                            <a class="btn btn-info" href="{{ route('downloadResguardoPDF', $resguardo->id) }}">Ver PDF</a>
                         @endif</td>
                 </tr>
             @endforeach
