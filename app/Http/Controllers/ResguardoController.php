@@ -153,7 +153,9 @@ class ResguardoController extends Controller
              * */
             // Empaquetando los datos
             $data = array(
+                'id' => $resguardo->id,
                 'fecha' => $fecha_g_spanish,
+                'fecha_header' => $fecha_de_generacion,
                 'solicitante' => $solicitante,
                 'descripciones' => $descripciones,
                 'marcas' => $marcas,

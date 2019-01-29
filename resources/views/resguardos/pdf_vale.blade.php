@@ -17,14 +17,56 @@
             padding: 20px;
             border: 1px solid black;
         }
-        p, table {
+
+        .tg  {
+            border-collapse:collapse;
+            border-spacing:0;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .tg td{
+            border-style:solid;
+            border-width:1px;
+            overflow:hidden;
+            word-break:normal;
+            border-color:black;}
+        .tg th{
+            font-size: 10px;
+            font-weight: bold;
+            border-style:solid;
+            border-width:1px;
+            overflow:hidden;
+            word-break:normal;
+            border-color:black;}
+        .tg .tg-h4f1{
+            font-size:12px;
+            background-color: #002752;color:#ffffff;border-color:#002752;text-align:center;}
+        .tg .tg-pqh4{
+            border-color:#002752;
+            text-align:center;}
+        .tg .tg-1hqm{
+            font-size:12px;
+            border-color:#002752;
+            text-align:center;
+        }
+
+        .tg .tg-title {
+            font-size: 16px;
+        }
+        .tg .tg-bold {
+            font-size:10px;
+            font-weight: bold;
+            background: #d8d8d8;
+        }
+
+        p, .table-activos {
             font-size: 12px;
         }
         p {
             text-align: justify;
         }
 
-        th {
+        .th-content {
             background: #1e7e34;
             color: white;
         }
@@ -43,10 +85,43 @@
             /*Este es el formateo de el texto donde va la firma*/
             font-size: 12px;
         }
+
+        .sign-container {
+            position: relative;
+        }
+        .placed-bottom {
+            position: absolute;
+            bottom: 0;
+        }
     </style>
 </head>
 <body>
     <div class="container-fluid">
+
+        <table class="tg">
+            <tr>
+                <th class="tg-pqh4" rowspan="3"><br>[AQUI VA EL LOGO <br><br>DE LA EMPRESA]</th>
+                <th class="tg-1hqm tg-title" colspan="5">FUSIÓN ELÉCTRICA DE MÉXICO S.A. DE C.V</th>
+            </tr>
+            <tr>
+                <td class="tg-1hqm tg-bold">TIPO DE DOCUMENTO</td>
+                <td class="tg-1hqm tg-bold">REVISIÓN</td>
+                <td class="tg-1hqm tg-bold">FECHA DE ELABORACIÓN</td>
+                <td class="tg-1hqm tg-bold">CÓDIGO</td>
+                <td class="tg-1hqm tg-bold">PÁGINA</td>
+            </tr>
+            <tr>
+                <td class="tg-1hqm">Formato</td>
+                <td class="tg-1hqm">0</td>
+                <td class="tg-1hqm">{{ $fecha_header }}</td>
+                <td class="tg-1hqm">{{ $id }}</td>
+                <td class="tg-1hqm">1 de 1</td>
+            </tr>
+            <tr>
+                <td class="tg-h4f1" colspan="6">VALE DE RESGUARDO DE DISPOSITIVOS TI/TELECOM</td>
+            </tr>
+        </table>
+
         <div class="row text-right">
             <div>
                 <p>Hca. Cd. de Juchitan de Zaragoza, Oaxaca, a {{ $fecha }}</p>
@@ -57,13 +132,13 @@
                 {{ $solicitante->nombre }} {{ $solicitante->apellidos }} lo siguiente:</p>
         </div>
         <div>
-            <table class="table">
+            <table class="table-activos text-center">
                 <thead class="">
                 <tr>
-                    <th scope="col">Descripcion</th>
-                    <th scope="col">Marca</th>
-                    <th scope="col">Modelo</th>
-                    <th scope="col">Accesorios</th>
+                    <th class="th-content" scope="col">Descripcion</th>
+                    <th class="th-content" scope="col">Marca</th>
+                    <th class="th-content" scope="col">Modelo</th>
+                    <th class="th-content" scope="col">Accesorios</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -99,8 +174,9 @@
         <div class="row">
             <p>Será responsabilidad del usuario devolver el equipo de cómputo y/o dispositivos en buen estado, sin daños ni alteraciones en cualquiera de las partes que la conforman. El usuario acepta que bajo ningún motivo los recursos de TI/Telecom asignados serán motivo de retención al finalizar la relación laboral con fines de negociaciones, por tal motivo deberá devolver dichos recursos al Departamento de Tecnologías de la Información o al que en su momento se designe como receptor el día de su retiro. En caso de retenerse el equipo al finalizar la relación laboral, el usuario acepta que la empresa pueda proceder por medios legales por robo y abuso de confianza.</p>
         </div>
-        <div class="row align-items-center">
-            <div class="col-4 text-center offset-4">
+
+        <div class="row align-items-center sign-container">
+            <div class="col-4 text-center offset-4 placed-bottom">
                 <span class="t">Ing. {{ $solicitante->nombre }} {{ $solicitante->apellidos }}</span>
                 <hr>
                 <span class="t">{{ $solicitante->puesto }}</span>

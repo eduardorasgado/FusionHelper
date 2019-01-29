@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="cddbc456-9ab5-4391-995f-6537bde7d221" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ResguardoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ResguardoController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/resguardos/pdf_vale.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/resguardos/pdf_vale.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -58,8 +59,8 @@
             <file pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/resources/views/resguardos/pdf_vale.blade.php">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="208">
-                    <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+                  <state relative-caret-position="494">
+                    <caret line="73" column="12" lean-forward="true" selection-start-line="73" selection-start-column="12" selection-end-line="73" selection-end-column="12" />
                   </state>
                 </provider>
               </entry>
@@ -322,8 +323,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ResguardoController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="455">
-              <caret line="156" column="46" selection-start-line="156" selection-start-column="46" selection-end-line="156" selection-end-column="46" />
+            <state relative-caret-position="143">
+              <caret line="155" column="39" selection-start-line="155" selection-start-column="39" selection-end-line="155" selection-end-column="39" />
               <folding>
                 <element signature="e#40#58#0#PHP" expanded="true" />
               </folding>
@@ -752,21 +753,7 @@
       <workItem from="1548613218300" duration="13584000" />
       <workItem from="1548694087845" duration="5763000" />
       <workItem from="1548706773019" duration="1964000" />
-      <workItem from="1548735688386" duration="3068000" />
-    </task>
-    <task id="LOCAL-00071" summary="Administrador/Proveedor: Retornar mensaje después de que un proveedor ha sido actualizado.">
-      <created>1546622799922</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
-      <option name="project" value="LOCAL" />
-      <updated>1546622799922</updated>
-    </task>
-    <task id="LOCAL-00072" summary="Administrador/Proveedor: Creación de activo-&gt; modelo, controlador y migración.">
-      <created>1546624413609</created>
-      <option name="number" value="00072" />
-      <option name="presentableId" value="LOCAL-00072" />
-      <option name="project" value="LOCAL" />
-      <updated>1546624413609</updated>
+      <workItem from="1548735688386" duration="9062000" />
     </task>
     <task id="LOCAL-00073" summary="Administrador/Proveedor: Agregando modelo y completando los campos de la migración.">
       <created>1546642525037</created>
@@ -1097,11 +1084,25 @@
       <option name="project" value="LOCAL" />
       <updated>1548708691151</updated>
     </task>
-    <option name="localTasksCounter" value="120" />
+    <task id="LOCAL-00120" summary="Administrador: Tabla, body y parrafos estilizados en el pdf">
+      <created>1548739645614</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1548739645615</updated>
+    </task>
+    <task id="LOCAL-00121" summary="Administrador: row para firma dinamico.">
+      <created>1548740787604</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1548740787604</updated>
+    </task>
+    <option name="localTasksCounter" value="122" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="277498000" />
+    <option name="totallyTimeSpent" value="283492000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="30" width="1366" height="738" extended-state="7" />
@@ -1157,8 +1158,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Empleado: lista de incidentes depurado." />
-    <MESSAGE value="Administrador: logica para eliminar un activo." />
     <MESSAGE value="Administrador: adding a separator in dropdown" />
     <MESSAGE value="Administrador: Agregado de controlador, modelo y migracion de resguardo." />
     <MESSAGE value="Administrador: Seeder y factory de accesorio, view del almacen." />
@@ -1182,7 +1181,9 @@
     <MESSAGE value="Administrador: Bootstrap minified importado en view de pdf y carga de html en vez de descargar pdf para facilitar el diseño de la vista." />
     <MESSAGE value="Administrador: Tabla con contenido dinamico en el pdf." />
     <MESSAGE value="Administrador: Mas formato a la tabla del vale, pasamos un empleado a los datos del pdf." />
-    <option name="LAST_COMMIT_MESSAGE" value="Administrador: Mas formato a la tabla del vale, pasamos un empleado a los datos del pdf." />
+    <MESSAGE value="Administrador: Tabla, body y parrafos estilizados en el pdf" />
+    <MESSAGE value="Administrador: row para firma dinamico." />
+    <option name="LAST_COMMIT_MESSAGE" value="Administrador: row para firma dinamico." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/database/migrations/2018_12_23_042312_create_incidentes_table.php">
@@ -1552,8 +1553,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ResguardoController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="156" column="46" selection-start-line="156" selection-start-column="46" selection-end-line="156" selection-end-column="46" />
+        <state relative-caret-position="143">
+          <caret line="155" column="39" selection-start-line="155" selection-start-column="39" selection-end-line="155" selection-end-column="39" />
           <folding>
             <element signature="e#40#58#0#PHP" expanded="true" />
           </folding>
@@ -1562,8 +1563,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/resguardos/pdf_vale.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+        <state relative-caret-position="494">
+          <caret line="73" column="12" lean-forward="true" selection-start-line="73" selection-start-column="12" selection-end-line="73" selection-end-column="12" />
         </state>
       </provider>
     </entry>
