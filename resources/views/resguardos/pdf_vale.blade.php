@@ -26,7 +26,8 @@
         }
         .tg td{
             border-style:solid;
-            border-width:1px;
+            border-width:2px;
+            margin: 0;
             overflow:hidden;
             word-break:normal;
             border-color:black;}
@@ -34,7 +35,7 @@
             font-size: 10px;
             font-weight: bold;
             border-style:solid;
-            border-width:1px;
+            border-width:2px;
             overflow:hidden;
             word-break:normal;
             border-color:black;}
@@ -44,7 +45,9 @@
             background-color: #002752;color:#ffffff;border-color:#002752;text-align:center;}
         .tg .tg-pqh4{
             border-color:#002752;
-            text-align:center;}
+            padding: 0;
+            text-align: center;
+        }
         .tg .tg-1hqm{
             font-size:12px;
             border-color:#002752;
@@ -55,13 +58,14 @@
             font-size: 16px;
         }
         .tg .tg-bold {
+            padding: 0;
             font-size:10px;
             font-weight: bold;
             background: #d8d8d8;
         }
 
         p, .table-activos {
-            font-size: 12px;
+            font-size: 13px;
         }
         p {
             text-align: justify;
@@ -84,7 +88,7 @@
 
         .t {
             /*Este es el formateo de el texto donde va la firma*/
-            font-size: 12px;
+            font-size: 13px;
         }
 
         .sign-container {
@@ -100,8 +104,9 @@
     <div class="container-fluid">
         <table class="tg">
             <tr>
-                <th class="tg-pqh4" rowspan="3">
-                    <!--img src="{{ $image_link }}" alt="fusion_logo"/-->
+                <th class="tg-pqh4" rowspan="3" style="width: 20px">
+                    <img src="{{ $image_link }}" alt="fusion_logo" width="110"
+                         style="padding: 0; margin: 0;"/>
                 </th>
                 <th class="tg-1hqm tg-title" colspan="5">FUSIÓN ELÉCTRICA DE MÉXICO S.A. DE C.V</th>
             </tr>

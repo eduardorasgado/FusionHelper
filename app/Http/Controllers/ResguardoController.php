@@ -153,8 +153,10 @@ class ResguardoController extends Controller
              * */
             // Empaquetando los datos
             //dd(asset('images/fusion_logo.png'));
+            //return public_path().'/images/fusion_logo.png';
             $data = array(
-                'image_link' => asset('images/fusion_logo.png'),
+                //'image_link' => asset('images/fusion_logo.png'),
+                'image_link' => public_path('images/LogotipoFusionElectrica.png'),
                 'id' => $resguardo->id,
                 'fecha' => $fecha_g_spanish,
                 'fecha_header' => $fecha_de_generacion,
@@ -168,7 +170,7 @@ class ResguardoController extends Controller
             $pdf = PDF::loadview('resguardos.pdf_vale', $data);
 
             /*** SOLO PARA TESTING DEL DISEÑO DEL PDF****/
-            //return $pdf->stream('resguardos.pdf_vale');
+            //return $pdf->stream('resguardos.pdf_vale.pdf');
             /***************/
 
             // el tiempo se separa como fecha hora, aqui lo justamos fecha-hora
@@ -204,6 +206,7 @@ class ResguardoController extends Controller
             return $pdf->download($pdf_name);
 
         } catch(Exception $e){
+            //return $e->getMessage();
             return redirect('/admin/resguardos/all')
                 ->with('Error', 'No se pudo generar el PDF del resguardo, intentelo más tarde.');
         }
