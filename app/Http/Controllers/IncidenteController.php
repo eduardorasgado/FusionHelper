@@ -24,7 +24,7 @@ class IncidenteController extends Controller
         $areas = Area::all();
         // entregar el formulario de reporte de incidente
         return view('incidentesEmpleado.incidentesEmpleadoRegistro',
-            compact('tipos', 'areas'));
+            compact('areas'));
     }
 
     public function postRegistro(Request $request)
