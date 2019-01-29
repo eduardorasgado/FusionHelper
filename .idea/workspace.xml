@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="cddbc456-9ab5-4391-995f-6537bde7d221" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ResguardoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ResguardoController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/resguardos/pdf_vale.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/resguardos/pdf_vale.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,24 +22,6 @@
         <state>
           <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
             <file pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/resources/views/incidentesAdmin/incidentesList.blade.php">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="4134">
-                    <caret line="159" column="42" selection-start-line="159" selection-start-column="42" selection-end-line="159" selection-end-column="42" />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/resources/views/tickets/ticketIndividual.blade.php">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="806">
-                    <caret line="31" column="10" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/resources/views/adminHome2.blade.php">
                 <provider selected="true" editor-type-id="text-editor">
                   <state relative-caret-position="2132">
@@ -50,17 +33,35 @@
             <file pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/resources/views/resguardos/allResguardosAdmin.blade.php">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="2392">
-                    <caret line="92" column="89" selection-start-line="92" selection-start-column="89" selection-end-line="92" selection-end-column="89" />
+                  <state relative-caret-position="286">
+                    <caret line="11" column="59" selection-start-line="11" selection-start-column="59" selection-end-line="11" selection-end-column="59" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="522">
+                    <caret line="91" column="7" lean-forward="true" selection-start-line="91" selection-start-column="7" selection-end-line="91" selection-end-column="7" />
                   </state>
                 </provider>
               </entry>
             </file>
             <file pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/resources/views/layouts/app.blade.php">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="184">
+                    <caret line="73" column="57" selection-start-line="73" selection-start-column="57" selection-end-line="73" selection-end-column="57" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/resources/views/resguardos/pdf_vale.blade.php">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="494">
-                    <caret line="73" column="12" lean-forward="true" selection-start-line="73" selection-start-column="12" selection-end-line="73" selection-end-column="12" />
+                  <state relative-caret-position="286">
+                    <caret line="99" column="33" selection-start-line="99" selection-start-column="33" selection-end-line="99" selection-end-column="33" />
                   </state>
                 </provider>
               </entry>
@@ -415,8 +416,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Proveedor.php" />
-        <option value="$PROJECT_DIR$/resources/views/almacen/proveedores.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2018_12_27_110457_create_proveedors_table.php" />
         <option value="$PROJECT_DIR$/resources/views/adminEmpleados/updateEmpleado.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/almacen/updateProveedor.blade.php" />
@@ -463,9 +462,11 @@
         <option value="$PROJECT_DIR$/app/Resguardo.php" />
         <option value="$PROJECT_DIR$/resources/views/resguardos/allResguardosEmpleado.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/resources/views/resguardos/allResguardosAdmin.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ResguardoController.php" />
         <option value="$PROJECT_DIR$/resources/views/resguardos/pdf_vale.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/resguardos/allResguardosAdmin.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
       </list>
     </option>
   </component>
@@ -753,14 +754,7 @@
       <workItem from="1548613218300" duration="13584000" />
       <workItem from="1548694087845" duration="5763000" />
       <workItem from="1548706773019" duration="1964000" />
-      <workItem from="1548735688386" duration="9062000" />
-    </task>
-    <task id="LOCAL-00073" summary="Administrador/Proveedor: Agregando modelo y completando los campos de la migración.">
-      <created>1546642525037</created>
-      <option name="number" value="00073" />
-      <option name="presentableId" value="LOCAL-00073" />
-      <option name="project" value="LOCAL" />
-      <updated>1546642525038</updated>
+      <workItem from="1548735688386" duration="11765000" />
     </task>
     <task id="LOCAL-00074" summary="Administrador/Proveedor: El formulario para el registro de un nuevo activo esta hecho, ruta para el form igual.">
       <created>1546643828419</created>
@@ -1098,11 +1092,18 @@
       <option name="project" value="LOCAL" />
       <updated>1548740787604</updated>
     </task>
-    <option name="localTasksCounter" value="122" />
+    <task id="LOCAL-00122" summary="Administrador: Tabla header formateada completamente">
+      <created>1548745604544</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1548745604544</updated>
+    </task>
+    <option name="localTasksCounter" value="123" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="283492000" />
+    <option name="totallyTimeSpent" value="286195000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="30" width="1366" height="738" extended-state="7" />
@@ -1158,7 +1159,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Administrador: adding a separator in dropdown" />
     <MESSAGE value="Administrador: Agregado de controlador, modelo y migracion de resguardo." />
     <MESSAGE value="Administrador: Seeder y factory de accesorio, view del almacen." />
     <MESSAGE value="Empleado: rutas para registro de resguardo, formulario." />
@@ -1183,33 +1183,10 @@
     <MESSAGE value="Administrador: Mas formato a la tabla del vale, pasamos un empleado a los datos del pdf." />
     <MESSAGE value="Administrador: Tabla, body y parrafos estilizados en el pdf" />
     <MESSAGE value="Administrador: row para firma dinamico." />
-    <option name="LAST_COMMIT_MESSAGE" value="Administrador: row para firma dinamico." />
+    <MESSAGE value="Administrador: Tabla header formateada completamente" />
+    <option name="LAST_COMMIT_MESSAGE" value="Administrador: Tabla header formateada completamente" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/database/migrations/2018_12_23_042312_create_incidentes_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="24" column="38" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Accesorio.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ProveedorController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-104">
-          <caret line="86" column="104" selection-start-line="86" selection-start-column="104" selection-end-line="86" selection-end-column="104" />
-          <folding>
-            <element signature="e#40#58#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AccesorioController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="351">
@@ -1497,7 +1474,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/tickets/ticketIndividual.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="806">
+        <state>
           <caret line="31" column="10" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
         </state>
       </provider>
@@ -1506,13 +1483,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2132">
           <caret line="82" column="41" selection-start-line="82" selection-start-column="41" selection-end-line="82" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/resguardos/allResguardosAdmin.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2392">
-          <caret line="92" column="89" selection-start-line="92" selection-start-column="89" selection-end-line="92" selection-end-column="89" />
         </state>
       </provider>
     </entry>
@@ -1563,8 +1533,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/resguardos/pdf_vale.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="73" column="12" lean-forward="true" selection-start-line="73" selection-start-column="12" selection-end-line="73" selection-end-column="12" />
+        <state relative-caret-position="286">
+          <caret line="99" column="33" selection-start-line="99" selection-start-column="33" selection-end-line="99" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/resguardos/allResguardosAdmin.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="11" column="59" selection-start-line="11" selection-start-column="59" selection-end-line="11" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="91" column="7" lean-forward="true" selection-start-line="91" selection-start-column="7" selection-end-line="91" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/app.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="73" column="57" selection-start-line="73" selection-start-column="57" selection-end-line="73" selection-end-column="57" />
         </state>
       </provider>
     </entry>

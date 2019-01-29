@@ -39,7 +39,8 @@
             word-break:normal;
             border-color:black;}
         .tg .tg-h4f1{
-            font-size:12px;
+            font-size:14px;
+            font-weight: bold;
             background-color: #002752;color:#ffffff;border-color:#002752;text-align:center;}
         .tg .tg-pqh4{
             border-color:#002752;
@@ -97,10 +98,10 @@
 </head>
 <body>
     <div class="container-fluid">
-
         <table class="tg">
             <tr>
-                <th class="tg-pqh4" rowspan="3"><br>[AQUI VA EL LOGO <br><br>DE LA EMPRESA]</th>
+                <th class="tg-pqh4" rowspan="3">
+                    </th>
                 <th class="tg-1hqm tg-title" colspan="5">FUSIÓN ELÉCTRICA DE MÉXICO S.A. DE C.V</th>
             </tr>
             <tr>

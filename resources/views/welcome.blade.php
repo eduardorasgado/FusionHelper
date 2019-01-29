@@ -81,6 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
+                    <img src="{{ url('/images/fusion_logo_cut.png') }}" alt="profile Pic">
                     Fusión Electrica de México
                 </div>
                 <h2>Mesa de Ayuda</h2>
