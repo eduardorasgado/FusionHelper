@@ -202,6 +202,8 @@ class ResguardoController extends Controller
             // guardando el nuevo estado
             $resguardo->save();
 
+            // TODO: La tabla no actualiza cuando se descarga el resguardo, representa un problema menor
+            // Se puede actualizar a mano con ctrl +r
             // descargando el pdf
             return $pdf->download($pdf_name);
 

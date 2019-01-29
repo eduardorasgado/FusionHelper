@@ -11,9 +11,9 @@
         </div>
         <div class="row">
             <div class="col-md-4">
-                <div class="jumbotron text-center">
+                <div class="jumbotron jumbo-1 text-center">
                     <div class="dropdown">
-                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                        <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
                             Incidentes y Tickets
                         </button>
                         <div class="dropdown-menu">
@@ -31,9 +31,9 @@
             </div>
 
             <div class="col-md-4">
-                <div class="jumbotron text-center">
+                <div class="jumbotron jumbo-2 text-center">
                     <div class="dropdown">
-                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                        <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
                             Administrar empleados
                         </button>
                         <div class="dropdown-menu">
@@ -45,9 +45,9 @@
             </div>
 
             <div class="col-md-4">
-                <div class="jumbotron text-center">
+                <div class="jumbotron jumbo-3 text-center">
                     <div class="dropdown">
-                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                        <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
                             Áreas
                         </button>
                         <div class="dropdown-menu">
@@ -62,9 +62,9 @@
         <div class="row">
 
             <div class="col-md-4">
-                <div class="jumbotron text-center">
+                <div class="jumbotron jumbo-4 text-center">
                     <div class="dropdown">
-                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                        <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
                             Almacén
                         </button>
                         <div class="dropdown-menu">
@@ -77,29 +77,13 @@
             </div>
 
             <div class="col-md-4">
-                <div class="jumbotron text-center">
+                <div class="jumbotron jumbo-5 text-center">
                     <div class="dropdown">
-                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" disabled>
-                            Mantenimiento
-                        </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{{url('registro/tecnico')}}">No registrados</a>
-                            <a class="dropdown-item" href="{{url('registro/tecnico')}}">Registrados</a>
-                            <a class="dropdown-item" href="{{url('registro/tecnico')}}">Todos</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="jumbotron text-center">
-                    <div class="dropdown">
-                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" disabled>
+                        <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" disabled>
                             Reporte
                         </button>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{{url('registro/tecnico')}}">No registrados</a>
-                            <a class="dropdown-item" href="{{url('registro/tecnico')}}">Registrados</a>
-                            <a class="dropdown-item" href="{{url('registro/tecnico')}}">Todos</a>
+                            <a class="dropdown-item" href="">Generar reporte del mes</a>
                         </div>
                     </div>
             </div>
@@ -109,12 +93,12 @@
         <h2>Otras acciones</h2>
         <div class="row">
             <div class="jumbotron col-md-6">
-                <a href="{{url('registro/tecnico')}}"><button class="btn btn-success" disabled>
+                <a href=""><button class="btn btn-success" disabled>
                         Otra tarea aqui</button></a></div>
             </div>
         </div>
     </div>
     <div class="container text-right">
-        <a href="{{url('registro/tecnico')}}"><button class="btn btn-outline-secondary">Reportar un bug</button></a>
+        <a href=""><button class="btn btn-outline-secondary">Reportar un bug</button></a>
     </div>
 @endsection

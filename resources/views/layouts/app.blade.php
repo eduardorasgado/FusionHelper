@@ -64,6 +64,41 @@
         .orange {
             color: #f6993f;
         }
+
+        .jumbo-1 {
+            background-image: url("/images/ThFusion01-2.jpg");
+            background-repeat: no-repeat;
+            background-size: 120%;
+            background-position: -10px -10px;
+        }
+
+        .jumbo-2 {
+            background-image: url("/images/ThFusion03-1.jpg");
+            background-repeat: no-repeat;
+            background-size: 120%;
+            background-position: -10px -10px;
+        }
+
+        .jumbo-3 {
+            background-image: url("/images/ThFusion02-1.jpg");
+            background-repeat: no-repeat;
+            background-size: 120%;
+            background-position: -10px -10px;
+        }
+
+        .jumbo-4 {
+            background-image: url("/images/QuienesSomos-2.jpg");
+            background-repeat: no-repeat;
+            background-size: 120%;
+            background-position: -5px -90px;
+        }
+
+        .jumbo-5 {
+            background-image: url("/images/Servicios2.jpg");
+            background-repeat: no-repeat;
+            background-size: 120%;
+            background-position: -5px -90px;
+        }
     </style>
 </head>
 <body>

@@ -12,19 +12,19 @@
         @if($authorized == 1)
         <div class="row">
             <div class="col-md-4 text-center">
-                <div class="jumbotron">
-                    <a href="{{ route('incidenteEmpleadoRegistro') }}"><button class="btn btn-success">Reportar un incidente</button></a>
+                <div class="jumbotron jumbo-1">
+                    <a href="{{ route('incidenteEmpleadoRegistro') }}"><button class="btn">Reportar un incidente</button></a>
                 </div>
             </div>
             <div class="col-md-4 text-center">
-                <div class="jumbotron">
-                    <a href="{{ route('incidentesEmpleadoIndex') }}"><button class="btn btn-success">Ver todos mis incidentes registrados</button></a>
+                <div class="jumbotron jumbo-2">
+                    <a href="{{ route('incidentesEmpleadoIndex') }}"><button class="btn">Ver todos mis incidentes registrados</button></a>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="jumbotron text-center">
+                <div class="jumbotron text-center jumbo-3">
                     <div class="dropdown">
-                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                        <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
                             Activos
                         </button>
                         <div class="dropdown-menu">
@@ -37,7 +37,7 @@
 
         </div>
         <div class="container">
-            <a href="{{url('registro/tecnico')}}"><button class="btn btn-outline-secondary">Reportar un bug</button></a>
+            <a href=""><button class="btn btn-outline-secondary">Reportar un bug</button></a>
         </div>
     </div>
     @elseif($authorized == 0)
