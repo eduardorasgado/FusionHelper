@@ -32,6 +32,17 @@
         td {
             border: 1px solid #1e7e34;
         }
+
+        hr {
+            background: black;
+            margin: 0;
+            padding: 0;
+        }
+
+        .t {
+            /*Este es el formateo de el texto donde va la firma*/
+            font-size: 12px;
+        }
     </style>
 </head>
 <body>
@@ -81,11 +92,19 @@
                 </tbody>
             </table>
         </div>
+        <br>
         <div class="row">
             <p>El usuario se compromete a cuidar, mantener en buen estado y utilizarla única y exclusivamente para asuntos relacionados con su actividad laboral. En caso de su extravío, daño o uso inadecuado, se responsabiliza a pagar total o parcialmente el costo de reposición de cualquiera de las partes afectadas.</p>
         </div>
         <div class="row">
             <p>Será responsabilidad del usuario devolver el equipo de cómputo y/o dispositivos en buen estado, sin daños ni alteraciones en cualquiera de las partes que la conforman. El usuario acepta que bajo ningún motivo los recursos de TI/Telecom asignados serán motivo de retención al finalizar la relación laboral con fines de negociaciones, por tal motivo deberá devolver dichos recursos al Departamento de Tecnologías de la Información o al que en su momento se designe como receptor el día de su retiro. En caso de retenerse el equipo al finalizar la relación laboral, el usuario acepta que la empresa pueda proceder por medios legales por robo y abuso de confianza.</p>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-4 text-center offset-4">
+                <span class="t">Ing. {{ $solicitante->nombre }} {{ $solicitante->apellidos }}</span>
+                <hr>
+                <span class="t">{{ $solicitante->puesto }}</span>
+            </div>
         </div>
     </div>
 </body>
