@@ -152,7 +152,9 @@ class ResguardoController extends Controller
              * AQUI SE GENERA EL PDF
              * */
             // Empaquetando los datos
+            //dd(asset('images/fusion_logo.png'));
             $data = array(
+                'image_link' => asset('images/fusion_logo.png'),
                 'id' => $resguardo->id,
                 'fecha' => $fecha_g_spanish,
                 'fecha_header' => $fecha_de_generacion,
@@ -166,7 +168,7 @@ class ResguardoController extends Controller
             $pdf = PDF::loadview('resguardos.pdf_vale', $data);
 
             /*** SOLO PARA TESTING DEL DISEÑO DEL PDF****/
-            return $pdf->stream('resguardos.pdf_vale');
+            //return $pdf->stream('resguardos.pdf_vale');
             /***************/
 
             // el tiempo se separa como fecha hora, aqui lo justamos fecha-hora
@@ -183,6 +185,10 @@ class ResguardoController extends Controller
                 $resguardo->estado = 1;
                 // guardar el nombre del archivo para acceder a el en otro momento
                 $resguardo->storage_link = $pdf_name;
+                // se guarda solo dia mes y anio
+                $resguardo->fecha_entrega = Carbon::now();
+                // se guarda el date time completo y en el frontend se muestra solo la hora
+                $resguardo->hora_entrega = Carbon::now()->toDateTimeString();
             } else{
                 // en caso de que se quiera cambiar el estado por la fuerza
                 // aun ya estando en 1
@@ -190,7 +196,6 @@ class ResguardoController extends Controller
                     ->with('Error', 'Ya se ha generado un PDF para este resguardo.');
             }
 
-            // TODO: Guardar el nombre del pdf en un campo de la tabla para su posterior
             // descarga
             // guardando el nuevo estado
             $resguardo->save();

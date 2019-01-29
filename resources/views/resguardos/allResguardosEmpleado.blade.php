@@ -70,7 +70,7 @@
                     <td>{{ $resguardo->fecha_asignacion }}</td>
                     <td> {{ explode(" ", $resguardo->created_at)[1] }}</td>
                     <td>@if(isset($resguardo->fecha_entrega)) {{ $resguardo->fecha_entrega }} @else aun sin asignar @endif</td>
-                    <td>@if(isset($resguardo->hora_entrega)) {{ $resguardo->hora_entrega }} @else aun sin asignar @endif</td>
+                    <td>@if(isset($resguardo->hora_entrega)) {{ explode(" ", $resguardo->hora_entrega)[1] }} @else aun sin asignar @endif</td>
                 </tr>
             @endforeach
             </tbody>

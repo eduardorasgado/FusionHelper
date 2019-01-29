@@ -101,7 +101,8 @@
         <table class="tg">
             <tr>
                 <th class="tg-pqh4" rowspan="3">
-                    </th>
+                    <!--img src="{{ $image_link }}" alt="fusion_logo"/-->
+                </th>
                 <th class="tg-1hqm tg-title" colspan="5">FUSIÓN ELÉCTRICA DE MÉXICO S.A. DE C.V</th>
             </tr>
             <tr>
