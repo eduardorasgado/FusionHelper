@@ -101,17 +101,37 @@
                         @if(count($activos) == 0)
                             <p>Aún no hay Activos</p>
                         @endif
-                        @foreach($activos as $activo)
-                            <p>Nombre: {{ $activo->nombre }} | Serie: {{ $activo->serie }} | Marca: {{ $activo->marca }} |
-                                Modelo: {{ $activo->modelo }} | Color: {{ $activo->color }} |
-                                <a class="btn btn-dark"
-                                   href="{{ route('updateActivo', $activo->id) }}"
-                                   onclick="return confirm('Está seguro de querer modificar este activo?')">Modificar</a>
-                                <a class="btn btn-danger"
-                                   href="{{ route('deleteActivo', $activo->id) }}"
-                                   onclick="return confirm('Está seguro de querer eliminar este activo?')">Eliminar</a>
-                            </p>
-                        @endforeach
+                        <table class="table">
+                            <thead class="table-dark">
+                            <tr>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Serie</th>
+                                <th scope="col">Marca</th>
+                                <th scope="col">Modelo</th>
+                                <th scope="col">Color</th>
+                                <th scope="col">Modificar</th>
+                                <th scope="col">Eliminar</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($activos as $activo)
+                                <tr>
+                                    <td>{{ $activo->nombre }}</td>
+                                    <td>{{ $activo->serie }}</td>
+                                    <td>{{ $activo->marca }}</td>
+                                    <td>{{ $activo->modelo }}</td>
+                                    <td>{{ $activo->color }}</td>
+                                    <td><a class="btn btn-dark"
+                                       href="{{ route('updateActivo', $activo->id) }}"
+                                       onclick="return confirm('Está seguro de querer modificar este activo?')">Modificar</a></td>
+                                    <td><a class="btn btn-danger"
+                                       href="{{ route('deleteActivo', $activo->id) }}"
+                                       onclick="return confirm('Está seguro de querer eliminar este activo?')">Eliminar</a></td>
+
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -126,24 +146,46 @@
                         @if(count($accesorios) == 0)
                             <p>Aún no hay Accesorios</p>
                         @endif
-                        @foreach($accesorios as $accesorio)
-                            <p> Nombre: {{ $accesorio->nombre }}
-                                | Serie:{{ $accesorio->serie }}
-                                | Marca: {{ $accesorio->marca }} |
-                                Modelo: {{ $accesorio->modelo }} |
-                                @foreach($activos as $activo)
-                                    @if($accesorio->activoId == $activo->id)
-                                        Activo al que pertenece: {{ $activo->nombre }}
-                                    @endif
-                                @endforeach
-                                <a class="btn btn-dark"
-                                   href="{{ route('updateAccesorio', $accesorio->id) }}"
-                                   onclick="return confirm('Está seguro de querer modificar este accesorio?')">Modificar</a>
-                                <a class="btn btn-danger"
-                                   href="{{ route('deleteAccesorio', $accesorio->id) }}"
-                                   onclick="return confirm('Está seguro de querer eliminar este accesorio?')">Eliminar</a>
-                            </p>
-                        @endforeach
+                        <table class="table">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Serie</th>
+
+                                    <th scope="col">Modelo</th>
+                                    <th scope="col">Activo al que pertenece</th>
+                                    <th scope="col">Modificar</th>
+                                    <th scope="col">Eliminar</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($accesorios as $accesorio)
+                                <tr>
+                                    <td>{{ $accesorio->nombre }}</td>
+                                    <td>{{ $accesorio->serie }}</td>
+
+                                    <td>{{ $accesorio->modelo }}</td>
+                                    <td>
+                                        @foreach($activos as $activo)
+                                            @if($accesorio->activoId == $activo->id)
+                                                {{ $activo->nombre }}
+                                            @endif
+                                        @endforeach
+                                    </td>
+                                    <td>
+                                    <a class="btn btn-dark"
+                                       href="{{ route('updateAccesorio', $accesorio->id) }}"
+                                       onclick="return confirm('Está seguro de querer modificar este accesorio?')">Modificar</a>
+                                    </td>
+                                    <td>
+                                    <a class="btn btn-danger"
+                                       href="{{ route('deleteAccesorio', $accesorio->id) }}"
+                                       onclick="return confirm('Está seguro de querer eliminar este accesorio?')">Eliminar</a>
+                                    </td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
