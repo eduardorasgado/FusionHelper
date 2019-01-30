@@ -59,17 +59,34 @@
                         @if(count($proveedores) == 0)
                             <p>Aún no hay proveedores</p>
                         @endif
-                        @foreach($proveedores as $proveedor)
-                            <p>Nombre: {{ $proveedor->nombre }} {{ $proveedor->apellidos }} | Email: {{ $proveedor->email }}
-                                | Telefono: {{ $proveedor->telefono }}
-                                <a class="btn btn-dark"
-                                   href="{{ route('updateProveedor', $proveedor->id) }}"
-                                    onclick="return confirm('Está seguro de querer modificar este proveedor?')">Modificar</a>
-                                <a class="btn btn-danger"
-                                   href="{{ route('deleteProveedor', $proveedor->id) }}"
-                                   onclick="return confirm('Está seguro de querer eliminar este proveedor?')">Eliminar</a>
-                            </p>
-                        @endforeach
+                        <table class="table">
+                            <thead class="table-dark">
+                            <tr>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">apellidos</th>
+                                <th scope="col">email</th>
+                                <th scope="col">telefono</th>
+                                <th scope="col">Editar</th>
+                                <th scope="col">Eliminar</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($proveedores as $proveedor)
+                                <tr>
+                                    <td>{{ $proveedor->nombre }}</td>
+                                    <td>{{ $proveedor->apellidos }}</td>
+                                    <td>{{ $proveedor->email }}</td>
+                                    <td>{{ $proveedor->telefono }}</td>
+                                    <td><a class="btn btn-dark"
+                                           href="{{ route('updateProveedor', $proveedor->id) }}"
+                                           onclick="return confirm('Está seguro de querer modificar este proveedor?')">Modificar</a></td>
+                                    <td><a class="btn btn-danger"
+                                           href="{{ route('deleteProveedor', $proveedor->id) }}"
+                                           onclick="return confirm('Está seguro de querer eliminar este proveedor?')">Eliminar</a></td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
