@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <title>Reporte del mes</title>
     <style>
         /*!
  * Bootstrap v4.2.1 (https://getbootstrap.com/)
@@ -270,6 +271,11 @@
                     @endforeach
                 </tbody>
             </table>
+        </div>
+    </div>
+    <div class="row" style="position: relative">
+        <div class="col-5 offset-4" style="position: absolute; bottom: 0;">
+            <p>Fusion Electrica de Mexico S.A. de C.V. a {{$fecha_actual}}</p>
         </div>
     </div>
 

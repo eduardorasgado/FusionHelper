@@ -184,21 +184,26 @@ class AdministradorController extends Controller
     }
 
     public function generarReporte(){
-        // Se genera un pdf con los datos de todoo el mes
-        $empleados = User::all();
-        $incidentes = Incidente::all();
-        $tickets = Ticket::all();
-        $resguardos = Resguardo::all();
-        $activos = Activo::all();
-        $accesorios = Accesorio::all();
-        $proveedores = Proveedor::all();
 
         // fecha actual
-        $now = date(time());
+        $now_raw = date(time());
         // fecha actual - un mes
-        $fecha_del_mes = date("d-m-Y", strtotime("-1 months", $now));
+        $fecha_del_mes = date("d-m-Y", strtotime("-1 months", $now_raw));
         //return $fecha_del_mes;
-        $now = date('d-m-Y', $now);
+        $now = date('d-m-Y', $now_raw);
+
+        $d_from = date('Y-m-d', strtotime("-1 months", $now_raw));
+        $d_to = date('Y-m-d', $now_raw);
+
+        // Se genera un pdf con los datos de todoo el mes, solamente del momento actual - un mes
+        $empleados = User::whereBetween('created_at', [$d_from, $d_to])->get();
+        $incidentes = Incidente::whereBetween('created_at', [$d_from, $d_to])->get();
+        $tickets = Ticket::whereBetween('created_at', [$d_from, $d_to])->get();
+        $resguardos = Resguardo::whereBetween('created_at', [$d_from, $d_to])->get();
+        $activos = Activo::whereBetween('created_at', [$d_from, $d_to])->get();
+        $accesorios = Accesorio::whereBetween('created_at', [$d_from, $d_to])->get();
+        $proveedores = Proveedor::whereBetween('created_at', [$d_from, $d_to])->get();
+
         try{
             // generar el pdf con el reporte
             $data = [
@@ -217,7 +222,8 @@ class AdministradorController extends Controller
             ini_set('max_execution_time', 300);
 
             $pdf = PDF::loadview('reporte.reporte_mes', $data);
-            return $pdf->stream('reporte_del_mes');
+            // retorna el pdf esperando ser descargado
+            return $pdf->stream('reporte_del_mes.de-'.$fecha_del_mes.'-a-'.$now.'.pdf');
 
         } catch( Exception $e){
             // en caso de error
