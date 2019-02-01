@@ -3,4 +3,5 @@
 *.scss linguist-vendored
 *.js linguist-vendored
 resources/views/resguardos/* linguist-vendored
+resources/views/reporte/* linguist-vendored
 CHANGELOG.md export-ignore
