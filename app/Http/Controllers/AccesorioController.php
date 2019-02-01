@@ -16,17 +16,20 @@ class AccesorioController extends Controller
 
         $validatedData = $request->validate([
             'nombre' => $RULE,
-            'activoId' => 'required',
             'serie' => $RULE,
             'service_tag' => $RULE,
             'modelo' => $RULE
         ]);
         // para mostrar el nombre en el mensaje de exito
         $acc_name = '';
+        $id_del_activo = null;
+        if(isset($request->activoId)){
+            $id_del_activo = $request->activoId;
+        }
         try{
             $accesorio = Accesorio::create([
                 'nombre' => $validatedData['nombre'],
-                'activoId' => $validatedData['activoId'],
+                'activoId' => $id_del_activo,
                 'serie' => $validatedData['serie'],
                 'service_tag' => $validatedData['service_tag'],
                 'modelo' => $validatedData['modelo']
@@ -50,22 +53,26 @@ class AccesorioController extends Controller
 
     public function postUpdate(Request $request){
         //
-         // buscando la existecia de el proveedor
+        // buscando la existecia de el proveedor
         $accesorioName = "";
         try{
             $RULE = 'string|required|max:100';
             $validatedData = $request->validate([
                 'nombre' => $RULE,
-                'activoId' => 'required',
                 'serie' => $RULE,
                 'service_tag' => $RULE,
                 'modelo' => $RULE
             ]);
 
+            $id_del_activo = null;
+            if(isset($request->activoId)){
+                $id_del_activo = $request->activoId;
+            }
+
             $accesorio = Accesorio::findOrFail($request->id);
 
             $accesorio->nombre = $validatedData["nombre"];
-            $accesorio->activoId = $validatedData["activoId"];
+            $accesorio->activoId = $id_del_activo;
             $accesorio->serie = $validatedData["serie"];
             $accesorio->service_tag = $validatedData["service_tag"];
             $accesorio->modelo = $validatedData["modelo"];

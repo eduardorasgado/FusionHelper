@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Area;
 use App\Incidente;
 use App\TipoIncidente;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Exception;
@@ -19,12 +20,23 @@ class IncidenteController extends Controller
         {
             return redirect('/empleado');
         }
+
         // form para el empleado
         // traemos todos los tipos de incidente registrados
         $areas = Area::all();
         // entregar el formulario de reporte de incidente
-        return view('incidentesEmpleado.incidentesEmpleadoRegistro',
-            compact('areas'));
+        if(Auth::user()->tipo_user == 0){
+            // en caso de que sea el admiistrador
+            // devolver areas y usuarios
+            $empleados = User::all();
+            return view('incidentesEmpleado.incidentesEmpleadoRegistro',
+                compact('areas', 'empleados'));
+        } else {
+            return view('incidentesEmpleado.incidentesEmpleadoRegistro',
+                compact('areas'));
+        }
+
+
     }
 
     public function postRegistro(Request $request)
@@ -35,32 +47,64 @@ class IncidenteController extends Controller
         {
             return redirect('/empleado');
         }
-        // registro que hace el empleado
-        $validatedData = $request->validate([
-            'area' => 'required|integer',
-            'prioridad' => 'required|integer',
-            'caso' => 'required|string|max:500'
-        ]);
+        $esAdmin =  Auth::user()->tipo_user;
+        $validatedData = null;
+        if($esAdmin == 0)
+            // si el usuario actual es administrador
+        {
+            // registro que hace el empleado
+            $validatedData = $request->validate([
+                'area' => 'required|integer',
+                'prioridad' => 'required|integer',
+                'caso' => 'required|string|max:500',
+                'empleadoId' => 'required|integer'
+            ]);
+        } else {
+            // cuando es empleado
+            $validatedData = $request->validate([
+                'area' => 'required|integer',
+                'prioridad' => 'required|integer',
+                'caso' => 'required|string|max:500',
+            ]);
+        }
 
         try{
             // creando un nuevo incidente
-            $newIncidente = Incidente::create([
-                'empleadoId' => Auth::user()->id,
-                'etiquetado' => 0,
-                // baja: 0, media: 1, alta: 2
-                'prioridad' => $validatedData['prioridad'],
-                'area' => $validatedData['area'],
-                'caso' => $validatedData['caso']
-            ]);
+            if($esAdmin == 0){
+                // en caso del admin
+                $newIncidente = Incidente::create([
+                    'empleadoId' => $validatedData['empleadoId'],
+                    'etiquetado' => 0,
+                    // baja: 0, media: 1, alta: 2
+                    'prioridad' => $validatedData['prioridad'],
+                    'area' => $validatedData['area'],
+                    'caso' => $validatedData['caso']
+                ]);
+            } else {
+                $newIncidente = Incidente::create([
+                    'empleadoId' => Auth::user()->id,
+                    'etiquetado' => 0,
+                    // baja: 0, media: 1, alta: 2
+                    'prioridad' => $validatedData['prioridad'],
+                    'area' => $validatedData['area'],
+                    'caso' => $validatedData['caso']
+                ]);
+            }
 
         } catch (Exception $e)
         {
+            //return $e->getMessage();
             // El caso de fallar la creacion del incidente
             return redirect()->back()
                 ->with('Error','Ha ocurrido un error en el servidor, intentelo más tarde o notifiquelo si persiste');
         }
 
         // Si el incidente se creo con exito
-        return redirect('/empleado/incidentes')->with('success','Se ha reportado el incidente con éxito');
+        if($esAdmin == 0){
+            return redirect('/admin/incidentes')->with('success','Se ha reportado el incidente con éxito');
+        } else {
+            return redirect('/empleado/incidentes')->with('success','Se ha reportado el incidente con éxito');
+        }
+
     }
 }

@@ -31,6 +31,6 @@ class AlmacenController extends Controller
         return view('almacen.listarAlmacen',
             compact('proveedores',
                 'activos',
-                    'accesorios'));
+                'accesorios'));
     }
 }

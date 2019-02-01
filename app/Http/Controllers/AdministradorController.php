@@ -5,11 +5,15 @@ use App\Area;
 use App\Incidente;
 use App\Ticket;
 use App\TipoIncidente;
+use App\Resguardo;
+use App\Proveedor;
+use App\Accesorio;
+use App \Activo;
 use App\User;
 use Illuminate\Http\Request;
 use Exception;
 use Illuminate\Support\Facades\DB;
-
+use Barryvdh\DomPDF\Facade as PDF;
 
 class AdministradorController extends Controller
 {
@@ -177,6 +181,45 @@ class AdministradorController extends Controller
                 'encolaCount',
                 'empleados',
                 'tickets'));
+    }
+
+    public function generarReporte(){
+        // Se genera un pdf con los datos de todo el mes
+        $empleados = User::all();
+        $incidentes = Incidente::all();
+        $tickets = Ticket::all();
+        $resguardos = Resguardo::all();
+        $activos = Activo::all();
+        $accesorios = Accesorio::all();
+        $proveedores = Proveedor::all();
+
+        // fecha actual
+        $now = date(time());
+        // fecha actual - un mes
+        $fecha_del_mes = date("d-m-Y", strtotime("-1 months", $now));
+        //return $fecha_del_mes;
+        $now = date('d-m-Y', $now);
+        try{
+            // generar el pdf con el reporte
+            $data = [
+                'fecha_mes' => $fecha_del_mes,
+                'fecha_actual' => $now,
+                'empleados' => $empleados,
+                'incidentes' => $incidentes,
+                'tickets' => $tickets,
+                'resguardos' => $resguardos,
+                'activos' => $activos,
+                'accesorios' => $accesorios,
+                'proveedores' => $proveedores
+            ];
+
+            $pdf = PDF::loadview('reporte.reporte_mes', $data);
+            return $pdf->stream('reporte_del_mes');
+
+        } catch( Exception $e){
+            // en caso de error
+            return redirect("admin/")->with('Error','No ha podido ser generado el reporte');
+        }
     }
 
     // UTILIDADES GENERALES

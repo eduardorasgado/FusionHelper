@@ -31,10 +31,10 @@ class EmpleadoController extends Controller
         }
         // recolectamos todos los incidentes del usuario en cuestion
         $incidentesRegistrados = Incidente::where('empleadoId', '=', Auth::user()->id)
-                    ->where('etiquetado', '=', 1)
-                    ->orderBy('id','desc')
-                    // paginacion para la vista incidentesList
-                    ->paginate(5,['*'], 'page1');
+            ->where('etiquetado', '=', 1)
+            ->orderBy('id','desc')
+            // paginacion para la vista incidentesList
+            ->paginate(5,['*'], 'page1');
 
         $tickets = Ticket::all();
 
