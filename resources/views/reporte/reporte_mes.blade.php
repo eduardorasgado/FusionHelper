@@ -124,6 +124,10 @@
                     @foreach($tickets as $ticket)
                         <tr>
                             <td>{{ $ticket->id }}</td>
+                            <td>{{ $ticket->tipo }}</td>
+                            <td>{{$ticket->diagnostico}}</td>
+                            <td>{{$ticket->solucion}}</td>
+                            <td>{{$ticket->descripcion_fallo}}</td>
                         </tr>
                     @endforeach
 
@@ -153,11 +157,17 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
                     @foreach($resguardos as $resguardo)
-                        <td></td>
+                        <tr>
+                            <td>{{ $resguardo->empleadoId }}</td>
+                            <td>{{ $resguardo->activosId }}</td>
+                            <td>{{ $resguardo->accesoriosId }}</td>
+                            <td>{{ $resguardo->fecha_asignacion }}</td>
+                            <td>{{ explode(" ", $resguardo->created_at)[1] }}</td>
+                            <td>@if(isset($resguardo->fecha_entrega)) {{ $resguardo->fecha_entrega }} @else aun sin asignar @endif</td>
+                            <td>@if(isset($resguardo->hora_entrega)) {{ explode(" ", $resguardo->hora_entrega)[1] }} @else aun sin asignar @endif</td>
+                        </tr>
                     @endforeach
-                </tr>
                 </tbody>
             </table>
 
@@ -182,11 +192,17 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
                     @foreach($activos as $activo)
-                        <td></td>
+                        <tr>
+                            <td>@if(isset($activo->nombre)) {{ $activo->nombre }} @endif</td>
+                            <td>@if(isset($activo->serie)) {{ $activo->serie }} @endif</td>
+                            <td>@if(isset($activo->etiqueta)) {{ $activo->etiqueta }} @endif</td>
+                            <td>@if(isset($activo->marca)) {{ $activo->marca }} @endif</td>
+                            <td>@if(isset($activo->modelo)) {{ $activo->modelo }} @endif</td>
+                            <td>@if(isset($activo->color)) {{ $activo->color }} @endif</td>
+                            <td>@if(isset($activo->descripcion)) {{ $activo->descripcion }} @endif</td>
+                        </tr>
                     @endforeach
-                </tr>
                 </tbody>
             </table>
 
@@ -211,11 +227,14 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
                     @foreach($accesorios as $accesorio)
-                        <td></td>
+                        <tr>
+                            <td>{{ $accesorio->nombre }}</td>
+                            <td>{{ $accesorio->serie }}</td>
+                            <td>{{ $accesorio->service_tag }}</td>
+                            <td>{{ $accesorio->modelo }}</td>
+                        </tr>
                     @endforeach
-                </tr>
                 </tbody>
             </table>
 
@@ -240,11 +259,15 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
                     @foreach($proveedores as $proveedor)
-                        <td></td>
+                        <tr>
+                            <td>{{ $proveedor->nombre }}</td>
+                            <td>{{ $proveedor->apellidos }}</td>
+                            <td>{{ $proveedor->telefono }}</td>
+                            <td>{{ $proveedor->email }}</td>
+                            <td>@if(isset($proveedor->rfc)) {{ $proveedor->rfc }} @endif</td>
+                        </tr>
                     @endforeach
-                </tr>
                 </tbody>
             </table>
         </div>

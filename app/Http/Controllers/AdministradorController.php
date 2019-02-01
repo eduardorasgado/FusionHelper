@@ -213,12 +213,15 @@ class AdministradorController extends Controller
                 'proveedores' => $proveedores
             ];
 
+            // extender el tiempo de carga de php
+            ini_set('max_execution_time', 300);
+
             $pdf = PDF::loadview('reporte.reporte_mes', $data);
             return $pdf->stream('reporte_del_mes');
 
         } catch( Exception $e){
             // en caso de error
-            return redirect("admin/")->with('Error','No ha podido ser generado el reporte');
+            return redirect("admin/")->with('Error','No ha podido ser generado el reporte. Error: '.$e->getMessage());
         }
     }
 
