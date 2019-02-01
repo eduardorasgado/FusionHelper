@@ -141,7 +141,7 @@ Route::group(['middleware' => ['is_admin']], function()
     // ALMACEN
     Route::get('/almacen/registros',
         'AlmacenController@index')
-    ->name('registros');
+        ->name('registros');
 
     // tablas de activos, accesorios y proveedores
     Route::get('/almacen/listas',
@@ -200,8 +200,8 @@ Route::group(['middleware' => ['is_admin']], function()
         ->name('postAccesorioRegistro');
 
     Route::get('/almacen/accesorio/update/{id}',
-    'AccesorioController@update')
-    ->name('updateAccesorio');
+        'AccesorioController@update')
+        ->name('updateAccesorio');
 
     Route::post('/almacen/accesorio/update/{id}',
         'AccesorioController@postUpdate')
@@ -225,4 +225,9 @@ Route::group(['middleware' => ['is_admin']], function()
     Route::get('/admin/resguardos/pdf/download/{id}',
         'ResguardoController@downloadResguardoPDF')
         ->name('downloadResguardoPDF');
+
+    // Generacion del reporte mensual
+    Route::get('/admin/reporte/pdf',
+        'AdministradorController@generarReporte')
+        ->name('generarReporteMensual');
 });

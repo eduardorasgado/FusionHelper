@@ -8,6 +8,11 @@
                 <p>Bienvenido a Fusión Electrica del Istmo. Esta es tu mesa de trabajo, ya puedes comenzar a
                     utilizarla. Excelente día</p>
             </div>
+            @if(Session::has('Error'))
+                <div class="alert alert-warning" role="alert" style="margin-top: 5px">
+                    <span class="text-success">{{ Session::get('Error') }}</span>
+                </div>
+            @endif
         </div>
         <div class="row">
             <div class="col-md-4">
@@ -77,24 +82,37 @@
             </div>
 
             <div class="col-md-4">
-                <div class="jumbotron jumbo-5 text-center">
+                <div class="jumbotron text-center">
                     <div class="dropdown">
                         <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" disabled>
-                            Reporte
+                            Mantenimiento
                         </button>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="">Generar reporte del mes</a>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="jumbotron jumbo-5 text-center">
+                    <div class="dropdown">
+                        <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+                            Reporte
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{{ route('generarReporteMensual')}}">Generar reporte del mes</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="container">
-        <h2>Otras acciones</h2>
-        <div class="row">
-            <div class="jumbotron col-md-6">
-                <a href=""><button class="btn btn-success" disabled>
-                        Otra tarea aqui</button></a></div>
+        <div class="container">
+            <h2>Otras acciones</h2>
+            <div class="row">
+                <div class="jumbotron col-md-6">
+                    <a href=""><button class="btn btn-success" disabled>
+                            Otra tarea aqui</button></a></div>
             </div>
         </div>
     </div>

@@ -287,7 +287,7 @@
                                 <div class="form-group row">
                                     <label for="activoId" class="col-md-4 col-form-label text-md-right">{{ __('Activo') }}</label>
                                     <select class="form-control col-md-6" id="activoId" name="activoId">
-                                        <option value="">Seleccione un activo</option>
+                                        <option value="">Sin activo</option>
                                         @foreach ($activos as $activo)
                                             <option value="{{ $activo->id }}">{{ $activo->nombre }} |
                                                 marca: {{ $activo->marca }} | modelo: {{ $activo->modelo }}</option>

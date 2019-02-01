@@ -16,7 +16,7 @@ class CreateAccesoriosTable extends Migration
         Schema::create('accesorios', function (Blueprint $table) {
             $table->increments('id');
             $table->string("nombre");
-            $table->integer('activoId');
+            $table->integer('activoId')->nullable();
             $table->string('serie');
             $table->string('service_tag');
             $table->string('modelo');

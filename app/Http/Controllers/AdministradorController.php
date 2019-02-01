@@ -8,7 +8,7 @@ use App\TipoIncidente;
 use App\Resguardo;
 use App\Proveedor;
 use App\Accesorio;
-use App \Activo;
+use App\ Activo;
 use App\User;
 use Illuminate\Http\Request;
 use Exception;
@@ -184,7 +184,7 @@ class AdministradorController extends Controller
     }
 
     public function generarReporte(){
-        // Se genera un pdf con los datos de todo el mes
+        // Se genera un pdf con los datos de todoo el mes
         $empleados = User::all();
         $incidentes = Incidente::all();
         $tickets = Ticket::all();

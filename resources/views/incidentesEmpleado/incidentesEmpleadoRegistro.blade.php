@@ -28,7 +28,7 @@
                             <option value="">Seleccione un área</option>
                             @foreach ($areas as $area)
                                 @if($area->estado)
-                                <option value="{{ $area->id }}">{{ $area->nombre }}</option>
+                                    <option value="{{ $area->id }}">{{ $area->nombre }}</option>
                                 @endif
                             @endforeach
                         </select>
@@ -43,6 +43,20 @@
                             <option value="2">Alta</option>
                         </select>
                     </div>
+
+                    @if(Auth::user()->tipo_user == 0)
+                        <div class="form-group row">
+                            <label for="empleadoId" class="col-md-4 col-form-label text-md-right">{{ __('Empleado') }}</label>
+                            <select class="form-control col-md-6" id="empleadoId" name="empleadoId">
+                                <option value="">Seleccione el empleado</option>
+                                @foreach($empleados as $empleado)
+
+                                    <option value="{{ $empleado->id}}">{{ $empleado->nombre}} {{ $empleado->apellidos }}</option>
+
+                                @endforeach
+                            </select>
+                        </div>
+                    @endif
 
                     <div class="form-group row">
                         <label for="caso" class="col-md-4 col-form-label text-md-right">{{ __('Caso') }}</label>

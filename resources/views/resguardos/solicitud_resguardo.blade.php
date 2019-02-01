@@ -56,6 +56,13 @@
                                             @endif
                                         @endforeach
                                     @endforeach
+                                        @foreach ($accesorios as $accesorio)
+                                            @if($accesorio->activoId == null)
+                                                <option value="{{ $accesorio->id }}">{{ $accesorio->nombre }} |
+                                                    serie: {{ $accesorio->serie }} | Service_tag: {{ $accesorio->service_tag }}
+                                                </option>
+                                            @endif
+                                        @endforeach
                                 </select>
                             </div>
 
