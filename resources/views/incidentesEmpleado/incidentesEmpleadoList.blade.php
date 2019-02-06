@@ -34,7 +34,7 @@
                     </div>
                 </div>
 
-                <div>
+                <div class="div-listado">
                     @if(!$registradosCount)
                         <br>
                         <div class="text-center">
@@ -86,16 +86,7 @@
                             @endforeach
                         @endforeach
                 </div>
-                    <div class="row text-center">
-                        @if($registradosCount)
-                            <div class="mt-2 mx-auto">
-                                {{-- Esto permite la paginacion de dos tablas en una misma view--}}
-                                {{$incidentesRegistrados->appends(['page1' => $incidentesRegistrados->currentPage(),
-                                'page2' => $incidentesEnCola->currentPage()])
-                                ->links()}}
-                            </div>
-                        @endif
-                    </div>
+
             </div>
 
             <div class="col-md-6 jumbotron jumboColorDark">
@@ -112,7 +103,7 @@
                         </div>
                     </div>
                 </div>
-                <div>
+                <div class="div-listado">
                     @if(!$encolaCount)
                         <br>
                         <div class="text-center">
@@ -146,14 +137,27 @@
                         @endif
                     @endforeach
                 </div>
-                <div class="row text-center">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 offset-2">
+                @if($registradosCount)
                     <div class="mt-2 mx-auto">
-                        @if($encolaCount)
-                            {{$incidentesEnCola->appends(['page1' => $incidentesRegistrados->currentPage(),
-                            'page2' => $incidentesEnCola->currentPage()])
-                            ->links()}}
-                        @endif
+                        {{-- Esto permite la paginacion de dos tablas en una misma view--}}
+                        {{$incidentesRegistrados->appends(['page1' => $incidentesRegistrados->currentPage(),
+                        'page2' => $incidentesEnCola->currentPage()])
+                        ->links()}}
                     </div>
+                @endif
+            </div>
+            <div class="col-md-6 align-items-center">
+                <div class="mt-2 mx-auto">
+                    @if($encolaCount)
+                        {{$incidentesEnCola->appends(['page1' => $incidentesRegistrados->currentPage(),
+                        'page2' => $incidentesEnCola->currentPage()])
+                        ->links()}}
+                    @endif
                 </div>
             </div>
         </div>

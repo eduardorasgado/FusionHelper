@@ -9,6 +9,7 @@ use App\TipoIncidente;
 use App\User;
 use Illuminate\Http\Request;
 use Exception;
+use Illuminate\Support\Facades\DB;
 
 class TicketController extends Controller
 {
@@ -108,11 +109,23 @@ class TicketController extends Controller
         return redirect()->back();
     }
 
-    public function getAllTickets()
+    public function getAllTickets(Request $request)
     {
         // devulve la lista del administrador para todos los tickets
         // disponibles en el sistema
-        $tickets = Ticket::latest()->paginate(10);
+        $tickets = null;
+        if(isset($request->area)){
+            $r_area = $request->area;
+            // en caso en el que venga el area en la url
+            $tickets = DB::table('tickets')->join( 'incidentes',
+                function($join) use ($r_area){
+                    $join->on('tickets.incidenteId', '=', 'incidentes.id')
+                        ->where('incidentes.area', '=', $r_area);
+                }
+            )->paginate(10);
+        } else {
+            $tickets = Ticket::latest()->paginate(10);
+        }
 
         // array vacio donde meter todos los incidenes de los
         // tikets seleccionados por la paginacion
@@ -148,8 +161,9 @@ class TicketController extends Controller
                     ->firstOrFail());
         }
 
+        $areas_raw = Area::all();
         return view('tickets.allTickets',
             compact('tickets', 'incidentes', 'empleados',
-                'tipos', 'areas'));
+                'tipos', 'areas', 'areas_raw'));
     }
 }

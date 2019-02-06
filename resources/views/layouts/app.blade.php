@@ -99,9 +99,17 @@
             background-size: 120%;
             background-position: -5px -90px;
         }
+
+        .div-listado {
+            float:left;
+
+            overflow-y: auto;
+            height: 800px;
+        }
     </style>
 </head>
 <body>
+
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
@@ -167,5 +175,6 @@
             Fusión Eléctrica de México. 2018-2019. Todos los derechos reservados.
         </footer>
     </div>
+
 </body>
 </html>

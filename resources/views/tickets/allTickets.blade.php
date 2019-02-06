@@ -14,10 +14,29 @@
         </div>
         <br><br><br>
 
-        <div class="row">
-            <label class="col-md-1 col-form-label" for="search">Filtrar</label>
-            <input class="form-control col-md-6" id="search"  type="text">
-        </div>
+
+            <form method="get" action="{{ route('getAllTickets') }}">
+            @csrf
+                <div class="form-group row">
+                    <label for="area" class="col-md-4 col-form-label text-md-right">{{ __('Filtrar por Área') }}</label>
+                    <select id="area-selector" class="form-control col-md-5" id="area" name="area">
+                        <option value="">Seleccione un área</option>
+                        @foreach ($areas_raw as $area)
+                            @if($area->estado)
+                                <option value="{{ $area->id }}">{{ $area->nombre }}</option>
+                            @endif
+                        @endforeach
+                    </select>
+                    <div class="">
+                        <div class="">
+                            <button type="submit" class="btn btn-primary">
+                                {{ __('Filtrar') }}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
         <br>
         <table class="table table-hover">
             <thead>
@@ -59,5 +78,14 @@
             @endif
         </div>
     </div>
+
+    <script>
+        var e = document.getElementById("area-selector");
+        e.addEventListener("click", function(){
+            //var strUser = e.options[e.selectedIndex].value;
+            //console.log(strUser);
+            console.log("changed")
+        })
+    </script>
 @endsection
 
