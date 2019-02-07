@@ -230,4 +230,8 @@ Route::group(['middleware' => ['is_admin']], function()
     Route::get('/admin/reporte/pdf',
         'AdministradorController@generarReporte')
         ->name('generarReporteMensual');
+
+    Route::get('/admin/reporte/general',
+        'AdministradorController@analisisReporte')
+        ->name('analisisReporte');
 });

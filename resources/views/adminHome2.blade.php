@@ -101,7 +101,8 @@
                             Reporte
                         </button>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{{ route('generarReporteMensual')}}" target="_blank">Generar reporte del mes</a>
+                            <a class="dropdown-item" href="{{ route('generarReporteMensual')}}" target="_blank">Generar reporte general del mes(PDF)</a>
+                            <a class="dropdown-item" href="{{ route('analisisReporte') }}">Reporte general</a>
                         </div>
                     </div>
                 </div>
