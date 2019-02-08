@@ -39,4 +39,7 @@ class ActivoGeneralController extends Controller
         return view("almacenGenerales.listaGenerales",
             compact("activos_generales", "accesorios_generales"));
     }
+
+    // TODO: GENERAR RUTAS PARA MODIFICAR Y ELIMINAR ACTIVOS Y ACCESORIOS GENERALES
+    // TODO: MODIFICAR LA URL DE LOS LINKS DE LAS VISTAS LISTAGENERALES.BLADE
 }

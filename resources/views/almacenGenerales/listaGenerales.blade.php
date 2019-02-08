@@ -61,7 +61,8 @@
                             <tr>
                                 <th>Id</th>
                                 <th scope="col">Nombre</th>
-
+                                <th>Modificar</th>
+                                <th>Eliminar</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -69,7 +70,16 @@
                                 <tr>
                                     <td>{{ $activo->id }}</td>
                                     <td>{{ $activo->nombre }}</td>
-
+                                    <td>
+                                        <a class="btn btn-dark"
+                                           href="{{ route('updateAccesorio', $activo->id) }}"
+                                           onclick="return confirm('Está seguro de querer modificar este activo general?')">Modificar</a>
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-danger"
+                                           href="{{ route('deleteAccesorio', $activo->id) }}"
+                                           onclick="return confirm('Está seguro de querer eliminar este activo general?')">Eliminar</a>
+                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>
@@ -93,6 +103,8 @@
                             <tr>
                                 <th>Id</th>
                                 <th scope="col">Nombre</th>
+                                <th>Modificar</th>
+                                <th>Eliminar</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -100,6 +112,16 @@
                                 <tr>
                                     <td>{{ $accesorio->id }}</td>
                                     <td>{{ $accesorio->nombre }}</td>
+                                    <td>
+                                        <a class="btn btn-dark"
+                                           href="{{ route('updateAccesorio', $accesorio->id) }}"
+                                           onclick="return confirm('Está seguro de querer modificar este accesorio?')">Modificar</a>
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-danger"
+                                           href="{{ route('deleteAccesorio', $accesorio->id) }}"
+                                           onclick="return confirm('Está seguro de querer eliminar este accesorio?')">Eliminar</a>
+                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>
