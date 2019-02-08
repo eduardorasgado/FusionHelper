@@ -77,7 +77,7 @@
                             <a class="dropdown-item" href="{{ route('listarAlmacen') }}">Listas de activos, accesorios y proveedores</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{ route('registroGenerales') }}">Registrar Activo o Accesorio General</a>
-                            <a class="dropdown-item" href="{{ route('listarAlmacen') }}">Listas de Activos y Accesorios Generales</a>
+                            <a class="dropdown-item" href="{{ route('allGenerales') }}">Listas de Activos y Accesorios Generales</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{ route('listarReguardosAdmin') }}">Resguardos</a>
                         </div>

@@ -239,4 +239,17 @@ Route::group(['middleware' => ['is_admin']], function()
     Route::get("/admin/generales/create",
         "ActivoGeneralController@createActivoAndAccesorio")
         ->name("registroGenerales");
+
+    Route::post("/admin/generales/activo/create",
+        "ActivoGeneralController@create")
+        ->name("postActivoGeneralRegistro");
+
+    Route::post("/admin/generales/accesorio/create",
+        "AccesorioGeneralController@create")
+        ->name("postAccesorioGeneralRegistro");
+
+    // listar todos los activos y accesorios generales
+    Route::get("/admin/generales/all",
+        "ActivoGeneralController@listGenerales")
+        ->name("allGenerales");
 });

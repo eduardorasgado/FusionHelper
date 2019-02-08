@@ -58,7 +58,7 @@
                         <h3>Registro de Activo General</h3>
                     </div>
                     <div class="card card-body">
-                        <form action="{{ route('postProveedorRegistro') }}"
+                        <form action="{{ route('postActivoGeneralRegistro') }}"
                               method="POST" onsubmit="return confirm('Está seguro de hacer este registro?')">
                             @csrf
 
@@ -96,7 +96,7 @@
                     </div>
                     <div class="card card-body">
                         <div class="card card-body">
-                            <form action="{{ route('postActivoRegistro') }}"
+                            <form action="{{ route('postAccesorioGeneralRegistro') }}"
                                   method="POST" onsubmit="return confirm('Está seguro de hacer este registro?')">
                                 @csrf
 
