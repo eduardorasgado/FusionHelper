@@ -31,7 +31,7 @@ class ResguardoController extends Controller
     //
     public function getRegistro(Request $request)
     {
-        //
+        // TODO: LOGICA PARA MANDAR NUEVA VISTA DE PRERESGUARDO
         $activos = Activo::all();
         $accesorios = Accesorio::all();
         return view('resguardos.solicitud_resguardo',

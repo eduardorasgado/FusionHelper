@@ -234,4 +234,9 @@ Route::group(['middleware' => ['is_admin']], function()
     Route::get('/admin/reporte/general',
         'AdministradorController@analisisReporte')
         ->name('analisisReporte');
+
+    // RUTAS PARA LOS ACTIVOS Y ACCESORIOS GENERALES
+    Route::get("/admin/generales/create",
+        "ActivoGeneralController@createActivoAndAccesorio")
+        ->name("registroGenerales");
 });
