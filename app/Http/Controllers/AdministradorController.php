@@ -14,6 +14,7 @@ use Illuminate\Http\Request;
 use Exception;
 use Illuminate\Support\Facades\DB;
 use Barryvdh\DomPDF\Facade as PDF;
+use Illuminate\Support\Facades\Hash;
 
 class AdministradorController extends Controller
 {
@@ -93,6 +94,25 @@ class AdministradorController extends Controller
         if(isset($request->tecnico)){ $user->tipo_user = 2; }
         // configurar el tipo de user como empleado
         else { $user->tipo_user = 1; }
+
+        if(isset($request->changePass)){
+            // si el usuario desea cambiar la pass
+            // se compara la pass intriducida con la pass en el sistema
+            //return Hash::make($request->actualPassword) + " | " + $user->password;
+            if(Hash::check($request->actualPassword, $user->password)){
+                // si coinciden entonces podemos hacer el cambio
+                if($request->newPassword == $request->newPasswordRepeated){
+                    // cambiar la contrasena
+                    $user->password = Hash::make($request->newPassword);
+                } else {
+                    return redirect()->back()
+                        ->with('Error','No La nueva contraseña no coincide en ambos campos.');
+                }
+            } else {
+                return redirect()->back()
+                    ->with('Error','La contraseña actual del usuario no es correcta.');
+            }
+        }
         // guardando los cambios
         $user->save();
         // vuelta a la lista de registrados
@@ -253,7 +273,9 @@ class AdministradorController extends Controller
 
         try {
             // devolver la vista requerida
-            return view('reporte.reporteGeneral');
+            return view('reporte.reporteGeneral',
+            compact('fecha_del_mes', 'now', 'empleados', 'incidentes',
+            'tickets', 'resguardos', 'activos', 'accesorios', 'proveedores'));
         } catch (Exception $e){
             // en caso de generar error
             return redirect("admin/")->with('Error','Intentelo mas tarde');
