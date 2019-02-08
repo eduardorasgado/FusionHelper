@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Accesorio;
+use App\AccesorioGeneral;
 use App\ActivoGeneral;
 use Illuminate\Http\Request;
 use Exception;
@@ -33,7 +34,7 @@ class ActivoGeneralController extends Controller
 
     public function listGenerales(){
         $activos_generales = ActivoGeneral::all();
-        $accesorios_generales = Accesorio::all();
+        $accesorios_generales = AccesorioGeneral::all();
 
         return view("almacenGenerales.listaGenerales",
             compact("activos_generales", "accesorios_generales"));
