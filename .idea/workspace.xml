@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cddbc456-9ab5-4391-995f-6537bde7d221" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/almacenGenerales/listaGenerales.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AccesorioGeneralController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AccesorioGeneralController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ActivoGeneralController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ActivoGeneralController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/adminHome2.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/adminHome2.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/almacenGenerales/formGenerales.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/almacenGenerales/formGenerales.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -172,8 +169,8 @@
             <file pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/resources/views/adminEmpleados/updateEmpleado.blade.php">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="26">
-                    <caret line="153" column="30" lean-forward="true" selection-start-line="153" selection-start-column="30" selection-end-line="153" selection-end-column="30" />
+                  <state relative-caret-position="234">
+                    <caret line="150" column="30" lean-forward="true" selection-start-line="150" selection-start-column="30" selection-end-line="150" selection-end-column="30" />
                   </state>
                 </provider>
               </entry>
@@ -227,20 +224,20 @@
                 </provider>
               </entry>
             </file>
-            <file pinned="false" current-in-tab="true">
+            <file pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/resources/views/adminHome2.blade.php">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="390">
-                    <caret line="79" column="81" selection-start-line="79" selection-start-column="81" selection-end-line="79" selection-end-column="81" />
+                  <state relative-caret-position="416">
+                    <caret line="80" column="64" lean-forward="true" selection-start-line="80" selection-start-column="64" selection-end-line="80" selection-end-column="64" />
                   </state>
                 </provider>
               </entry>
             </file>
-            <file pinned="false" current-in-tab="false">
+            <file pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/resources/views/almacenGenerales/formGenerales.blade.php">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="1236">
-                    <caret line="98" column="64" selection-start-line="98" selection-start-column="64" selection-end-line="98" selection-end-column="64" />
+                  <state relative-caret-position="262">
+                    <caret line="29" column="71" selection-start-line="29" selection-start-column="71" selection-end-line="29" selection-end-column="71" />
                   </state>
                 </provider>
               </entry>
@@ -306,7 +303,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="403">
@@ -327,8 +324,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ActivoGeneralController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="33" column="24" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
+            <state relative-caret-position="403">
+              <caret line="30" column="94" lean-forward="true" selection-start-line="30" selection-start-column="94" selection-end-line="30" selection-end-column="94" />
               <folding>
                 <element signature="e#40#58#0#PHP" expanded="true" />
               </folding>
@@ -339,8 +336,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdministradorController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="140" column="77" lean-forward="true" selection-start-line="140" selection-start-column="77" selection-end-line="140" selection-end-column="77" />
+            <state relative-caret-position="404">
+              <caret line="222" column="79" lean-forward="true" selection-start-line="222" selection-start-column="79" selection-end-line="222" selection-end-column="79" />
               <folding>
                 <element signature="e#39#52#0#PHP" expanded="true" />
               </folding>
@@ -366,11 +363,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AccesorioGeneralController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="403">
+              <caret line="24" column="76" selection-start-line="24" selection-start-column="76" selection-end-line="24" selection-end-column="76" />
+              <folding>
+                <element signature="e#40#65#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -447,12 +447,12 @@
         <option value="$PROJECT_DIR$/app/ActivoGeneral.php" />
         <option value="$PROJECT_DIR$/app/AccesorioGeneral.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ResguardoController.php" />
-        <option value="$PROJECT_DIR$/resources/views/almacenGenerales/formGenerales.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/AccesorioGeneralController.php" />
         <option value="$PROJECT_DIR$/resources/views/almacenGenerales/listaGenerales.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/ActivoGeneralController.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/adminHome2.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ActivoGeneralController.php" />
+        <option value="$PROJECT_DIR$/resources/views/almacenGenerales/formGenerales.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/AccesorioGeneralController.php" />
       </list>
     </option>
   </component>
@@ -556,7 +556,7 @@
       <path value="$PROJECT_DIR$/vendor/yajra/laravel-datatables-oracle" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="y" value="30" />
     <option name="width" value="1366" />
     <option name="height" value="738" />
@@ -762,14 +762,7 @@
       <workItem from="1548983034740" duration="13803000" />
       <workItem from="1549403454751" duration="14163000" />
       <workItem from="1549553947423" duration="2007000" />
-      <workItem from="1549646952755" duration="10312000" />
-    </task>
-    <task id="LOCAL-00091" summary="Administrador: Logica de eliminacion de accesorio">
-      <created>1548487349354</created>
-      <option name="number" value="00091" />
-      <option name="presentableId" value="LOCAL-00091" />
-      <option name="project" value="LOCAL" />
-      <updated>1548487349354</updated>
+      <workItem from="1549646952755" duration="12252000" />
     </task>
     <task id="LOCAL-00092" summary="Administrador: Depurando el eliminado de tipos de incidente y el listado de incidentes.">
       <created>1548489644422</created>
@@ -1107,14 +1100,21 @@
       <option name="project" value="LOCAL" />
       <updated>1549660504347</updated>
     </task>
-    <option name="localTasksCounter" value="140" />
+    <task id="LOCAL-00140" summary="Administrador: View y ruta para el listado de todos los generales, logica para guardar activos generales">
+      <created>1549662256410</created>
+      <option name="number" value="00140" />
+      <option name="presentableId" value="LOCAL-00140" />
+      <option name="project" value="LOCAL" />
+      <updated>1549662256410</updated>
+    </task>
+    <option name="localTasksCounter" value="141" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="341031000" />
+    <option name="totallyTimeSpent" value="342971000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="30" width="1366" height="738" extended-state="7" />
+    <frame x="0" y="30" width="1366" height="738" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
@@ -1167,7 +1167,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Administrador: Se guarda el nombre del resguardo en la db. se aseguran bien los error handlers para el pdf." />
     <MESSAGE value="Administrador: Ruta para descargar el pdf del vale deseado." />
     <MESSAGE value="Administrador: Ruta para descargar el pdf del vale deseado: descarga a dar click en boton." />
     <MESSAGE value="Administrador: Bootstrap minified importado en view de pdf y carga de html en vez de descargar pdf para facilitar el diseño de la vista." />
@@ -1192,7 +1191,8 @@
     <MESSAGE value="Administrador: Cambiar la password a los usuarios, seguridad y manejo de errores." />
     <MESSAGE value="Administrador: Creacion de la migracion, modelo y controller de activo y accesorio generales" />
     <MESSAGE value="Administrador: Frontend del registro de los generales" />
-    <option name="LAST_COMMIT_MESSAGE" value="Administrador: Frontend del registro de los generales" />
+    <MESSAGE value="Administrador: View y ruta para el listado de todos los generales, logica para guardar activos generales" />
+    <option name="LAST_COMMIT_MESSAGE" value="Administrador: View y ruta para el listado de todos los generales, logica para guardar activos generales" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/config/view.php">
@@ -1442,13 +1442,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_02_08_141804_create_activo_generals_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_02_08_141822_create_accesorio_generals_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
@@ -1484,13 +1477,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AccesorioGeneralController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AreaController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-624" />
@@ -1513,30 +1499,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdministradorController.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/adminHome2.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="140" column="77" lean-forward="true" selection-start-line="140" selection-start-column="77" selection-end-line="140" selection-end-column="77" />
-          <folding>
-            <element signature="e#39#52#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ActivoGeneralController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="33" column="24" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
-          <folding>
-            <element signature="e#40#58#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/adminEmpleados/updateEmpleado.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="153" column="30" lean-forward="true" selection-start-line="153" selection-start-column="30" selection-end-line="153" selection-end-column="30" />
+        <state relative-caret-position="416">
+          <caret line="80" column="64" lean-forward="true" selection-start-line="80" selection-start-column="64" selection-end-line="80" selection-end-column="64" />
         </state>
       </provider>
     </entry>
@@ -1547,17 +1513,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/almacenGenerales/formGenerales.blade.php">
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_02_08_141804_create_activo_generals_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1236">
-          <caret line="98" column="64" selection-start-line="98" selection-start-column="64" selection-end-line="98" selection-end-column="64" />
+        <state relative-caret-position="390">
+          <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/adminHome2.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdministradorController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="79" column="81" selection-start-line="79" selection-start-column="81" selection-end-line="79" selection-end-column="81" />
+        <state relative-caret-position="404">
+          <caret line="222" column="79" lean-forward="true" selection-start-line="222" selection-start-column="79" selection-end-line="222" selection-end-column="79" />
+          <folding>
+            <element signature="e#39#52#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/almacenGenerales/formGenerales.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="29" column="71" selection-start-line="29" selection-start-column="71" selection-end-line="29" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/adminEmpleados/updateEmpleado.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="150" column="30" lean-forward="true" selection-start-line="150" selection-start-column="30" selection-end-line="150" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ActivoGeneralController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="30" column="94" lean-forward="true" selection-start-line="30" selection-start-column="94" selection-end-line="30" selection-end-column="94" />
+          <folding>
+            <element signature="e#40#58#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AccesorioGeneralController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="24" column="76" selection-start-line="24" selection-start-column="76" selection-end-line="24" selection-end-column="76" />
+          <folding>
+            <element signature="e#40#65#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

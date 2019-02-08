@@ -25,9 +25,9 @@
                 Presione el mismo botón para cancelar registro.</span>
             </div>
             <br><br><br>
-            @if(Session::has('successProveedor'))
+            @if(Session::has('success'))
                 <div class="alert alert-warning" role="alert" style="margin-top: 5px">
-                    <span class="text-success">{{ Session::get('successProveedor') }}</span>
+                    <span class="text-success">{{ Session::get('success') }}</span>
                 </div>
             @endif
             @if(Session::has('Error'))
@@ -66,7 +66,7 @@
                                 <label for="nombre" class="col-md-4 col-form-label text-md-right">{{ __('Nombre') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="nombre" type="text" class="form-control{{ $errors->has('nombre') ? ' is-invalid' : '' }}" name="nombre" value="{{ old('name') }}" required autofocus>
+                                    <input id="nombre" type="text" class="form-control{{ $errors->has('nombre') ? ' is-invalid' : '' }}" name="nombre" value="{{ old('nombre') }}" required autofocus>
 
                                     @if ($errors->has('nombre'))
                                         <span class="invalid-feedback" role="alert">

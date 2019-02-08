@@ -17,18 +17,18 @@ class ActivoGeneralController extends Controller
 
     public function create(Request $request){
         // registrar el activo general y devolver la vista de la lista de generales
-        $nombre = $request->validate([
+        $data = $request->validate([
             "nombre" => "required|max:100"
         ]);
         try {
             $activo = ActivoGeneral::create([
-                "nombre" => $nombre
+                "nombre" => $data["nombre"]
             ]);
         } catch(Exception $e){
             return redirect("admin/generales/create")
                 ->with('Error','No es posible registrar un activo general.');
         }
-        return "creacion de activo general";
+        return redirect()->back()->with("success", "Se registro el activo general con exito");
     }
 
     public function listGenerales(){
