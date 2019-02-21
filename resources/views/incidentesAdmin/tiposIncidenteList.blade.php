@@ -46,7 +46,7 @@
                                 <a onclick="return confirm('Está seguro/a de esta acción?');"
                                    href="{{ route('deleteTipoIncidente', $tipo->id) }}" class="btn btn-danger">Eliminar</a>
                                 &nbsp;&nbsp;&nbsp;&nbsp;
-                                <a href="" class="btn btn-success">Modificar</a>
+                                <a href="{{ route('updateTipoIncidente', $tipo->id) }}" class="btn btn-success">Modificar</a>
                             </div>
                         </div>
                     </div>

@@ -137,6 +137,13 @@ Route::group(['middleware' => ['is_admin']], function()
     Route::get('/tipoincidente/delete/{id}',
         'TipoIncidenteController@delete')
         ->name('deleteTipoIncidente');
+    // Modificar el tipo de incidente
+    Route::get('/tipoincidente/update/{id}',
+        'TipoIncidenteController@update')
+        ->name('updateTipoIncidente');
+    Route::post('/tipoincidente/update/{id}',
+        'TipoIncidenteController@updatePost')
+        ->name('updateTipoIncidentePost');
 
     // ALMACEN
     Route::get('/almacen/registros',

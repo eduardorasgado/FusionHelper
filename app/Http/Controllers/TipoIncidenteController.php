@@ -90,4 +90,37 @@ class TipoIncidenteController extends Controller
             ->with('success', 'El tipo de incidente '.$deletedTipo.' ha sido eliminado/a.');
     }
 
+    public function update(Request $request){
+        // mandar la vista del formulario  para actualizar el tipo de inc.
+        try {
+            // primero buscamos si se encuentra el id con ese tipo de inc.
+            $t_incidente = TipoIncidente::findOrFail($request->id);
+            // se devuelve el form con los datos
+            return view('incidentesAdmin.TIpoIncidentesUpdate',
+                compact('t_incidente'));
+
+        } catch(Exception $e){
+            return redirect()->back()
+                ->with('Error', 'El tipo de incidente no ha podido ser modificado.');
+        }
+    }
+
+    public function updatePost(Request $request){
+        // actualizar los campos de un tipo de incidente sin modificar el id
+        try{
+            //
+            $t_incidente = TipoIncidente::findOrFail($request->id);
+            $t_incidente->nombre = $request->nombre;
+            $t_incidente->descripcion = $request->descripcion;
+            // guardando los cambios
+            $t_incidente->save();
+            return redirect('/tipoincidente')
+                ->with('success', 'El tipo de incidente se ha modificado exitosamente.');
+        } catch(Exception $e){
+            //
+            return redirect('/tipoincidente')
+                ->with('Error', 'El tipo de incidente no ha podido ser modificado.');
+        }
+    }
+
 }
