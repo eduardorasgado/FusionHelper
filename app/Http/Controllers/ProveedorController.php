@@ -13,7 +13,6 @@ class ProveedorController extends Controller
     {
         $validatedData = $request->validate([
             'nombre' => 'required|string|max:100',
-            'apellidos' => 'required|string|max:100',
             'telefono' => 'required',
             'email' => 'required|string|max:150',
             'rfc' => 'required|string|max:150'
@@ -24,7 +23,6 @@ class ProveedorController extends Controller
 
         $proveedor = Proveedor::create([
             'nombre' => $validatedData['nombre'],
-            'apellidos' => $validatedData['apellidos'],
             'telefono' => $validatedData['telefono'],
             'email' => $validatedData['email'],
             'rfc' => $validatedData['rfc'],
@@ -61,7 +59,6 @@ class ProveedorController extends Controller
         try{
             $validatedData = $request->validate([
                 'nombre' => 'string|required|max:100',
-                'apellidos' => 'string|required|max:200',
                 'telefono' => 'required',
                 'email' => 'string|required|max: 200',
                 'rfc' => 'string|max:200'
@@ -70,7 +67,6 @@ class ProveedorController extends Controller
             $proveedor = Proveedor::findOrFail($request->id);
 
             $proveedor->nombre = $validatedData["nombre"];
-            $proveedor->apellidos = $validatedData["apellidos"];
             $proveedor->telefono = $validatedData["telefono"];
             $proveedor->email = $validatedData["email"];
             $proveedor->rfc = $validatedData["rfc"];

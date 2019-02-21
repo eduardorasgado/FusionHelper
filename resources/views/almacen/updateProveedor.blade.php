@@ -23,7 +23,7 @@
                     @csrf
 
                     <div class="form-group row">
-                        <label for="nombre" class="col-md-4 col-form-label text-md-right">{{ __('Nombre') }}</label>
+                        <label for="nombre" class="col-md-4 col-form-label text-md-right">{{ __('Nombre de la empresa') }}</label>
 
                         <div class="col-md-6">
                             <input id="nombre" type="text" class="form-control{{ $errors->has('nombre') ? ' is-invalid' : '' }}" name="nombre" value="{{ $proveedor->nombre }}" required autofocus>
@@ -31,20 +31,6 @@
                             @if ($errors->has('nombre'))
                                 <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('nombre') }}</strong>
-                                    </span>
-                            @endif
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
-                        <label for="apellidos" class="col-md-4 col-form-label text-md-right">{{ __('Apellidos') }}</label>
-
-                        <div class="col-md-6">
-                            <input id="apellido" type="text" class="form-control{{ $errors->has('apellidos') ? ' is-invalid' : '' }}" name="apellidos" value="{{ $proveedor->apellidos }}" required autofocus>
-
-                            @if ($errors->has('apellidos'))
-                                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('apellidos') }}</strong>
                                     </span>
                             @endif
                         </div>

@@ -61,7 +61,6 @@ $factory->define(App\Incidente::class, function(Faker $faker)
 $factory->define(App\Proveedor::class, function(Faker $faker){
     return [
         'nombre' => $faker->firstName,
-        'apellidos' => $faker->lastName,
         'telefono' => $faker->numberBetween($min=1287654321, $max=2147483645),
         'email' => $faker->email,
         'rfc' => $faker->swiftBicNumber,

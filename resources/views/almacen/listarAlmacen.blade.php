@@ -62,8 +62,7 @@
                         <table class="table">
                             <thead class="table-dark">
                             <tr>
-                                <th scope="col">Nombre</th>
-                                <th scope="col">apellidos</th>
+                                <th scope="col">Nombre de empresa</th>
                                 <th scope="col">email</th>
                                 <th scope="col">telefono</th>
                                 <th scope="col">Editar</th>
@@ -74,7 +73,6 @@
                             @foreach($proveedores as $proveedor)
                                 <tr>
                                     <td>{{ $proveedor->nombre }}</td>
-                                    <td>{{ $proveedor->apellidos }}</td>
                                     <td>{{ $proveedor->email }}</td>
                                     <td>{{ $proveedor->telefono }}</td>
                                     <td><a class="btn btn-dark"
