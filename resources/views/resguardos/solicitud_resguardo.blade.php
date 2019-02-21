@@ -50,7 +50,7 @@
                                         @foreach ($accesorios as $accesorio)
                                             @if($accesorio->activoId == $activo->id)
                                                 <option value="{{ $accesorio->id }}">{{ $accesorio->nombre }} |
-                                                    serie: {{ $accesorio->serie }} | Service_tag: {{ $accesorio->service_tag }}
+                                                    serie: {{ $accesorio->serie }} | Marca: {{ $accesorio->service_tag }}
                                                     | Activo perteneciente: {{ $activo->nombre }}
                                                 </option>
                                             @endif

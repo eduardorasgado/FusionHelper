@@ -142,8 +142,8 @@ class ResguardoController extends Controller
             for($i = 0; $i <$accesorios_size; ++$i){
                 // agregar la descripcion de cada accesorio
                 $accesorio_object = Accesorio::find($accesoriosId[$i]);
-                $descripcion = $accesorio_object->nombre." modelo ".$accesorio_object->modelo
-                    ." Service tag: ".$accesorio_object->service_tag;
+                $descripcion = $accesorio_object->nombre.", Modelo ".$accesorio_object->modelo
+                    ." Marca: ".$accesorio_object->service_tag;
                 array_push($accesorios, $descripcion);
             }
 

@@ -296,7 +296,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="service_tag" class="col-md-4 col-form-label text-md-right">{{ __('Service tag') }}</label>
+                                    <label for="service_tag" class="col-md-4 col-form-label text-md-right">{{ __('Marca') }}</label>
 
                                     <div class="col-md-6">
                                         <input id="service_tag" type="text" class="form-control{{ $errors->has('service_tag') ? ' is-invalid' : '' }}" name="service_tag" value="{{ old('service_tag') }}" required>

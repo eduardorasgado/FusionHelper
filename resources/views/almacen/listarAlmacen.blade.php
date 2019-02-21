@@ -148,6 +148,7 @@
                             <thead class="table-dark">
                                 <tr>
                                     <th scope="col">Nombre</th>
+                                    <th scope="col">Marca</th>
                                     <th scope="col">Serie</th>
 
                                     <th scope="col">Modelo</th>
@@ -160,6 +161,7 @@
                             @foreach($accesorios as $accesorio)
                                 <tr>
                                     <td>{{ $accesorio->nombre }}</td>
+                                    <td>{{ $accesorio->service_tag }}</td>
                                     <td>{{ $accesorio->serie }}</td>
 
                                     <td>{{ $accesorio->modelo }}</td>
