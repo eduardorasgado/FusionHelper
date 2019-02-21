@@ -24,7 +24,7 @@
                 <p><span class="blue">Diagnóstico: </span>{{ $ticket->diagnostico }}</p>
                 <p><span class="blue">Solución: </span>{{ $ticket->solucion }}</p>
                 <p><span class="blue">Descripción del fallo: </span>{{ $ticket->descripcion_fallo }}</p>
-                <p><span class="blue">Fecha de registro: </span> {{ $incidente->created_at }}</p>
+                <p><span class="blue">Fecha de reporte del incidente: </span> {{ $incidente->created_at }}</p>
                 <p><span class="blue">Fecha y hora de inicio: </span>{{ $incidente->created_at }}</p>
                 <p><span class="blue">Fecha y hora de cierre: </span>{{ $ticket->created_at }}</p>
             </div>

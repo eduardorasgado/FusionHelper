@@ -91,7 +91,7 @@
                                         <p><span class="orange">Diagnóstico: </span>{{ $ticket->diagnostico }}</p>
                                         <p><span class="orange">Solución: </span>{{ $ticket->solucion }}</p>
                                         <p><span class="orange">Descripción del fallo: </span>{{ $ticket->descripcion_fallo }}</p>
-                                        <p><span class="orange">Fecha de registro: </span> {{ $ticket->created_at }}</p>
+                                        <p><span class="orange">Fecha de generacion del ticket: </span> {{ $ticket->created_at }}</p>
 
                                         <div class="row">
                                             <div class="col-md-8"></div>
@@ -159,7 +159,7 @@
                                         Alta
                                     @endif
                                 </p>
-                                <p><span class="orange">Fecha de registro: </span> {{ $incidente->created_at }}</p>
+                                <p><span class="orange">Fecha de reporte de incidente: </span> {{ $incidente->created_at }}</p>
                                 <div class="row">
                                     <div class="col-md-8"></div>
                                     <div class="col-md-2">
