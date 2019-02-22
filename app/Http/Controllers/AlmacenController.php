@@ -24,6 +24,7 @@ class AlmacenController extends Controller
         $proveedores = Proveedor::all();
         $activos = Activo::all();
         $accesorios = Accesorio::all();
+        $estado = ['Disponible', 'En uso', 'Averiado', 'extraviado'];
 
         // TODO: ACTIVOS Y ACCESORIOS, PAGINACION MULTIPLE
 
@@ -31,6 +32,6 @@ class AlmacenController extends Controller
         return view('almacen.listarAlmacen',
             compact('proveedores',
                 'activos',
-                'accesorios'));
+                'accesorios', 'estado'));
     }
 }

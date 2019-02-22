@@ -119,6 +119,16 @@
                         </div>
                     </div>
 
+                    <div class="form-group row">
+                        <label for="status" class="col-md-4 col-form-label text-md-right">{{ __('Status') }}</label>
+                        <select class="form-control col-md-6" id="status" name="status">
+                            <option value="0" @if($activo->status ==0) selected @endif>Disponible</option>
+                            <option value="1" @if($activo->status ==1) selected @endif>En uso</option>
+                            <option value="2" @if($activo->status ==2) selected @endif>Averiado</option>
+                            <option value="3" @if($activo->status ==3) selected @endif>Extraviado</option>
+                        </select>
+                    </div>
+
                     <div class="form-group row mb-0 text-center">
                         <div class="col-md-6 offset-md-4">
                             <button type="submit" class="btn btn-primary">

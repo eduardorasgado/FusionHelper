@@ -21,7 +21,8 @@ class ActivoController extends Controller
             'marca' => $RULE,
             'modelo' => $RULE,
             'color' => 'required|string:max:40',
-            'descripcion' => 'required|string|max: 300'
+            'descripcion' => 'required|string|max: 300',
+            'status' => 'required'
         ]);
 
         try {
@@ -33,7 +34,7 @@ class ActivoController extends Controller
                 'modelo' => $validatedData['modelo'],
                 'color' => $validatedData['color'],
                 // disponible
-                'status' => 0,
+                'status' => $validatedData['status'],
                 'descripcion' => $validatedData['descripcion']
             ]);
         } catch (Exception $e)

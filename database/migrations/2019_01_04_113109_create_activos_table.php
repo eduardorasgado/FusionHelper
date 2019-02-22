@@ -21,7 +21,7 @@ class CreateActivosTable extends Migration
             $table->string('marca')->default('');
             $table->string('modelo')->default('');
             $table->string('color')->default('');
-            // 0: disponible, 1: en uso
+            // 0: disponible, 1: en uso, 2: averiado, 3: extraivado,
             $table->integer('status')->default(0);
             $table->text('descripcion');
             // podemos agregar un campo para guardar una url de imagen

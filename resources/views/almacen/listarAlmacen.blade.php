@@ -107,6 +107,7 @@
                                 <th scope="col">Marca</th>
                                 <th scope="col">Modelo</th>
                                 <th scope="col">Color</th>
+                                <th scope="col">Status</th>
                                 <th scope="col">Modificar</th>
                                 <th scope="col">Eliminar</th>
                             </tr>
@@ -119,6 +120,7 @@
                                     <td>{{ $activo->marca }}</td>
                                     <td>{{ $activo->modelo }}</td>
                                     <td>{{ $activo->color }}</td>
+                                    <td>{{$estado[$activo->status]}}</td>
                                     <td><a class="btn btn-dark"
                                        href="{{ route('updateActivo', $activo->id) }}"
                                        onclick="return confirm('Está seguro de querer modificar este activo?')">Modificar</a></td>
