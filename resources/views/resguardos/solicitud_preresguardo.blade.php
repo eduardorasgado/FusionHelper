@@ -36,8 +36,7 @@
                                 <select multiple class="form-control col-md-8" id="activosId[]" name="activosId[]"
                                         size="@if(count($activos)>14) 15 @endif">
                                     @foreach ($activos as $activo)
-                                        <option value="{{ $activo->id }}">{{ $activo->nombre }} |
-                                            marca: {{ $activo->marca }} | modelo: {{ $activo->modelo }} | color: {{ $activo->color }}</option>
+                                        <option value="{{ $activo->id }}">{{ $activo->nombre }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -50,19 +49,16 @@
                                         @foreach ($accesorios as $accesorio)
                                             @if($accesorio->activoId == $activo->id)
                                                 <option value="{{ $accesorio->id }}">{{ $accesorio->nombre }} |
-                                                    serie: {{ $accesorio->serie }} | Marca: {{ $accesorio->service_tag }}
-                                                    | Activo perteneciente: {{ $activo->nombre }}
                                                 </option>
                                             @endif
                                         @endforeach
                                     @endforeach
-                                        @foreach ($accesorios as $accesorio)
-                                            @if($accesorio->activoId == null)
-                                                <option value="{{ $accesorio->id }}">{{ $accesorio->nombre }} |
-                                                    serie: {{ $accesorio->serie }} | Marca: {{ $accesorio->service_tag }}
-                                                </option>
-                                            @endif
-                                        @endforeach
+                                    @foreach ($accesorios as $accesorio)
+                                        @if($accesorio->activoId == null)
+                                            <option value="{{ $accesorio->id }}">{{ $accesorio->nombre }}
+                                            </option>
+                                        @endif
+                                    @endforeach
                                 </select>
                             </div>
 

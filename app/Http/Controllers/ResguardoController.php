@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Accesorio;
+use App\AccesorioGeneral;
 use App\Activo;
+use App\ActivoGeneral;
 use App\Resguardo;
 use App\User;
 use Barryvdh\DomPDF\Facade as PDF;
@@ -29,15 +31,23 @@ class ResguardoController extends Controller
                                 'accesorios'));
     }
     //
-    public function getRegistro(Request $request)
+    public function getRegistroEmpleado(Request $request)
     {
         // TODO: LOGICA PARA MANDAR NUEVA VISTA DE PRERESGUARDO
+        $activos = ActivoGeneral::all();
+        $accesorios = AccesorioGeneral::all();
+        return view('resguardos.solicitud_preresguardo',
+            compact('activos', 'accesorios'));
+    }
+
+    public function getRegistroAdmin(Request $request){
         $activos = Activo::where('status', '=', 0)->get();
         $accesorios = Accesorio::all();
         return view('resguardos.solicitud_resguardo',
             compact('activos', 'accesorios'));
     }
 
+    // TODO: MANEJAR EL POST REGISTRO PARA EMPLEADO Y PARA ADMIN
     public function postRegistro(Request $request)
     {
         $validatedData = $request->validate([

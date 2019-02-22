@@ -44,8 +44,9 @@ Route::group(['middleware' => ['auth']], function() {
 
     // crear una solicitud para resguardo, por parte del empleado
     Route::get('/empleado/resguardos/create',
-        'ResguardoController@getRegistro')
+        'ResguardoController@getRegistroEmpleado')
         ->name('resguardoEmpleadoRegistro');
+
     Route::post('/empleado/resguardos/create',
         'ResguardoController@postRegistro')
         ->name('resguardoEmpleadoRegistro');
