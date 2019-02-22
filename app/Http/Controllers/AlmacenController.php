@@ -24,7 +24,7 @@ class AlmacenController extends Controller
         $proveedores = Proveedor::all();
         $activos = Activo::all();
         $accesorios = Accesorio::all();
-        $estado = ['Disponible', 'En uso', 'Averiado', 'extraviado'];
+        $estado = ['Disponible', 'En uso', 'Averiado', 'Extraviado'];
 
         // TODO: ACTIVOS Y ACCESORIOS, PAGINACION MULTIPLE
 

@@ -72,7 +72,8 @@ class ActivoController extends Controller
                 'marca' => $RULE,
                 'modelo' => $RULE,
                 'color' => 'required|string|max:20',
-                'descripcion' => 'required|string|max:300'
+                'descripcion' => 'required|string|max:300',
+                'status' => 'required'
             ]);
 
             $activo = Activo::findOrFail($request->id);
@@ -83,6 +84,7 @@ class ActivoController extends Controller
             $activo->modelo = $validatedData['modelo'];
             $activo->color = $validatedData['color'];
             $activo->descripcion = $validatedData['descripcion'];
+            $activo->status = $validatedData['status'];
 
             // guardando el activo actualizado
             $activo->save();
