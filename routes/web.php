@@ -47,8 +47,9 @@ Route::group(['middleware' => ['auth']], function() {
         'ResguardoController@getRegistroEmpleado')
         ->name('resguardoEmpleadoRegistro');
 
+    // gurdar el preresguardo
     Route::post('/empleado/resguardos/create',
-        'ResguardoController@postRegistro')
+        'ResguardoController@postRegistroPreresguardo')
         ->name('resguardoEmpleadoRegistro');
 });
 
