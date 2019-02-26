@@ -48,11 +48,6 @@ class ResguardoController extends Controller
     }
 
     // TODO: MANEJAR EL POST REGISTRO PARA EMPLEADO Y PARA ADMIN
-    public function postRegistroPreresguardo(Request $request){
-        // esto guarda un preresguardo que hizo el empleado
-        return "guardar(post) de preresguardo";
-    }
-
     // este es para que el admin asigne el resguardo
     public function postRegistroResguardo(Request $request)
     {

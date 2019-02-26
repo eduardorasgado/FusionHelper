@@ -25,10 +25,15 @@
                             <span class="text-success">{{ Session::get('Error') }}</span>
                         </div>
                     @endif
+                    @if(Session::has('success'))
+                        <div class="alert alert-warning" role="alert" style="margin-top: 5px">
+                            <span class="text-success">{{ Session::get('success') }}</span>
+                        </div>
+                    @endif
                 </div>
                 <div class="card card-body">
                     <div class="card card-body">
-                        <form action="{{ route('resguardoEmpleadoRegistro') }}"
+                        <form action="{{ route('resguardoRegistro') }}"
                               method="POST" onsubmit="return confirm('Está seguro de hacer este registro?')">
                             @csrf
                             <div class="form-group row">

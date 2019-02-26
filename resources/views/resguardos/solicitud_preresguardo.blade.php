@@ -28,7 +28,7 @@
                 </div>
                 <div class="card card-body">
                     <div class="card card-body">
-                        <form action="{{ route('resguardoEmpleadoRegistro') }}"
+                        <form action="{{ route('PreresguardoEmpleadoRegistro') }}"
                               method="POST" onsubmit="return confirm('Está seguro de hacer este registro?')">
                             @csrf
                             <div class="form-group row">
@@ -45,19 +45,8 @@
                                 <label for="accesoriosId[]" class="col-md-2 col-form-label text-md-right">{{ __('Seleccione accesorios(si es necesario)') }}</label>
                                 <select multiple class="form-control col-md-8" id="accesoriosId[]" name="accesoriosId[]"
                                         size="@if(count($accesorios)>9) 10 @endif">
-                                    @foreach($activos as $activo)
-                                        @foreach ($accesorios as $accesorio)
-                                            @if($accesorio->activoId == $activo->id)
-                                                <option value="{{ $accesorio->id }}">{{ $accesorio->nombre }} |
-                                                </option>
-                                            @endif
-                                        @endforeach
-                                    @endforeach
                                     @foreach ($accesorios as $accesorio)
-                                        @if($accesorio->activoId == null)
-                                            <option value="{{ $accesorio->id }}">{{ $accesorio->nombre }}
-                                            </option>
-                                        @endif
+                                        <option value="{{ $accesorio->id }}">{{ $accesorio->nombre }}</option>
                                     @endforeach
                                 </select>
                             </div>

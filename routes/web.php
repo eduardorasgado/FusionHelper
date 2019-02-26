@@ -49,8 +49,13 @@ Route::group(['middleware' => ['auth']], function() {
 
     // gurdar el preresguardo
     Route::post('/empleado/resguardos/create',
-        'ResguardoController@postRegistroPreresguardo')
-        ->name('resguardoEmpleadoRegistro');
+        'PreresguardoController@postRegistroPreresguardo')
+        ->name('PreresguardoEmpleadoRegistro');
+
+    // listar todos los preresguardos del empleado
+    Route::get('empleado/preresguardos/all',
+        'PreresguardoController@index')
+        ->name("preresguardosAllEmpleado");
 });
 
 // RUTAS PARA EL ADMINISTRADOR
@@ -221,6 +226,12 @@ Route::group(['middleware' => ['is_admin']], function()
         ->name('deleteAccesorio');
 
     // RESGUARDOS: LISTADO Y APROBACION
+    // guardar el resguardo por el admin
+    Route::post('/admin/resguardo/{id}',
+        'ResguardoController@postRegistroResguardo')
+        ->name('resguardoRegistro');
+
+    // mostrar la lista de los rsguardos ya generados
     Route::get('/admin/resguardos/all',
         'ResguardoController@adminListAll')
         ->name('listarReguardosAdmin');
