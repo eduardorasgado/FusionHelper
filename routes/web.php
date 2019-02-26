@@ -226,6 +226,12 @@ Route::group(['middleware' => ['is_admin']], function()
         ->name('deleteAccesorio');
 
     // RESGUARDOS: LISTADO Y APROBACION
+    // vistas de preresguardos
+    // listar todos los preresguardos del empleado
+    Route::get('admin/preresguardos/all',
+        'PreresguardoController@indexAdmin')
+        ->name("preresguardosAllAdmin");
+
     // guardar el resguardo por el admin
     Route::post('/admin/resguardo/{id}',
         'ResguardoController@postRegistroResguardo')

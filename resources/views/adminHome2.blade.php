@@ -79,8 +79,8 @@
                             <a class="dropdown-item" href="{{ route('registroGenerales') }}">Registrar Activo o Accesorio General</a>
                             <a class="dropdown-item" href="{{ route('allGenerales') }}">Listas de Activos y Accesorios Generales</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="">Solicitudes de resguardo(pendientes)</a>
-                            <a class="dropdown-item" href="{{ route('listarReguardosAdmin') }}">Resguardos generadors</a>
+                            <a class="dropdown-item" href="{{ route("preresguardosAllAdmin") }}">Solicitudes de resguardo(pendientes)</a>
+                            <a class="dropdown-item" href="{{ route('listarReguardosAdmin') }}">Resguardos generados</a>
                         </div>
                     </div>
                 </div>

@@ -6,6 +6,7 @@ use App\Accesorio;
 use App\AccesorioGeneral;
 use App\ActivoGeneral;
 use App\Preresguardo;
+use App\User;
 use Illuminate\Http\Request;
 use Exception;
 use Illuminate\Support\Facades\Auth;
@@ -20,6 +21,17 @@ class PreresguardoController extends Controller
         $accesorios = AccesorioGeneral::all();
         return view('resguardos.allPreresguardosEmpleado',
             compact('resguardos', 'activos', 'accesorios'));
+    }
+
+    public function indexAdmin(){
+        // regresa todos los preresguardos con empleados para el admin
+        $resguardos = Preresguardo::where("resguardado", "=", 0)->paginate(10);
+        $activos = ActivoGeneral::all();
+        $accesorios = AccesorioGeneral::all();
+        $empleados = User::all();
+
+        return view('resguardos.allPreresguardosAdmin',
+            compact('resguardos', 'activos', 'accesorios', 'empleados'));
     }
     //
     public function postRegistroPreresguardo(Request $request){
