@@ -70,10 +70,13 @@ class ResguardoController extends Controller
         }
 
         try{
+            $pr_empleado = Preresguardo::findOrFail($request->id);
+            $empleado = User::findOrFail($pr_empleado->empleadoId);
+
             // crear un nuevo resguardo con in estado de 0(por procesar)
             $resguardo = Resguardo::create([
                 'estado' => 0,
-                'empleadoId' => Auth::id(),
+                'empleadoId' => $empleado->id,
                 'activosId' => $activos_list,
                 'accesoriosId' => $accesorios_list,
                 //'fecha_asignacion' => Carbon::now()->format('d-m-Y'),
@@ -95,8 +98,8 @@ class ResguardoController extends Controller
             return redirect('/empleado/resguardos/create')
                 ->with('Error', 'La solicitud no pudo ser procesada, intentelo mas tarde.');
         }
-        return redirect('/empleado/resguardos/all')
-            ->with('success', 'La solicitud fue enviada con exito');
+        return redirect('/admin/resguardos/all')
+            ->with('success', 'Se ha generado el resguardo con exito');
     }
 
     public function adminListAll(){
@@ -143,6 +146,7 @@ class ResguardoController extends Controller
             $marcas = [];
             $modelos = [];
             $activos_size = sizeof($activosId);
+
             for($i = 0; $i < $activos_size; ++$i){
                 // buscando cada elemento de los activos del reguardo y agregando
                 // sus propiedades deseadas en el string
@@ -158,12 +162,17 @@ class ResguardoController extends Controller
             $accesorios = [];
             $accesoriosId = explode(',', $resguardo->accesoriosId);
             $accesorios_size = count($accesoriosId);
-            for($i = 0; $i <$accesorios_size; ++$i){
-                // agregar la descripcion de cada accesorio
-                $accesorio_object = Accesorio::find($accesoriosId[$i]);
-                $descripcion = $accesorio_object->nombre.", Modelo ".$accesorio_object->modelo
-                    ." Marca: ".$accesorio_object->service_tag;
-                array_push($accesorios, $descripcion);
+
+            // si el primer elemento de la lista de accesorios es distinto de un string vacio
+            // ya que si no hay accesorio el explode produce un array de un elemento ""
+            if($accesoriosId[0] != ""){
+                for($i = 0; $i <$accesorios_size; ++$i){
+                    // agregar la descripcion de cada accesorio
+                    $accesorio_object = Accesorio::find($accesoriosId[$i]);
+                    $descripcion = $accesorio_object->nombre.", Modelo ".$accesorio_object->modelo
+                        ." Marca: ".$accesorio_object->service_tag;
+                    array_push($accesorios, $descripcion);
+                }
             }
 
             $solicitante = User::findOrFail($resguardo->empleadoId);
