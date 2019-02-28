@@ -70,7 +70,7 @@ class PreresguardoController extends Controller
     public function createResguardo(Request $request){
         // transicion de preresguardo a resguardo
         try{
-            //
+            //return $request->id;
             $preresguardo = Preresguardo::findOrFail($request->id);
             $activosGeneral = ActivoGeneral::all();
             $accesoriosGeneral = AccesorioGeneral::all();

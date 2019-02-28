@@ -8,7 +8,7 @@
             <div class="col-md-10">
 
             </div>
-            <a class="btn btn-primary" href="{{ route('empleado')  }}">Atrás</a>
+            <a class="btn btn-primary" href="{{ route('preresguardosAllAdmin')  }}">Atrás</a>
         </div>
         <br>
         <div class="row">
@@ -43,14 +43,23 @@
                             <h4>Solicitud</h4>
                             <h5>Activos:</h5>
                                 <ul>
+                                    <!-- TODO: EXPLODE PARA TRATAR AL ACTIVOGENERAL DEL PRERESGUARDO YA QYE ES UN STRING EN FORMA DE LISTA-->
                                     @foreach($activosGeneral as $activoGeneral)
-                                        <li>{{ $activoGeneral->nombre }}</li>
+                                        @foreach(explode(",", $preresguardo->activoGeneral) as $activoGEmpleado)
+                                            @if($activoGeneral->id == $activoGEmpleado)
+                                                <li>{{ $activoGeneral->nombre }}</li>
+                                            @endif
+                                        @endforeach
                                     @endforeach
                                 </ul>
                             <h5>Accesorios:</h5>
                                 <ul>
                                     @foreach($accesoriosGeneral as $accesorioGeneral)
-                                        <li>{{ $accesorioGeneral->nombre }}</li>
+                                        @foreach(explode(",", $preresguardo->accesorioGeneral) as $accesorioGEmpleado)
+                                            @if($accesorioGeneral->id == $accesorioGEmpleado)
+                                                <li>{{ $accesorioGeneral->nombre }}</li>
+                                            @endif
+                                        @endforeach
                                     @endforeach
                                 </ul>
                         </div>
