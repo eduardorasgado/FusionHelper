@@ -81,6 +81,8 @@
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{ route("preresguardosAllAdmin") }}">Solicitudes de resguardo(pendientes)</a>
                             <a class="dropdown-item" href="{{ route('listarReguardosAdmin') }}">Resguardos generados</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{{route('resguardoEmpleadoRegistro')}}">Solicitar activos/accesorios</a>
                         </div>
                     </div>
                 </div>

@@ -178,6 +178,7 @@ class AdministradorController extends Controller
         $tickets = Ticket::all();
 
         $incidentesEnCola = Incidente::where('etiquetado', '=', 0)
+            ->orderBy('id','desc')
             // diferenciamos dos paginaciones para una misma vista
             // vease la vista para notar el manejo de la doble
             // paginacion dentro de una vista

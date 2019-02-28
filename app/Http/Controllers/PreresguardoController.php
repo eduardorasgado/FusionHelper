@@ -51,12 +51,18 @@ class PreresguardoController extends Controller
         //return "contenido: activos:" . $activosString . " | accesorios: " . $accesoriosString;
         try{
             //
+            $empleado = isset($request->empleado) ? $request->empleado : Auth::id();
             Preresguardo::create([
-                'empleadoId' => Auth::id(),
+                'empleadoId' => $empleado,
                 'activoGeneral' => $activosString,
                 'accesorioGeneral' => $accesoriosString,
             ]);
             // retornar la vista de archivos sin procesar
+            if(Auth::user()->tipo_user == 0){
+                // en caso de ser admin
+                return redirect("admin/preresguardos/all")->with("success",
+                    "Se ha guardado tu solicitud en el sistema");
+            }
             return redirect("empleado/preresguardos/all")->with("success",
                 "Se ha guardado tu solicitud en el sistema");
 

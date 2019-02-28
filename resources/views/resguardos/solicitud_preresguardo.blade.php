@@ -31,6 +31,19 @@
                         <form action="{{ route('PreresguardoEmpleadoRegistro') }}"
                               method="POST" onsubmit="return confirm('Está seguro de hacer este registro?')">
                             @csrf
+
+                            @if(isset($empleados))
+                                <div class="form-group row">
+                                    <label for="empleado" class="col-md-2 col-form-label text-md-right">{{ __('Seleccione Empleados') }}</label>
+                                    <select class="form-control col-md-8" id="empleado" name="empleado"
+                                            >
+                                        @foreach ($empleados as $empleado)
+                                            <option value="{{ $empleado->id }}">{{ $empleado->nombre }} {{ $empleado->apellidos }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            @endif
+
                             <div class="form-group row">
                                 <label for="activosId[]" class="col-md-2 col-form-label text-md-right">{{ __('Seleccione Activos') }}</label>
                                 <select multiple class="form-control col-md-8" id="activosId[]" name="activosId[]"

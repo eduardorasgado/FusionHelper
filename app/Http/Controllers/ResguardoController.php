@@ -34,9 +34,16 @@ class ResguardoController extends Controller
     //
     public function getRegistroEmpleado()
     {
-        // TODO: LOGICA PARA MANDAR NUEVA VISTA DE PRERESGUARDO
         $activos = ActivoGeneral::all();
         $accesorios = AccesorioGeneral::all();
+        if(Auth::user()->tipo_user == 0){
+            // si el usuario es admin se envia una lista de empleados
+            //menos el admin
+            $empleados = User::all();
+
+            return view('resguardos.solicitud_preresguardo',
+                compact('activos', 'accesorios', 'empleados'));
+        }
         return view('resguardos.solicitud_preresguardo',
             compact('activos', 'accesorios'));
     }
@@ -105,7 +112,7 @@ class ResguardoController extends Controller
     public function adminListAll(){
         // llevar todos los resguardos paginados al front
         try{
-            $resguardos = DB::table('resguardos')->paginate(5);
+            $resguardos = DB::table('resguardos')->orderBy("created_at","desc")->paginate(5);
             $activos = Activo::all();
             $accesorios = Accesorio::all();
             $empleados = User::all();
