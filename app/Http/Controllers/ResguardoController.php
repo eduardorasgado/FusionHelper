@@ -6,6 +6,7 @@ use App\Accesorio;
 use App\AccesorioGeneral;
 use App\Activo;
 use App\ActivoGeneral;
+use App\Preresguardo;
 use App\Resguardo;
 use App\User;
 use Barryvdh\DomPDF\Facade as PDF;
@@ -31,7 +32,7 @@ class ResguardoController extends Controller
                                 'accesorios'));
     }
     //
-    public function getRegistroEmpleado(Request $request)
+    public function getRegistroEmpleado()
     {
         // TODO: LOGICA PARA MANDAR NUEVA VISTA DE PRERESGUARDO
         $activos = ActivoGeneral::all();
@@ -40,7 +41,7 @@ class ResguardoController extends Controller
             compact('activos', 'accesorios'));
     }
 
-    public function getRegistroAdmin(Request $request){
+    public function getRegistroAdmin(){
         $activos = Activo::where('status', '=', 0)->get();
         $accesorios = Accesorio::all();
         return view('resguardos.solicitud_resguardo',
@@ -82,6 +83,13 @@ class ResguardoController extends Controller
                 'hora_entrega' => null,
                 'storage_link' => null,
             ]);
+
+            // si el resguardo se guarda con exito, entonces se cambia
+            // el estado del preresguardo a resguardado
+            $preresguard = Preresguardo::findOrFail($request->id);
+            $preresguard->resguardado = 1;
+            $preresguard->save();
+
         } catch(Exception $e){
             //return $e->getMessage();
             return redirect('/empleado/resguardos/create')

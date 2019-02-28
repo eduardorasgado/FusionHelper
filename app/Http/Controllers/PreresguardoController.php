@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Accesorio;
 use App\AccesorioGeneral;
+use App\Activo;
 use App\ActivoGeneral;
 use App\Preresguardo;
 use App\User;
@@ -63,6 +64,30 @@ class PreresguardoController extends Controller
             return redirect()->back()
                 ->with("Error",
                     'Error al intentar guardar el preregistro, favor de volver atras, intentelo mas tarde');
+        }
+    }
+
+    public function createResguardo(Request $request){
+        // transicion de preresguardo a resguardo
+        try{
+            //
+            $preresguardo = Preresguardo::findOrFail($request->id);
+            $activosGeneral = ActivoGeneral::all();
+            $accesoriosGeneral = AccesorioGeneral::all();
+
+            $activos = Activo::all();
+            $accesorios = Accesorio::all();
+
+            $empleado = User::findOrFail($preresguardo->empleadoId);
+
+            return view("resguardos.procesarPreresguardo",
+                compact("activosGeneral", "accesoriosGeneral", "preresguardo",
+                    "activos", "accesorios", "empleado"));
+        } catch(Exception $e){
+            //
+            return redirect()->back()
+                ->with("Error",
+                    'Error al intentar acceder a la base de datos, intentelo mas tarde');
         }
     }
 

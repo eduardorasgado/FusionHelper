@@ -85,7 +85,7 @@
                     </td>
                     <td>{{ explode(" ", $resguardo->created_at)[0] }}</td>
 
-                    <td><a href="" class="btn btn-success">Procesar</a></td>
+                    <td><a href="{{ route("procesarPreresguardo", $resguardo->id) }}" class="btn btn-success">Procesar</a></td>
                 </tr>
             @endforeach
             </tbody>

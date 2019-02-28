@@ -232,6 +232,10 @@ Route::group(['middleware' => ['is_admin']], function()
         'PreresguardoController@indexAdmin')
         ->name("preresguardosAllAdmin");
 
+    Route::get('admin/preresguardo/procesar/{id}',
+        'PreresguardoController@createResguardo')
+        ->name("procesarPreresguardo");
+
     // guardar el resguardo por el admin
     Route::post('/admin/resguardo/{id}',
         'ResguardoController@postRegistroResguardo')
