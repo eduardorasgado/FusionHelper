@@ -72,12 +72,12 @@
                                     <td>{{ $activo->nombre }}</td>
                                     <td>
                                         <a class="btn btn-dark"
-                                           href="{{ route('updateAccesorio', $activo->id) }}"
+                                           href=""
                                            onclick="return confirm('Está seguro de querer modificar este activo general?')">Modificar</a>
                                     </td>
                                     <td>
                                         <a class="btn btn-danger"
-                                           href="{{ route('deleteAccesorio', $activo->id) }}"
+                                           href=""
                                            onclick="return confirm('Está seguro de querer eliminar este activo general?')">Eliminar</a>
                                     </td>
                                 </tr>
@@ -114,12 +114,12 @@
                                     <td>{{ $accesorio->nombre }}</td>
                                     <td>
                                         <a class="btn btn-dark"
-                                           href="{{ route('updateAccesorio', $accesorio->id) }}"
+                                           href=""
                                            onclick="return confirm('Está seguro de querer modificar este accesorio?')">Modificar</a>
                                     </td>
                                     <td>
                                         <a class="btn btn-danger"
-                                           href="{{ route('deleteAccesorio', $accesorio->id) }}"
+                                           href=""
                                            onclick="return confirm('Está seguro de querer eliminar este accesorio?')">Eliminar</a>
                                     </td>
                                 </tr>
