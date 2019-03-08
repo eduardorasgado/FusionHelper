@@ -17,7 +17,12 @@ class PreresguardoController extends Controller
     // listar todos los preresguardos para el empleado
     public function index(){
         //
-        $resguardos = Preresguardo::where('empleadoId', '=', Auth::id())->paginate(10);
+        $resguardos = Preresguardo::where([
+            ['empleadoId', '=', Auth::id()],
+            // donde el status sea de disponible
+            ['resguardado', '=', 0]
+        ])->paginate(10);
+
         $activos = ActivoGeneral::all();
         $accesorios = AccesorioGeneral::all();
         return view('resguardos.allPreresguardosEmpleado',
