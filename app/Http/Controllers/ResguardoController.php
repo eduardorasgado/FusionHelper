@@ -210,7 +210,8 @@ class ResguardoController extends Controller
 
             // el tiempo se separa como fecha hora, aqui lo justamos fecha-hora
             $time_stamp = explode(" ", Carbon::now()->toDateTimeString());
-            $pdf_name = 'resguardo.'.$time_stamp[0]."-".$time_stamp[1].".pdf";
+            $pdf_name = 'resguardo.'.$time_stamp[0]."-"
+                .str_replace(":", ".", $time_stamp[1]).".pdf";
 
             // guardando el pdf
             Storage::disk('local')->put($pdf_name, $pdf->output());
@@ -243,7 +244,7 @@ class ResguardoController extends Controller
             return $pdf->download($pdf_name);
 
         } catch(Exception $e){
-            //return $e->getMessage();
+            return $e->getMessage();
             return redirect('/admin/resguardos/all')
                 ->with('Error', 'No se pudo generar el PDF del resguardo, intentelo más tarde.');
         }
