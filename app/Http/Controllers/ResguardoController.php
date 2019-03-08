@@ -271,7 +271,7 @@ class ResguardoController extends Controller
         $activos_list = (string) $activos[0];
 		if(isset($activos[0])){
 			// solo si no esta vacio
-			this.changeActivoStatus($activos[0]);
+			$this->changeActivoStatus($activos[0]);
 		}
         $size = sizeof($activos);
         if($size > 1){
@@ -287,16 +287,18 @@ class ResguardoController extends Controller
                 if($i != $size-1){
                     $activos_list = $activos_list.",";
                 }
+                // cambiamos el status del activo
+                $this->changeActivoStatus($activos[$i]);
             }
         }
         return $activos_list;
     }
 	
 	private function changeActivoStatus($activoId){
-		$activo = Activo::find($id);
+		$activo = Activo::findOrFail($activoId);
 		// cambiar el status a en uso
 		$activo->status = 1;
-		$activo-save();
+		$activo->save();
 		$activo = null;
 	}
 }

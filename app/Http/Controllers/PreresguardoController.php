@@ -81,7 +81,7 @@ class PreresguardoController extends Controller
             $activosGeneral = ActivoGeneral::all();
             $accesoriosGeneral = AccesorioGeneral::all();
 
-            $activos = Activo::all();
+            $activos = Activo::where("status", "=", "0")->get();
             $accesorios = Accesorio::all();
 
             $empleado = User::findOrFail($preresguardo->empleadoId);
