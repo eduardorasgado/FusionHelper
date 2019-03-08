@@ -269,6 +269,10 @@ class ResguardoController extends Controller
         $activos_list = '';
         // incluyendo primero el primer elemento
         $activos_list = (string) $activos[0];
+		if(isset($activos[0])){
+			// solo si no esta vacio
+			this.changeActivoStatus($activos[0]);
+		}
         $size = sizeof($activos);
         if($size > 1){
             // en caso de ser mas de un elemento en el arreglo
@@ -287,4 +291,12 @@ class ResguardoController extends Controller
         }
         return $activos_list;
     }
+	
+	private function changeActivoStatus($activoId){
+		$activo = Activo::find($id);
+		// cambiar el status a en uso
+		$activo->status = 1;
+		$activo-save();
+		$activo = null;
+	}
 }
