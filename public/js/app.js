@@ -61346,7 +61346,9 @@ function (_Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Header).call(this, props));
     _this.state = {
       meses: [[1, "Enero"], [2, "Febrero"], [3, "Marzo"], [4, "Abril"], [5, "Mayo"], [6, "Junio"], [7, "Julio"], [8, "Agosto"], [9, "Septiembre"], [10, "Octubre"], [11, "Noviembre"], [12, "Diciembre"]],
-      mesElegido: null
+      mesElegido: 1,
+      tipoReporte: [[1, "Reporte de Eventos por tipo de incidente"], [2, "Incidentes por áreas o proyectos"], [3, "Tiempo de respuesta por tipo de evento"], [4, "Tiempo de resupesta por departamento"], [5, "Inventario de equipos de computo e impresoras"], [6, "Inventario de equipos de computo por área o proyecto"]],
+      tipoReporteElegido: 1
     };
     return _this;
   }
@@ -61356,6 +61358,13 @@ function (_Component) {
     value: function onMesChange(event) {
       this.setState({
         mesElegido: event.target.value
+      });
+    }
+  }, {
+    key: "onTipoReporteChange",
+    value: function onTipoReporteChange(event) {
+      this.setState({
+        tipoReporteElegido: event.target.value
       });
     }
   }, {
@@ -61373,22 +61382,45 @@ function (_Component) {
         className: "card-header"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Fusion Reporter")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card-body"
-      }, this.state.meses.map(function (_ref, i) {
+      }, "Seleccionar el mes:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.state.meses.map(function (_ref, i) {
         var _ref2 = _slicedToArray(_ref, 2),
             index = _ref2[0],
             mes = _ref2[1];
 
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "form-check-inline",
           key: i
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+          className: "form-check-label"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          className: "form-check-input",
           type: "radio",
           checked: parseInt(_this2.state.mesElegido) === index,
           onChange: function onChange(event) {
             return _this2.onMesChange(event);
           },
           value: index
-        }), mes);
-      })))));
+        }), mes));
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "El mes seleccionado es: ", this.state.meses[this.state.mesElegido - 1][1]), "Seleccionar el tipo de reporte:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.state.tipoReporte.map(function (_ref3, i) {
+        var _ref4 = _slicedToArray(_ref3, 2),
+            index = _ref4[0],
+            tipo = _ref4[1];
+
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "form-check",
+          key: i
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+          className: "form-check-label"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          className: "form-check-input",
+          type: "radio",
+          checked: parseInt(_this2.state.tipoReporteElegido) === index,
+          onChange: function onChange(event) {
+            return _this2.onTipoReporteChange(event);
+          },
+          value: index
+        }), tipo));
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "El tipo de reporte seleccionado es: ", this.state.tipoReporte[this.state.tipoReporteElegido - 1][1])))));
     }
   }]);
 

@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cddbc456-9ab5-4391-995f-6537bde7d221" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/js/components/Header.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Example.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Reporter.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Reporter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Header.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -250,8 +248,8 @@
             <file pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/resources/js/components/Header.js">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="480">
-                    <caret line="30" column="91" selection-start-line="30" selection-start-column="91" selection-end-line="30" selection-end-column="91" />
+                  <state relative-caret-position="438">
+                    <caret line="72" column="54" selection-start-line="72" selection-start-column="54" selection-end-line="72" selection-end-column="54" />
                   </state>
                 </provider>
               </entry>
@@ -266,8 +264,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="259" column="36" selection-start-line="259" selection-start-column="36" selection-end-line="259" selection-end-column="36" />
+            <state relative-caret-position="411">
+              <caret line="267" column="6" selection-start-line="267" selection-start-column="6" selection-end-line="267" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -685,14 +683,7 @@
       <workItem from="1551393067959" duration="3085000" />
       <workItem from="1552076946339" duration="173000" />
       <workItem from="1552077167058" duration="4477000" />
-      <workItem from="1552426731867" duration="9765000" />
-    </task>
-    <task id="LOCAL-00115" summary="Administrador: Ruta para descargar el pdf del vale deseado.">
-      <created>1548696682205</created>
-      <option name="number" value="00115" />
-      <option name="presentableId" value="LOCAL-00115" />
-      <option name="project" value="LOCAL" />
-      <updated>1548696682205</updated>
+      <workItem from="1552426731867" duration="11091000" />
     </task>
     <task id="LOCAL-00116" summary="Administrador: Ruta para descargar el pdf del vale deseado: descarga a dar click en boton.">
       <created>1548700189153</created>
@@ -1030,11 +1021,18 @@
       <option name="project" value="LOCAL" />
       <updated>1552431038562</updated>
     </task>
-    <option name="localTasksCounter" value="164" />
+    <task id="LOCAL-00164" summary="Reporter: Rendereando meses en el header">
+      <created>1552436762798</created>
+      <option name="number" value="00164" />
+      <option name="presentableId" value="LOCAL-00164" />
+      <option name="project" value="LOCAL" />
+      <updated>1552436762798</updated>
+    </task>
+    <option name="localTasksCounter" value="165" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="388001000" />
+    <option name="totallyTimeSpent" value="389327000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -1090,7 +1088,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Administrador: Frontend del registro de los generales" />
     <MESSAGE value="Administrador: View y ruta para el listado de todos los generales, logica para guardar activos generales" />
     <MESSAGE value="Administrador: Logica para guardar accesorios generales" />
     <MESSAGE value="Administrador: Vista del listado de los generales" />
@@ -1115,7 +1112,8 @@
     <MESSAGE value="Administrador: Filtro de preresguardo depurado para el empleado" />
     <MESSAGE value="Administrador: Generar pdf depurado." />
     <MESSAGE value="Inclucion de react y del componente reporter" />
-    <option name="LAST_COMMIT_MESSAGE" value="Inclucion de react y del componente reporter" />
+    <MESSAGE value="Reporter: Rendereando meses en el header" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reporter: Rendereando meses en el header" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php">
@@ -1438,13 +1436,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="259" column="36" selection-start-line="259" selection-start-column="36" selection-end-line="259" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/components/Reporter.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="178">
@@ -1452,6 +1443,13 @@
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="411">
+          <caret line="267" column="6" selection-start-line="267" selection-start-column="6" selection-end-line="267" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -1464,8 +1462,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/components/Header.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="30" column="91" selection-start-line="30" selection-start-column="91" selection-end-line="30" selection-end-column="91" />
+        <state relative-caret-position="438">
+          <caret line="72" column="54" selection-start-line="72" selection-start-column="54" selection-end-line="72" selection-end-column="54" />
         </state>
       </provider>
     </entry>
